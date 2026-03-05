@@ -16,14 +16,23 @@ No dependencies and no build step required.
 2. Open `index.html` directly in your browser.
 
 ## Deploy (GitHub Pages)
-Preferred approach: deploy from the repository root on the `main` branch.
+Preferred approach: deploy from the `/docs` folder on the `main` branch.
 
 1. Push this repository to GitHub.
 2. Go to **Settings → Pages**.
 3. Set **Source** to `Deploy from a branch`.
-4. Choose branch `main` and folder `/ (root)`.
+4. Choose branch `main` and folder `/docs`.
 5. Save and wait for Pages to publish.
 
-Alternative: You can also deploy from `/docs` if you later move all site files there.
+The site files are stored in `/docs` so GitHub Pages can publish directly from that folder.
 
-If using a custom domain, add a `CNAME` file with your domain (not included here by default).
+## Custom domain setup (`shreejaai.com`)
+1. Go to **Settings → Pages**.
+2. Ensure **Source** is set to **Deploy from a branch**.
+3. Select branch **main** and folder **/docs**.
+4. In **Custom domain**, enter `shreejaai.com` and save.
+5. After certificate provisioning completes, enable **Enforce HTTPS**.
+
+### DNS notes
+- Configure apex/root DNS with **A records** pointed to GitHub Pages.
+- Configure `www` as a **CNAME** record pointing to the apex/custom domain setup.
