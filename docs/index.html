@@ -1,101 +1,390 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Shreeja AI | Trust Layer for AI Agents</title>
-  <meta name="description" content="Shreeja AI builds trust and governance infrastructure for agentic systems with AGR and Company Box.">
-  <meta property="og:title" content="Shreeja AI | Trust Layer for AI Agents">
-  <meta property="og:description" content="Govern agentic runtime behavior, enforce policies, and improve operational trust with Shreeja AI.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://shreejaai.com/">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Shreeja AI | Trust Layer for AI Agents">
-  <meta name="twitter:description" content="Discover AGR and Company Box by Shreeja AI.">
-  <link rel="canonical" href="https://shreejaai.com/">
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="stylesheet" href="assets/style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ShreejaAI — The Trust Layer for AI Agents</title>
+  <meta name="description" content="Govern, observe, and control AI agent actions at runtime across any stack." />
+  <link rel="stylesheet" href="assets/style.css" />
 </head>
+
 <body>
+  <!-- ====== Header / Nav (Cube-like) ====== -->
   <header class="site-header">
-    <div class="container nav-wrap">
-      <a class="logo" href="index.html">Shreeja <span>AI</span></a>
-      <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
-      <ul class="nav-links">
-        <li><a class="active" href="index.html">Home</a></li>
-        <li><a href="agr.html">AGR</a></li>
-        <li><a href="company-box.html">Company Box</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a class="btn primary" href="contact.html">Book a Demo</a></li>
-      </ul>
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-mark"></span>
+        <span class="brand-text">ShreejaAI</span>
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navMenu">
+          <span class="sr-only">Open menu</span>
+          <span class="hamburger"></span>
+        </button>
+
+        <div id="navMenu" class="nav-menu">
+          <!-- Product dropdown -->
+          <div class="nav-item dropdown">
+            <button class="dropdown-toggle" type="button" aria-expanded="false">
+              Product <span class="caret"></span>
+            </button>
+            <div class="dropdown-menu" role="menu">
+              <a class="dropdown-link" href="agr.html">
+                <span class="dd-title">AGR</span>
+                <span class="dd-sub">Agent Governance at Runtime</span>
+              </a>
+              <a class="dropdown-link" href="company-box.html">
+                <span class="dd-title">Company Box</span>
+                <span class="dd-sub">Compliance-ready company ops box</span>
+              </a>
+            </div>
+          </div>
+
+          <a class="nav-link" href="#platform">Platform</a>
+          <a class="nav-link" href="#security">Security</a>
+          <a class="nav-link" href="about.html">About</a>
+          <a class="nav-link" href="contact.html">Contact</a>
+
+          <div class="nav-cta">
+            <a class="btn btn-ghost" href="#platform">Explore</a>
+            <a class="btn btn-primary" href="contact.html">Request a demo</a>
+          </div>
+        </div>
+      </nav>
     </div>
   </header>
 
-  <main class="container">
-    <section class="hero">
-      <div>
-        <span class="tagline">Trust Layer for AI Agents</span>
-        <h1>Build, deploy, and govern AI agents with confidence.</h1>
-        <p class="lead">Shreeja AI helps teams make agentic systems safer and easier to operate through runtime governance, policy guardrails, and transparent operational controls.</p>
-        <div class="btn-row">
-          <a class="btn primary" href="contact.html">Book a Demo</a>
-          <a class="btn" href="#products">Explore Products</a>
+  <main>
+    <!-- ====== Hero ====== -->
+    <section class="section hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="badge-row">
+            <span class="badge">AI Governance</span>
+            <span class="badge">Runtime Controls</span>
+            <span class="badge">Audit-Ready</span>
+          </div>
+
+          <h1 class="h1">
+            The Trust Layer for AI Agents
+          </h1>
+
+          <p class="lead">
+            Govern, observe, and control agent actions at runtime — across any language, OS, and framework.
+          </p>
+
+          <div class="cta-row">
+            <a class="btn btn-primary" href="contact.html">Request a demo</a>
+            <a class="btn btn-ghost" href="#platform">Explore platform</a>
+          </div>
+
+          <div class="micro-proof">
+            <span class="dot"></span>
+            Built for enterprise trust: policy gating, approvals, audit logs, and evidence capture.
+          </div>
+        </div>
+
+        <!-- Right-side visual like Cube (mock UI panel) -->
+        <div class="hero-visual">
+          <div class="mock-panel">
+            <div class="mock-header">
+              <span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span>
+              <span class="mock-title">Runtime Policy</span>
+            </div>
+            <pre class="mock-code"><code>
+policy:
+  allow:
+    - tool: "jira.create_issue"
+      role: "ops"
+      when: "risk_score &lt; 0.70"
+
+approval:
+  required_when: "risk_score &gt;= 0.70"
+
+audit:
+  capture: ["prompt", "tools", "outputs", "approvals"]
+  export: "evidence://org/audits/2026/03"
+            </code></pre>
+          </div>
+
+          <div class="mini-flow">
+            <div class="flow-node">Agent</div>
+            <div class="flow-arrow"></div>
+            <div class="flow-node">Policy Engine</div>
+            <div class="flow-arrow"></div>
+            <div class="flow-node">Tool Gateway</div>
+            <div class="flow-arrow"></div>
+            <div class="flow-node">Audit Log</div>
+          </div>
         </div>
       </div>
-      <aside class="card hero-art" aria-label="Trust and governance highlights">
-        <h3>Built for modern AI operations</h3>
-        <p>Bring governance into runtime decisions, keep teams aligned on policy intent, and maintain a clear trace from action to outcome.</p>
-        <div class="pill-row">
-          <span class="badge">Runtime controls</span>
-          <span class="badge">Operational clarity</span>
-          <span class="badge">Human oversight</span>
+    </section>
+
+    <!-- ====== Pillars (4 cards) ====== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="h2">Built for governance-first agent teams</h2>
+          <p class="subhead">Cube-style pillars: short, scannable, and “platform-y”.</p>
         </div>
-      </aside>
-    </section>
 
-    <section id="products" class="section">
-      <h2>Products</h2>
-      <div class="grid-2">
-        <article class="card">
-          <h3>AGR</h3>
-          <p>Agent Governance at Runtime (AGR) enforces behavior policies while agents execute tasks, helping teams reduce risk and improve accountability.</p>
-          <a class="btn" href="agr.html">Learn more</a>
-        </article>
-        <article class="card">
-          <h3>Company Box</h3>
-          <p>A secure ops and delivery hub for agent-enabled teams that need reliable access patterns, controlled secrets workflow, and operational traceability.</p>
-          <a class="btn" href="company-box.html">Learn more</a>
-        </article>
+        <div class="grid grid-4">
+          <article class="card pillar">
+            <h3 class="h3">Governed</h3>
+            <p>Runtime policies, approvals, and tool permissions — enforceable by design.</p>
+          </article>
+          <article class="card pillar">
+            <h3 class="h3">Observable</h3>
+            <p>Audit trails, lineage, session replay, and evidence exports for compliance.</p>
+          </article>
+          <article class="card pillar">
+            <h3 class="h3">Safe-by-design</h3>
+            <p>Least privilege, sandboxing patterns, and hardened tool gateways.</p>
+          </article>
+          <article class="card pillar">
+            <h3 class="h3">Integrated</h3>
+            <p>Works across languages, OS, and popular agent frameworks/tooling.</p>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section class="section">
-      <h2>Why Shreeja AI</h2>
-      <div class="grid-3">
-        <article class="card"><h3>Governance-first design</h3><p>Controls are integrated into workflows from day one, not bolted on after deployment.</p></article>
-        <article class="card"><h3>Operator-friendly</h3><p>Clear signals and predictable guardrails help engineers and business teams collaborate effectively.</p></article>
-        <article class="card"><h3>Flexible foundations</h3><p>Approach trust as an evolving capability that adapts to changing tools, teams, and risk context.</p></article>
+    <!-- ====== Explore Platform (2 product cards) ====== -->
+    <section id="platform" class="section platform">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="h2">Explore the platform</h2>
+          <p class="subhead">Two products, one trust layer.</p>
+        </div>
+
+        <div class="grid grid-2">
+          <article class="card platform-card">
+            <div class="platform-top">
+              <span class="kicker">Product</span>
+              <h3 class="h2">AGR</h3>
+              <p class="platform-sub">Agent Governance at Runtime</p>
+            </div>
+            <ul class="checklist">
+              <li>Policy engine + runtime enforcement</li>
+              <li>Tool allowlists + approvals</li>
+              <li>Audit logs + evidence capture</li>
+            </ul>
+            <div class="platform-actions">
+              <a class="btn btn-primary" href="agr.html">Learn AGR</a>
+              <a class="btn btn-ghost" href="contact.html">Request demo</a>
+            </div>
+          </article>
+
+          <article class="card platform-card">
+            <div class="platform-top">
+              <span class="kicker">Product</span>
+              <h3 class="h2">Company Box</h3>
+              <p class="platform-sub">Compliance-ready business ops box</p>
+            </div>
+            <ul class="checklist">
+              <li>Policies + processes + templates</li>
+              <li>Operational controls + evidence</li>
+              <li>Audit-ready documentation packs</li>
+            </ul>
+            <div class="platform-actions">
+              <a class="btn btn-primary" href="company-box.html">Learn Company Box</a>
+              <a class="btn btn-ghost" href="contact.html">Request demo</a>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section class="section">
-      <h2>Trust &amp; Governance</h2>
-      <div class="grid-2">
-        <article class="card"><h3>Audit logs</h3><p>Capture key runtime decisions and actions for review and post-incident analysis.</p></article>
-        <article class="card"><h3>Policy enforcement</h3><p>Apply standardized governance rules to agent behavior across use cases.</p></article>
-        <article class="card"><h3>Least privilege</h3><p>Limit tool and data access to the minimum needed for each task.</p></article>
-        <article class="card"><h3>Human-in-the-loop</h3><p>Escalate sensitive actions for approval without slowing standard operations.</p></article>
+    <!-- ====== Deep Dive: AGR (split section) ====== -->
+    <section class="section split">
+      <div class="container split-grid">
+        <div class="split-copy">
+          <span class="kicker">AGR</span>
+          <h2 class="h2">Govern agents while they run</h2>
+          <p class="lead-sm">
+            Enforce runtime policies for tools, data access, and risky actions — with approvals and audit trails.
+          </p>
+
+          <div class="feature-grid">
+            <div class="feature">
+              <h3 class="h3">Policy evaluation</h3>
+              <p>Decide if an action is allowed, denied, or needs escalation.</p>
+            </div>
+            <div class="feature">
+              <h3 class="h3">Tool gateway</h3>
+              <p>Centralized enforcement for tool calls across frameworks.</p>
+            </div>
+            <div class="feature">
+              <h3 class="h3">Evidence capture</h3>
+              <p>Store prompts, actions, approvals, and outputs — export on demand.</p>
+            </div>
+            <div class="feature">
+              <h3 class="h3">Human-in-the-loop</h3>
+              <p>Approval workflows for high-risk actions and privileged operations.</p>
+            </div>
+          </div>
+
+          <div class="cta-row">
+            <a class="btn btn-primary" href="agr.html">See AGR</a>
+            <a class="btn btn-ghost" href="contact.html">Talk to us</a>
+          </div>
+        </div>
+
+        <div class="split-visual">
+          <div class="mock-panel">
+            <div class="mock-header">
+              <span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span>
+              <span class="mock-title">How AGR routes actions</span>
+            </div>
+            <div class="diagram">
+              <div class="diagram-node">Agent</div>
+              <div class="diagram-connector"></div>
+              <div class="diagram-node">Policy Engine</div>
+              <div class="diagram-connector"></div>
+              <div class="diagram-node">Tool Gateway</div>
+              <div class="diagram-connector"></div>
+              <div class="diagram-node">Audit / Evidence</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== Deep Dive: Company Box (split section) ====== -->
+    <section class="section split alt">
+      <div class="container split-grid">
+        <div class="split-copy">
+          <span class="kicker">Company Box</span>
+          <h2 class="h2">Make compliance repeatable</h2>
+          <p class="lead-sm">
+            A packaged system for documentation, operational controls, and audit readiness — built to grow with you.
+          </p>
+
+          <div class="feature-grid">
+            <div class="feature">
+              <h3 class="h3">Policies & SOPs</h3>
+              <p>Ready-to-adapt templates for governance and internal controls.</p>
+            </div>
+            <div class="feature">
+              <h3 class="h3">Evidence packs</h3>
+              <p>Track what you did, when you did it, and who approved it.</p>
+            </div>
+            <div class="feature">
+              <h3 class="h3">Audit readiness</h3>
+              <p>Build your compliance posture without chaos or spreadsheets.</p>
+            </div>
+            <div class="feature">
+              <h3 class="h3">Operating system</h3>
+              <p>Repeatable operating model for teams shipping AI safely.</p>
+            </div>
+          </div>
+
+          <div class="cta-row">
+            <a class="btn btn-primary" href="company-box.html">See Company Box</a>
+            <a class="btn btn-ghost" href="contact.html">Talk to us</a>
+          </div>
+        </div>
+
+        <div class="split-visual">
+          <div class="mock-panel">
+            <div class="mock-header">
+              <span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span>
+              <span class="mock-title">What you get</span>
+            </div>
+            <ul class="mock-list">
+              <li>Policy templates</li>
+              <li>Approval workflows</li>
+              <li>Evidence trackers</li>
+              <li>Audit-ready documentation</li>
+              <li>Operational checklists</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== Security / Trust teaser ====== -->
+    <section id="security" class="section trust">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="h2">Security & compliance, by default</h2>
+          <p class="subhead">Add a dedicated Security page later — this block builds trust immediately.</p>
+        </div>
+
+        <div class="grid grid-3">
+          <article class="card trust-card">
+            <h3 class="h3">Data handling</h3>
+            <p>Clear retention, access boundaries, and auditability across agent actions.</p>
+          </article>
+          <article class="card trust-card">
+            <h3 class="h3">Access control</h3>
+            <p>Least privilege patterns and centralized enforcement at tool gateways.</p>
+          </article>
+          <article class="card trust-card">
+            <h3 class="h3">Evidence exports</h3>
+            <p>Exportable logs and evidence packs to support audits and reviews.</p>
+          </article>
+        </div>
+
+        <div class="trust-actions">
+          <a class="btn btn-ghost" href="privacy.html">Privacy</a>
+          <a class="btn btn-ghost" href="terms.html">Terms</a>
+          <a class="btn btn-primary" href="contact.html">Request a demo</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== Final CTA strip ====== -->
+    <section class="cta-strip">
+      <div class="container cta-strip-inner">
+        <div>
+          <h2 class="h2">Ready to govern your agents?</h2>
+          <p class="subhead">Let’s map runtime controls to your tools, workflows, and compliance needs.</p>
+        </div>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="contact.html">Request a demo</a>
+          <a class="btn btn-ghost" href="#platform">Explore platform</a>
+        </div>
       </div>
     </section>
   </main>
 
+  <!-- ====== Footer ====== -->
   <footer class="site-footer">
     <div class="container footer-grid">
-      <div><strong>Shreeja AI</strong><br>Trust Layer for AI Agents</div>
-      <div>Delhi, India • <a href="mailto:navneetgoel126@gmail.com">navneetgoel126@gmail.com</a> • <a href="tel:+918295850959">+91 8295850959</a><br><a href="privacy.html">Privacy Policy</a> • <a href="terms.html">Terms of Use</a></div>
+      <div class="footer-brand">
+        <div class="brand-line">
+          <span class="brand-mark"></span>
+          <span class="brand-text">ShreejaAI</span>
+        </div>
+        <p class="muted">The Trust Layer for AI Agents.</p>
+      </div>
+
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4 class="h4">Product</h4>
+          <a href="agr.html">AGR</a>
+          <a href="company-box.html">Company Box</a>
+        </div>
+        <div class="footer-col">
+          <h4 class="h4">Company</h4>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4 class="h4">Legal</h4>
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <span class="muted">© <span id="year"></span> ShreejaAI. All rights reserved.</span>
     </div>
   </footer>
+
   <script src="assets/script.js"></script>
 </body>
 </html>
