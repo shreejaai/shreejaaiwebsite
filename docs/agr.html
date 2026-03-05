@@ -17,50 +17,94 @@
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-<header class="site-header"><div class="container nav-wrap"><a class="logo" href="index.html">Shreeja <span>AI</span></a><button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button><ul class="nav-links"><li><a href="index.html">Home</a></li><li><a class="active" href="agr.html">AGR</a></li><li><a href="company-box.html">Company Box</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a class="btn primary" href="contact.html">Book a Demo</a></li></ul></div></header>
-<main class="container">
-  <section class="hero">
-    <div><span class="tagline">Trust Layer for AI Agents</span><h1>AGR: Agent Governance at Runtime</h1><p class="lead">AGR is designed for teams that need confidence in how AI agents act in real time. It brings policy, permissions, and oversight into live execution paths.</p></div>
-    <aside class="card"><h3>Who it is for</h3><p>Platform teams, AI product teams, and governance stakeholders working on agent-powered applications.</p></aside>
-  </section>
-
-  <section class="section">
-    <h2>Key features</h2>
-    <div class="grid-2">
-      <article class="card"><h3>Policy engine</h3><p>Define and apply governance rules to runtime actions and decision branches.</p></article>
-      <article class="card"><h3>Tool permissions</h3><p>Control agent access to tools and workflows based on context and role.</p></article>
-      <article class="card"><h3>Audit trace</h3><p>Maintain transparent records of prompts, actions, and approvals for internal visibility.</p></article>
-      <article class="card"><h3>Human-in-the-loop</h3><p>Insert approvals at sensitive checkpoints to balance autonomy and control.</p></article>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="logo" href="index.html">Shreeja <span>AI</span></a>
+      <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="site-navigation">☰</button>
+      <ul class="nav-links" id="site-navigation" aria-label="Primary navigation">
+        <li><a href="index.html">Home</a></li>
+        <li class="nav-item has-dropdown open">
+          <button class="nav-drop-toggle" aria-expanded="true" aria-controls="products-menu">Products</button>
+          <div class="nav-dropdown" id="products-menu" aria-label="Products submenu">
+            <a class="active" href="agr.html">AGR</a>
+            <a href="company-box.html">Company Box</a>
+          </div>
+        </li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a class="btn primary" href="contact.html">Book a Demo</a></li>
+      </ul>
     </div>
-  </section>
+  </header>
 
-  <section class="section">
-    <h2>How it works</h2>
-    <ol class="steps card">
-      <li>Define governance policies for your agent tasks and allowed action boundaries.</li>
-      <li>Attach scoped tool and data permissions aligned with least-privilege principles.</li>
-      <li>Monitor runtime actions with traceable logs and trigger review where needed.</li>
-      <li>Use feedback from operations to continuously tune guardrails and workflows.</li>
-    </ol>
-  </section>
+  <main class="container">
+    <section class="hero" aria-labelledby="agr-hero-heading">
+      <div class="card">
+        <span class="tagline">Product • Governance layer</span>
+        <h1 id="agr-hero-heading">AGR keeps agent behavior within policy boundaries.</h1>
+        <p class="lead">Agent Governance at Runtime (AGR) inserts policy checks directly into execution, so teams can automate confidently without losing oversight.</p>
+        <div class="btn-row">
+          <a class="btn primary" href="contact.html">Book AGR demo</a>
+          <a class="btn" href="#agr-how" data-scroll-target="#agr-how">See how it works</a>
+        </div>
+      </div>
+      <aside class="mock-panel" aria-label="AGR runtime snapshot">
+        <h3>Live governance snapshot</h3>
+        <div class="mock-line"><strong>Policy packs</strong><span>12 active profiles</span></div>
+        <div class="mock-line"><strong>Runtime checks</strong><span>99.2% auto-resolved</span></div>
+        <div class="mock-line"><strong>Human approvals</strong><span>Escalated by risk tier</span></div>
+      </aside>
+    </section>
 
-  <section class="section">
-    <h2>Use cases</h2>
-    <div class="pill-row">
-      <span class="pill">Agent-assisted operations</span><span class="pill">Knowledge workflows</span><span class="pill">Support orchestration</span><span class="pill">Internal copilots</span><span class="pill">Multi-agent pipelines</span>
-    </div>
-  </section>
+    <section class="section" aria-labelledby="agr-capabilities">
+      <h2 id="agr-capabilities">Core capabilities</h2>
+      <div class="capability-grid">
+        <article class="card"><h3>Policy engine</h3><p>Define runtime constraints for tool usage, data movement, and decision thresholds.</p></article>
+        <article class="card"><h3>Permission orchestration</h3><p>Apply least-privilege logic to tools and workflows based on role and task context.</p></article>
+        <article class="card"><h3>Audit-grade tracing</h3><p>Capture structured logs of prompts, calls, outcomes, and approval events.</p></article>
+      </div>
+    </section>
 
-  <section class="section faq">
-    <h2>FAQ</h2>
-    <div class="card">
-      <details><summary>Can AGR work with different agent frameworks?</summary><p>AGR is positioned as a runtime governance layer and can be aligned with varied orchestration patterns.</p></details>
-      <details><summary>Does AGR replace human reviewers?</summary><p>No. AGR complements teams by automating checks and routing sensitive actions for explicit approval.</p></details>
-      <details><summary>Is AGR only for production systems?</summary><p>It can support both pre-production validation and production governance to improve confidence early.</p></details>
-    </div>
-  </section>
-</main>
-<footer class="site-footer"><div class="container footer-grid"><div><strong>Shreeja AI</strong><br>Trust Layer for AI Agents</div><div>Delhi, India • <a href="mailto:navneetgoel126@gmail.com">navneetgoel126@gmail.com</a> • <a href="tel:+918295850959">+91 8295850959</a><br><a href="privacy.html">Privacy Policy</a> • <a href="terms.html">Terms of Use</a></div></div></footer>
-<script src="assets/script.js"></script>
+    <section id="agr-how" class="section" aria-labelledby="agr-how-heading">
+      <h2 id="agr-how-heading">How AGR works</h2>
+      <ol class="steps card">
+        <li>Map agent tasks to governance intents and acceptable action boundaries.</li>
+        <li>Attach policies for tools, data sources, and escalation behavior.</li>
+        <li>Run real-time checks at each decision point and route exceptions.</li>
+        <li>Use operational feedback to tune policy strictness over time.</li>
+      </ol>
+    </section>
+
+    <section class="section" aria-labelledby="agr-use-cases">
+      <h2 id="agr-use-cases">Use cases</h2>
+      <div class="pill-row">
+        <span class="pill">Support workflow governance</span>
+        <span class="pill">Internal copilots</span>
+        <span class="pill">Agentic finance operations</span>
+        <span class="pill">Regulated knowledge retrieval</span>
+        <span class="pill">Multi-agent automation</span>
+      </div>
+    </section>
+
+    <section class="section faq" aria-labelledby="agr-faq-heading">
+      <h2 id="agr-faq-heading">FAQ</h2>
+      <div class="card">
+        <details><summary>Can AGR work with different agent frameworks?</summary><p>Yes. AGR is designed as a runtime governance layer that can align with varied orchestration setups.</p></details>
+        <details><summary>Does AGR replace human reviewers?</summary><p>No. It strengthens teams by automating standard checks and routing high-risk actions for explicit approval.</p></details>
+        <details><summary>Is AGR only for production systems?</summary><p>AGR can support pre-production testing and production operations, helping teams build confidence early.</p></details>
+      </div>
+    </section>
+
+    <section class="cta-strip" aria-label="AGR final call to action">
+      <div>
+        <h2>Roll out trustworthy agents faster.</h2>
+        <p>See AGR in a focused walkthrough tailored to your governance model.</p>
+      </div>
+      <a class="btn primary" href="contact.html">Talk to the AGR team</a>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="container footer-grid"><div><strong>Shreeja AI</strong><br>Trust Layer for AI Agents</div><div>Delhi, India • <a href="mailto:navneetgoel126@gmail.com">navneetgoel126@gmail.com</a> • <a href="tel:+918295850959">+91 8295850959</a><br><a href="privacy.html">Privacy Policy</a> • <a href="terms.html">Terms of Use</a></div></div></footer>
+  <script src="assets/script.js"></script>
 </body>
 </html>

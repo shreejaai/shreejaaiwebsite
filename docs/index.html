@@ -20,11 +20,16 @@
   <header class="site-header">
     <div class="container nav-wrap">
       <a class="logo" href="index.html">Shreeja <span>AI</span></a>
-      <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
-      <ul class="nav-links">
+      <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="site-navigation">☰</button>
+      <ul class="nav-links" id="site-navigation" aria-label="Primary navigation">
         <li><a class="active" href="index.html">Home</a></li>
-        <li><a href="agr.html">AGR</a></li>
-        <li><a href="company-box.html">Company Box</a></li>
+        <li class="nav-item has-dropdown">
+          <button class="nav-drop-toggle" aria-expanded="false" aria-controls="products-menu">Products</button>
+          <div class="nav-dropdown" id="products-menu" aria-label="Products submenu">
+            <a href="agr.html">AGR</a>
+            <a href="company-box.html">Company Box</a>
+          </div>
+        </li>
         <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
         <li><a class="btn primary" href="contact.html">Book a Demo</a></li>
@@ -33,60 +38,134 @@
   </header>
 
   <main class="container">
-    <section class="hero">
-      <div>
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="card">
         <span class="tagline">Trust Layer for AI Agents</span>
-        <h1>Build, deploy, and govern AI agents with confidence.</h1>
-        <p class="lead">Shreeja AI helps teams make agentic systems safer and easier to operate through runtime governance, policy guardrails, and transparent operational controls.</p>
+        <h1 id="hero-heading">Move from AI experimentation to governed operations.</h1>
+        <p class="lead">Shreeja AI helps platform and product teams deploy agentic systems with policy guardrails, runtime control, and clear accountability from action to outcome.</p>
         <div class="btn-row">
           <a class="btn primary" href="contact.html">Book a Demo</a>
-          <a class="btn" href="#products">Explore Products</a>
+          <a class="btn" href="#platform" data-scroll-target="#platform">Explore platform</a>
         </div>
       </div>
-      <aside class="card hero-art" aria-label="Trust and governance highlights">
-        <h3>Built for modern AI operations</h3>
-        <p>Bring governance into runtime decisions, keep teams aligned on policy intent, and maintain a clear trace from action to outcome.</p>
-        <div class="pill-row">
-          <span class="badge">Runtime controls</span>
-          <span class="badge">Operational clarity</span>
-          <span class="badge">Human oversight</span>
-        </div>
+      <aside class="mock-panel" aria-label="Operational trust signals">
+        <h3>Ops console snapshot</h3>
+        <div class="mock-line"><strong>Active agents</strong><span>24 across 6 workflows</span></div>
+        <div class="mock-line"><strong>Policy checks</strong><span>1,842 passed today</span></div>
+        <div class="mock-line"><strong>Escalations</strong><span>3 routed for approval</span></div>
+        <ul class="mini-flow" aria-label="Governance flow">
+          <li>Prompt + intent inspected before tool calls.</li>
+          <li>Policy engine evaluates permissions in runtime context.</li>
+          <li>Auditable logs and approval gates captured automatically.</li>
+        </ul>
       </aside>
     </section>
 
-    <section id="products" class="section">
-      <h2>Products</h2>
+    <section class="section" aria-labelledby="pillar-heading">
+      <h2 id="pillar-heading">Why teams choose Shreeja AI</h2>
       <div class="grid-2">
-        <article class="card">
+        <article class="card pillar-card">
+          <span class="badge">Pillar 01</span>
+          <h3>Runtime governance</h3>
+          <p>Policy controls execute where agent decisions are made, not only after incidents happen.</p>
+        </article>
+        <article class="card pillar-card">
+          <span class="badge">Pillar 02</span>
+          <h3>Human oversight by design</h3>
+          <p>Insert lightweight approval checkpoints for sensitive actions while preserving automation velocity.</p>
+        </article>
+        <article class="card pillar-card">
+          <span class="badge">Pillar 03</span>
+          <h3>Operational transparency</h3>
+          <p>Understand who did what, when, and why through structured runtime traces and policy outcomes.</p>
+        </article>
+        <article class="card pillar-card">
+          <span class="badge">Pillar 04</span>
+          <h3>Security-native workflows</h3>
+          <p>Bring least-privilege access and secrets discipline into agent operations from the start.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="platform" aria-labelledby="platform-heading">
+      <h2 id="platform-heading">Explore platform</h2>
+      <p class="section-intro">Two connected products help teams launch AI agents confidently: AGR governs behavior in execution, while Company Box secures and operationalizes delivery workflows.</p>
+      <div class="platform-grid">
+        <article class="card platform-card">
+          <div class="pill-row"><span class="pill">Governance</span><span class="pill">Runtime control</span></div>
           <h3>AGR</h3>
-          <p>Agent Governance at Runtime (AGR) enforces behavior policies while agents execute tasks, helping teams reduce risk and improve accountability.</p>
-          <a class="btn" href="agr.html">Learn more</a>
+          <p>Agent Governance at Runtime enforces policies, permissions, and intervention paths while your agents are actively working.</p>
+          <a class="btn" href="agr.html">Explore AGR</a>
         </article>
-        <article class="card">
+        <article class="card platform-card">
+          <div class="pill-row"><span class="pill">Ops hub</span><span class="pill">Secure delivery</span></div>
           <h3>Company Box</h3>
-          <p>A secure ops and delivery hub for agent-enabled teams that need reliable access patterns, controlled secrets workflow, and operational traceability.</p>
-          <a class="btn" href="company-box.html">Learn more</a>
+          <p>A secure operations and delivery layer for AI-enabled teams that need access control, secrets discipline, and execution visibility.</p>
+          <a class="btn" href="company-box.html">Explore Company Box</a>
         </article>
       </div>
     </section>
 
-    <section class="section">
-      <h2>Why Shreeja AI</h2>
-      <div class="grid-3">
-        <article class="card"><h3>Governance-first design</h3><p>Controls are integrated into workflows from day one, not bolted on after deployment.</p></article>
-        <article class="card"><h3>Operator-friendly</h3><p>Clear signals and predictable guardrails help engineers and business teams collaborate effectively.</p></article>
-        <article class="card"><h3>Flexible foundations</h3><p>Approach trust as an evolving capability that adapts to changing tools, teams, and risk context.</p></article>
+    <section class="section split-section" aria-labelledby="split-agr-heading">
+      <div class="split-grid">
+        <article>
+          <span class="tagline">Deep dive</span>
+          <h2 id="split-agr-heading">Policy-aware actions with AGR</h2>
+          <p>AGR continuously validates intent, tools, and context before an agent acts. Teams can define governance profiles once and apply them across multiple workflows.</p>
+          <div class="pill-row">
+            <span class="pill">Policy engine</span>
+            <span class="pill">Approval routing</span>
+            <span class="pill">Audit trace</span>
+          </div>
+        </article>
+        <aside class="mock-panel" aria-label="AGR runtime checks">
+          <h3>AGR runtime checks</h3>
+          <div class="mock-line"><strong>Intent match</strong><span>Knowledge retrieval ✅</span></div>
+          <div class="mock-line"><strong>Tool scope</strong><span>CRM read-only ✅</span></div>
+          <div class="mock-line"><strong>Risk level</strong><span>Medium → Approval needed</span></div>
+        </aside>
       </div>
     </section>
 
-    <section class="section">
-      <h2>Trust &amp; Governance</h2>
-      <div class="grid-2">
-        <article class="card"><h3>Audit logs</h3><p>Capture key runtime decisions and actions for review and post-incident analysis.</p></article>
-        <article class="card"><h3>Policy enforcement</h3><p>Apply standardized governance rules to agent behavior across use cases.</p></article>
-        <article class="card"><h3>Least privilege</h3><p>Limit tool and data access to the minimum needed for each task.</p></article>
-        <article class="card"><h3>Human-in-the-loop</h3><p>Escalate sensitive actions for approval without slowing standard operations.</p></article>
+    <section class="section split-section" aria-labelledby="split-cb-heading">
+      <div class="split-grid">
+        <aside class="mock-panel" aria-label="Company Box delivery controls">
+          <h3>Company Box controls</h3>
+          <div class="mock-line"><strong>Secrets rotations</strong><span>All keys current</span></div>
+          <div class="mock-line"><strong>Deployment policy</strong><span>2-person review enabled</span></div>
+          <div class="mock-line"><strong>Change audit</strong><span>Last export: 14 min ago</span></div>
+        </aside>
+        <article>
+          <span class="tagline">Deep dive</span>
+          <h2 id="split-cb-heading">Operate securely with Company Box</h2>
+          <p>Company Box aligns teams on secure delivery workflows for AI operations, centralizing role-aware access, traceability, and secrets handling.</p>
+          <div class="pill-row">
+            <span class="pill">Access boundaries</span>
+            <span class="pill">Secrets workflow</span>
+            <span class="pill">Ops traceability</span>
+          </div>
+        </article>
       </div>
+    </section>
+
+    <section class="section" aria-labelledby="security-heading">
+      <h2 id="security-heading">Security &amp; compliance, built in</h2>
+      <div class="card">
+        <p>Shreeja AI is designed to support enterprise governance expectations through policy controls, auditable workflows, and structured access patterns across your agent lifecycle.</p>
+        <div class="pill-row">
+          <span class="pill">Audit-ready history</span>
+          <span class="pill">Role-based operations</span>
+          <span class="pill">Least-privilege principles</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-strip" aria-label="Final call to action">
+      <div>
+        <h2>Ready to govern AI agents with confidence?</h2>
+        <p>See how AGR and Company Box can fit your stack and rollout model.</p>
+      </div>
+      <a class="btn primary" href="contact.html">Schedule a walkthrough</a>
     </section>
   </main>
 

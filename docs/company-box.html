@@ -17,48 +17,94 @@
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-<header class="site-header"><div class="container nav-wrap"><a class="logo" href="index.html">Shreeja <span>AI</span></a><button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button><ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="agr.html">AGR</a></li><li><a class="active" href="company-box.html">Company Box</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a class="btn primary" href="contact.html">Book a Demo</a></li></ul></div></header>
-<main class="container">
-  <section class="hero">
-    <div><span class="tagline">Trust Layer for AI Agents</span><h1>Company Box: Secure Ops &amp; Delivery Hub</h1><p class="lead">Company Box helps teams coordinate agent-enabled operations with clearer controls around access, sensitive workflows, and execution visibility.</p></div>
-    <aside class="card"><h3>Positioning</h3><p>Designed as a practical operational layer where teams can manage security-minded delivery workflows without heavy overhead.</p></aside>
-  </section>
-
-  <section class="section">
-    <h2>Core sections</h2>
-    <div class="grid-3">
-      <article class="card"><h3>Access control</h3><p>Support role-aware access boundaries so teams can separate responsibilities and reduce operational risk.</p></article>
-      <article class="card"><h3>Secrets workflow</h3><p>Handle sensitive credentials through structured workflows rather than ad-hoc sharing practices.</p></article>
-      <article class="card"><h3>Operational trace</h3><p>Track meaningful operational events for accountability and continuous improvement.</p></article>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="logo" href="index.html">Shreeja <span>AI</span></a>
+      <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="site-navigation">☰</button>
+      <ul class="nav-links" id="site-navigation" aria-label="Primary navigation">
+        <li><a href="index.html">Home</a></li>
+        <li class="nav-item has-dropdown open">
+          <button class="nav-drop-toggle" aria-expanded="true" aria-controls="products-menu">Products</button>
+          <div class="nav-dropdown" id="products-menu" aria-label="Products submenu">
+            <a href="agr.html">AGR</a>
+            <a class="active" href="company-box.html">Company Box</a>
+          </div>
+        </li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a class="btn primary" href="contact.html">Book a Demo</a></li>
+      </ul>
     </div>
-  </section>
+  </header>
 
-  <section class="section">
-    <h2>Best for</h2>
-    <div class="pill-row">
-      <span class="pill">Internal AI platforms</span><span class="pill">Cross-functional delivery teams</span><span class="pill">Regulated process environments</span><span class="pill">Security-conscious product orgs</span>
-    </div>
-  </section>
+  <main class="container">
+    <section class="hero" aria-labelledby="cb-hero-heading">
+      <div class="card">
+        <span class="tagline">Product • Secure operations hub</span>
+        <h1 id="cb-hero-heading">Company Box secures day-to-day AI delivery operations.</h1>
+        <p class="lead">Company Box gives teams a trusted workspace for access controls, secrets workflows, and delivery traceability across AI-enabled systems.</p>
+        <div class="btn-row">
+          <a class="btn primary" href="contact.html">Book Company Box demo</a>
+          <a class="btn" href="#cb-how" data-scroll-target="#cb-how">View workflow</a>
+        </div>
+      </div>
+      <aside class="mock-panel" aria-label="Company Box operation snapshot">
+        <h3>Operations snapshot</h3>
+        <div class="mock-line"><strong>Workspace roles</strong><span>8 teams, scoped access</span></div>
+        <div class="mock-line"><strong>Secrets status</strong><span>No stale credentials</span></div>
+        <div class="mock-line"><strong>Release trace</strong><span>Audit export ready</span></div>
+      </aside>
+    </section>
 
-  <section class="section">
-    <h2>Outcomes</h2>
-    <div class="card"><ul>
-      <li>More consistent operational practices across teams.</li>
-      <li>Clearer visibility into delivery and change workflows.</li>
-      <li>Better alignment between AI innovation and governance expectations.</li>
-    </ul></div>
-  </section>
+    <section class="section" aria-labelledby="cb-capabilities">
+      <h2 id="cb-capabilities">Core capabilities</h2>
+      <div class="capability-grid">
+        <article class="card"><h3>Role-aware access</h3><p>Keep boundaries clear between builders, operators, and reviewers with scoped privileges.</p></article>
+        <article class="card"><h3>Structured secrets workflow</h3><p>Handle credentials through controlled, reviewable workflows instead of ad-hoc distribution.</p></article>
+        <article class="card"><h3>Delivery traceability</h3><p>Track meaningful changes across AI operations to support audits and internal reporting.</p></article>
+      </div>
+    </section>
 
-  <section class="section faq">
-    <h2>FAQ</h2>
-    <div class="card">
-      <details><summary>Is Company Box only for AI teams?</summary><p>No, it can also support broader operational teams collaborating with AI-enabled workflows.</p></details>
-      <details><summary>Can Company Box replace existing tools?</summary><p>It is typically positioned to complement existing stacks and organize trust-centric operational controls.</p></details>
-      <details><summary>What is the first step to adopt it?</summary><p>Start by mapping your current access and secrets practices, then layer workflows incrementally.</p></details>
-    </div>
-  </section>
-</main>
-<footer class="site-footer"><div class="container footer-grid"><div><strong>Shreeja AI</strong><br>Trust Layer for AI Agents</div><div>Delhi, India • <a href="mailto:navneetgoel126@gmail.com">navneetgoel126@gmail.com</a> • <a href="tel:+918295850959">+91 8295850959</a><br><a href="privacy.html">Privacy Policy</a> • <a href="terms.html">Terms of Use</a></div></div></footer>
-<script src="assets/script.js"></script>
+    <section id="cb-how" class="section" aria-labelledby="cb-how-heading">
+      <h2 id="cb-how-heading">How Company Box works</h2>
+      <ol class="steps card">
+        <li>Define team roles and access scopes for environments and workflows.</li>
+        <li>Configure secrets handling with approvals and rotation expectations.</li>
+        <li>Standardize release handoffs with traceable checkpoints and logs.</li>
+        <li>Review operational telemetry to improve security posture over time.</li>
+      </ol>
+    </section>
+
+    <section class="section" aria-labelledby="cb-use-cases">
+      <h2 id="cb-use-cases">Use cases</h2>
+      <div class="pill-row">
+        <span class="pill">Internal AI platforms</span>
+        <span class="pill">Security-conscious product teams</span>
+        <span class="pill">Regulated process environments</span>
+        <span class="pill">Cross-functional AI operations</span>
+        <span class="pill">Enterprise delivery controls</span>
+      </div>
+    </section>
+
+    <section class="section faq" aria-labelledby="cb-faq-heading">
+      <h2 id="cb-faq-heading">FAQ</h2>
+      <div class="card">
+        <details><summary>Is Company Box only for AI teams?</summary><p>No. It can also support broader operations teams collaborating with AI-enabled workflows.</p></details>
+        <details><summary>Can Company Box replace existing tools?</summary><p>It is typically used with existing tooling to centralize trust-centric operational controls.</p></details>
+        <details><summary>What is the first step to adopt it?</summary><p>Start by mapping access and secrets practices, then introduce workflows incrementally per team.</p></details>
+      </div>
+    </section>
+
+    <section class="cta-strip" aria-label="Company Box final call to action">
+      <div>
+        <h2>Strengthen AI operations without slowing delivery.</h2>
+        <p>Explore how Company Box can fit your current security and release workflow.</p>
+      </div>
+      <a class="btn primary" href="contact.html">Talk to Company Box team</a>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="container footer-grid"><div><strong>Shreeja AI</strong><br>Trust Layer for AI Agents</div><div>Delhi, India • <a href="mailto:navneetgoel126@gmail.com">navneetgoel126@gmail.com</a> • <a href="tel:+918295850959">+91 8295850959</a><br><a href="privacy.html">Privacy Policy</a> • <a href="terms.html">Terms of Use</a></div></div></footer>
+  <script src="assets/script.js"></script>
 </body>
 </html>
