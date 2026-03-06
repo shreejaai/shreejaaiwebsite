@@ -9,6 +9,7 @@
   <meta property="og:description" content="Mission-driven trust and governance for AI agents.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://shreejaai.com/about.html">
+  <meta property="og:image" content="https://shreejaai.com/assets/logo.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="About Shreeja AI">
   <meta name="twitter:description" content="Trust Layer for AI Agents.">
@@ -17,22 +18,90 @@
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-<header class="site-header"><div class="container nav-wrap"><a class="logo" href="index.html">Shreeja <span>AI</span></a><button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button><ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="agr.html">AGR</a></li><li><a href="company-box.html">Company Box</a></li><li><a class="active" href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a class="btn primary" href="contact.html">Book a Demo</a></li></ul></div></header>
-<main class="container">
-  <section class="hero">
-    <div><span class="tagline">Trust Layer for AI Agents</span><h1>About Shreeja AI</h1><p class="lead">Shreeja AI is focused on building trust and governance foundations for agentic systems so organizations can scale AI operations responsibly.</p></div>
-    <aside class="card"><h3>Company overview</h3><p>Based in Delhi, India, we focus on practical governance tooling that helps teams align innovation with control, transparency, and accountable outcomes.</p></aside>
-  </section>
-
-  <section class="section">
-    <div class="grid-3">
-      <article class="card"><h2>Mission</h2><p>Enable organizations to deploy AI agents with confidence through clear runtime governance and operational guardrails.</p></article>
-      <article class="card"><h2>Vision</h2><p>Advance a future where trustworthy autonomous systems are standard in enterprise workflows.</p></article>
-      <article class="card"><h2>Values</h2><p>Trust by design, operational clarity, and responsible human oversight across every stage of adoption.</p></article>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="logo" href="index.html"><img src="assets/logo.png" alt="Shreeja AI"></a>
+      <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="site-navigation">☰</button>
+      <ul class="nav-links" id="site-navigation" aria-label="Primary navigation">
+        <li><a href="index.html">Home</a></li>
+        <li class="nav-item has-dropdown">
+          <button class="nav-drop-toggle" aria-expanded="false" aria-controls="products-menu">Products</button>
+          <div class="nav-dropdown" id="products-menu" aria-label="Products submenu">
+            <a href="agr.html">AGR</a>
+            <a href="company-box.html">Company Box</a>
+          </div>
+        </li>
+        <li><a class="active" href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a class="btn primary" href="contact.html">Book a Demo</a></li>
+      </ul>
     </div>
-  </section>
-</main>
-<footer class="site-footer"><div class="container footer-grid"><div><strong>Shreeja AI</strong><br>Trust Layer for AI Agents</div><div>Delhi, India • <a href="mailto:navneetgoel126@gmail.com">navneetgoel126@gmail.com</a> • <a href="tel:+918295850959">+91 8295850959</a><br><a href="privacy.html">Privacy Policy</a> • <a href="terms.html">Terms of Use</a></div></div></footer>
-<script src="assets/script.js"></script>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <span class="tagline">Trust Layer for AI Agents</span>
+        <h1>About Shreeja AI</h1>
+        <p class="lead">We are building trust and governance foundations for agentic systems so organizations can scale AI operations responsibly.</p>
+      </div>
+      <aside class="card">
+        <h3>Company overview</h3>
+        <p>Based in Delhi, India, we focus on practical governance tooling that helps teams align innovation with control, transparency, and accountable outcomes.</p>
+        <div class="pill-row">
+          <span class="pill">Founded 2025</span>
+          <span class="pill">Delhi, India</span>
+          <span class="pill">AI Governance</span>
+        </div>
+      </aside>
+    </section>
+
+    <section class="section">
+      <div class="grid-3">
+        <article class="card">
+          <h2>Mission</h2>
+          <p>Enable organizations to deploy AI agents with confidence through clear runtime governance and operational guardrails. We believe trust should be engineered into systems, not bolted on after the fact.</p>
+        </article>
+        <article class="card">
+          <h2>Vision</h2>
+          <p>Advance a future where trustworthy autonomous systems are standard in enterprise workflows. As AI agents take on more complex tasks, governance must evolve alongside their capabilities.</p>
+        </article>
+        <article class="card">
+          <h2>Values</h2>
+          <p>Trust by design, operational clarity, and responsible human oversight across every stage of adoption. We build for the teams who need to ship fast without compromising on accountability.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>What drives us</h2>
+      <div class="grid-2">
+        <article class="card">
+          <h3>The problem we see</h3>
+          <p>AI agents are being deployed faster than governance frameworks can keep up. Teams are choosing between moving fast and maintaining control. We think that's a false trade-off.</p>
+        </article>
+        <article class="card">
+          <h3>Our approach</h3>
+          <p>We build governance tooling that works at the speed of agent execution — runtime checks, structured approvals, and audit-ready traces that integrate into existing workflows without slowing delivery.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="cta-strip" aria-label="About CTA">
+      <div>
+        <h2>Want to work with us?</h2>
+        <p>We're building the trust layer for the next generation of AI operations.</p>
+      </div>
+      <a class="btn primary" href="contact.html">Get in touch</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-logo"><img src="assets/logo.png" alt="Shreeja AI"></div>
+      <div>Delhi, India • <a href="mailto:hello@shreejaai.com">hello@shreejaai.com</a><br><a href="privacy.html">Privacy Policy</a> • <a href="terms.html">Terms of Use</a></div>
+    </div>
+  </footer>
+  <script src="assets/script.js"></script>
 </body>
 </html>
