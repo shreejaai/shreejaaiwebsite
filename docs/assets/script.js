@@ -79,7 +79,7 @@
       const message = encodeURIComponent(document.querySelector('#message').value.trim());
       const subject = `Website inquiry from ${decodeURIComponent(name) || 'Visitor'}`;
       const body = `Name: ${decodeURIComponent(name)}\nEmail: ${decodeURIComponent(email)}\n\nMessage:\n${decodeURIComponent(message)}`;
-      window.location.href = `mailto:navneetgoel126@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      window.location.href = `mailto:hello@shreejaai.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     });
   }
 })();
