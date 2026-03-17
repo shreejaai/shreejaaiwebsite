@@ -631,10 +631,103 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
 }
 .arch-feature strong { font-size: 0.8rem; font-weight: 600; color: var(--text); line-height: 1.3; }
 
+/* ── Arch spotlight wrapper ────────────────────────────────── */
+.arch-spotlight {
+  position: relative;
+  padding: 2rem;
+  margin-top: 2rem;
+  border-radius: var(--radius);
+  border: 1px solid rgba(74, 108, 247, 0.16);
+  background: rgba(6, 10, 24, 0.55);
+  overflow: hidden;
+}
+.arch-spotlight::before {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 55%; height: 75%;
+  background: radial-gradient(ellipse, rgba(74, 108, 247, 0.11), transparent 70%);
+  pointer-events: none;
+}
+.arch-spotlight--teal::before {
+  background: radial-gradient(ellipse, rgba(56, 217, 169, 0.09), transparent 70%);
+}
+.arch-spotlight--teal { border-color: rgba(56, 217, 169, 0.16); }
+.arch-spotlight .arch-diagram { margin-top: 0; }
+
+/* Single-product layout */
+.arch-products--single { display: block; }
+.arch-products--single .arch-product { border-radius: var(--radius); }
+.arch-products--single.arch-products::before { left: -4px; }
+.arch-products--single.arch-products::after  { right: -4px; }
+
+/* Featured product box with breathing glow */
+@keyframes archGlow {
+  0%, 100% { box-shadow: 0 0 0 1px rgba(74,108,247,0.1), 0 0 56px rgba(74,108,247,0.13), 0 24px 48px rgba(0,0,0,0.4); }
+  50%       { box-shadow: 0 0 0 1px rgba(74,108,247,0.18), 0 0 80px rgba(74,108,247,0.22), 0 24px 48px rgba(0,0,0,0.4); }
+}
+@keyframes archGlowTeal {
+  0%, 100% { box-shadow: 0 0 0 1px rgba(56,217,169,0.1), 0 0 56px rgba(56,217,169,0.1), 0 24px 48px rgba(0,0,0,0.4); }
+  50%       { box-shadow: 0 0 0 1px rgba(56,217,169,0.2), 0 0 80px rgba(56,217,169,0.18), 0 24px 48px rgba(0,0,0,0.4); }
+}
+
+.arch-product--featured {
+  padding: 1.8rem;
+  background: rgba(5, 8, 22, 0.95) !important;
+  border: 1px solid rgba(74, 108, 247, 0.45) !important;
+  animation: archGlow 4s ease-in-out infinite;
+}
+.arch-product--cb-featured {
+  border: 1px solid rgba(56, 217, 169, 0.4) !important;
+  animation: archGlowTeal 4s ease-in-out infinite !important;
+}
+
+.arch-product--featured .arch-stack { gap: 0.45rem; }
+.arch-product--featured .arch-layer { padding: 0.65rem 1rem; font-size: 0.86rem; }
+.arch-product--featured .arch-features { gap: 0.4rem; }
+.arch-product--featured .arch-feature { padding: 0.55rem 0.85rem; }
+
+/* Product footer (sub-label + CTA) */
+.arch-product-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.2rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  flex-wrap: wrap;
+}
+.arch-product-footer .arch-product-sub { margin: 0; text-align: left; font-size: 0.75rem; }
+.arch-product-footer .btn { font-size: 0.82rem; padding: 0.5rem 1.1rem; white-space: nowrap; flex-shrink: 0; }
+
+/* AGR dependency layer inside Company Box */
+.arch-agr-layer {
+  margin-top: 0.85rem;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  background: rgba(74, 108, 247, 0.07);
+  border: 1px dashed rgba(74, 108, 247, 0.42);
+  display: grid;
+  gap: 0.28rem;
+}
+.arch-agr-tag {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--primary-light);
+  font-family: 'Space Mono', monospace;
+  letter-spacing: 0.07em;
+}
+.arch-agr-layer p { font-size: 0.78rem; color: var(--muted) !important; line-height: 1.4; margin: 0; }
+.arch-agr-link { font-size: 0.78rem; font-weight: 600; color: var(--primary-light); transition: var(--transition); }
+.arch-agr-link:hover { color: #fff; }
+
 /* Responsive */
 @media (max-width: 960px) {
   .hero, .contact-grid, .grid-3, .grid-2, .platform-grid, .capability-grid, .split-grid, .flow-grid { grid-template-columns: 1fr; }
   .arch-diagram { grid-template-columns: 1fr; gap: 1.2rem; }
+  .arch-spotlight { padding: 1.2rem; }
   .arch-sources .arch-item::after,
   .arch-consumers .arch-item::before { display: none; }
   .arch-products { grid-template-columns: 1fr; }
