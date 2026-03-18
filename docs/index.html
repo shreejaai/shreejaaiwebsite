@@ -1,233 +1,1003 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Shreeja AI | Trust Layer for AI Agents</title>
-  <meta name="description" content="Shreeja AI builds trust and governance infrastructure for agentic systems with AGR and Company Box.">
-  <meta property="og:title" content="Shreeja AI | Trust Layer for AI Agents">
-  <meta property="og:description" content="Govern agentic runtime behavior, enforce policies, and improve operational trust with Shreeja AI.">
-  <meta property="og:type" content="website">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shreeja AI — Developer Infrastructure for AI Agents</title>
+  <meta name="description" content="AGR governs every action your AI agents take with Cedar policies in under 2ms. Company Box puts a full 5-agent engineering pipeline in one person's hands.">
+  <meta property="og:title" content="Shreeja AI — Developer Infrastructure for AI Agents">
+  <meta property="og:description" content="AGR: Cedar policy engine + durable approvals + audit trail. Company Box: PM to deploy, governed by AGR.">
   <meta property="og:url" content="https://shreejaai.com/">
+  <meta property="og:type" content="website">
   <meta property="og:image" content="https://shreejaai.com/assets/logo.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Shreeja AI | Trust Layer for AI Agents">
-  <meta name="twitter:description" content="Discover AGR and Company Box by Shreeja AI.">
-  <meta name="twitter:image" content="https://shreejaai.com/assets/logo.png">
   <link rel="canonical" href="https://shreejaai.com/">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="stylesheet" href="assets/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      /* Brand navy pulled from logo wordmark */
+      --ink:    #111827;          /* body text — dark neutral */
+      --ink2:   #374260;          /* secondary text — navy tint */
+      --ink3:   #6b7a99;          /* muted — blue-gray */
+      --bg:     #faf9f6;
+      --bg2:    #f2f0eb;
+      --bg3:    #e8e4dc;
+      --line:   #d8d3c8;
+      --brand:  #141f4a;          /* logo navy — headings, nav, CTA bg */
+      --brand2: #1e2d6b;          /* hover state for brand navy */
+      --blue:   #1a52d4;          /* AGR accent — logo gradient mid */
+      --blue-l: #e8f0fd;
+      --teal:   #0d7f6a;
+      --teal-l: #e0f4ef;
+      --amber:  #c47a12;
+      --amber-l:#fdf0d8;
+      --red:    #c1321e;
+      --red-l:  #fde8e5;
+    }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    button { font-family: inherit; cursor: pointer; }
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 10px 20px; border-radius: 8px; font-size: 14px;
+      font-weight: 500; transition: all 0.15s; border: 1.5px solid transparent;
+      cursor: pointer; text-decoration: none; white-space: nowrap;
+    }
+    .btn-dark { background: var(--brand); color: #fff; border-color: var(--brand); }
+    .btn-dark:hover { background: var(--brand2); border-color: var(--brand2); }
+    .btn-outline { background: transparent; color: var(--ink); border-color: var(--line); }
+    .btn-outline:hover { border-color: var(--ink3); background: var(--bg2); }
+    .btn-white { background: #fff; color: var(--ink); border-color: #fff; }
+    .btn-white:hover { background: var(--bg2); }
+    .btn-outline-white { background: transparent; color: #fff; border-color: rgba(255,255,255,0.4); }
+    .btn-outline-white:hover { border-color: #fff; background: rgba(255,255,255,0.08); }
+
+    /* Nav */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(250,249,246,0.94);
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    nav.scrolled { border-bottom-color: var(--line); box-shadow: 0 1px 12px rgba(0,0,0,0.06); }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 88px; padding: 8px 0; position: relative;
+    }
+    .nav-brand {
+      display: flex; align-items: center;
+      text-decoration: none;
+    }
+    .logo { height: 72px; width: auto; display: block; }
+    .nav-links { display: flex; align-items: center; gap: 2px; list-style: none; }
+    .nav-links a, .nav-drop-btn {
+      padding: 6px 12px; border-radius: 6px; font-size: 14px; font-weight: 500;
+      color: var(--ink2); transition: background 0.15s, color 0.15s;
+      background: none; border: none; display: inline-flex; align-items: center; gap: 3px;
+    }
+    .nav-links a:hover, .nav-drop-btn:hover { background: var(--bg2); color: var(--brand); }
+    .nav-drop { position: relative; }
+    .nav-drop-menu {
+      position: absolute; top: 100%; left: 0;
+      background: transparent; border: none; padding: 8px 0 0 0;
+      min-width: 200px; display: none; z-index: 200;
+    }
+    .nav-drop-menu-inner {
+      background: #fff; border: 1px solid var(--line); border-radius: 10px;
+      padding: 6px; box-shadow: 0 4px 24px rgba(0,0,0,0.09);
+    }
+    .nav-drop:hover .nav-drop-menu { display: block; }
+    .nav-drop-menu a {
+      display: block; padding: 8px 12px; border-radius: 6px;
+      font-size: 14px; color: var(--ink2); transition: background 0.15s, color 0.15s;
+    }
+    .nav-drop-menu a:hover { background: var(--bg2); color: var(--ink); }
+    .nav-toggle {
+      display: none; background: none; border: 1.5px solid var(--line);
+      border-radius: 6px; padding: 6px 10px; font-size: 18px; color: var(--ink);
+    }
+
+    /* Pulse */
+    @keyframes pulse { 0%,100%{transform:scale(1);opacity:1} 50%{transform:scale(1.5);opacity:.5} }
+    .pulse-dot {
+      width: 7px; height: 7px; border-radius: 50%; background: var(--blue);
+      animation: pulse 1.8s ease-in-out infinite; display: inline-block; flex-shrink: 0;
+    }
+
+    /* Sections */
+    section { padding: 88px 0; }
+    .bg-white { background: #fff; }
+    .bg-stone { background: var(--bg2); }
+    .bg-dark   { background: var(--brand); color: #fff; }
+    .section-eyebrow {
+      font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 500;
+      letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink3); margin-bottom: 8px;
+    }
+    .section-hd { text-align: center; max-width: 620px; margin: 0 auto 56px; }
+    .section-hd h2 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: clamp(26px, 3.2vw, 38px); margin-bottom: 12px; color: var(--brand);
+    }
+    .section-hd p { color: var(--ink2); font-size: 16px; line-height: 1.7; }
+
+    /* ── Hero ── */
+    .hero { padding: 72px 0 88px; background: var(--bg); }
+    .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--blue-l); border: 1px solid rgba(26,95,212,0.2);
+      border-radius: 999px; padding: 5px 14px;
+      font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--blue); margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: clamp(34px, 4.8vw, 56px); line-height: 1.08; margin-bottom: 18px; color: var(--brand);
+    }
+    .hero h1 em { font-style: italic; color: var(--teal); }
+    .hero-sub { font-size: 17px; color: var(--ink2); line-height: 1.7; max-width: 46ch; margin-bottom: 28px; }
+    .hero-btns { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 36px; }
+    .hero-stats { display: flex; gap: 28px; flex-wrap: wrap; }
+    .stat strong {
+      display: block; font-family: 'DM Serif Display', serif;
+      font-size: 22px; color: var(--brand); line-height: 1;
+    }
+    .stat span { font-size: 11px; color: var(--ink3); font-family: 'JetBrains Mono', monospace; }
+
+    /* Flow card */
+    .flow-card {
+      background: #fff; border: 1px solid var(--line); border-radius: 14px;
+      box-shadow: 0 2px 24px rgba(0,0,0,0.04); overflow: hidden;
+    }
+    .flow-card-top { height: 3px; background: linear-gradient(90deg, var(--blue), var(--teal)); }
+    .flow-card-body { padding: 22px 22px 0; }
+    .flow-lbl {
+      font-family: 'JetBrains Mono', monospace; font-size: 10px;
+      color: var(--ink3); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 18px;
+    }
+    .flow-step {
+      display: flex; align-items: flex-start; gap: 12px;
+      padding: 11px 0; border-top: 1px solid var(--line);
+    }
+    .flow-step:first-of-type { border-top: none; }
+    .ficon {
+      width: 32px; height: 32px; border-radius: 7px; background: var(--bg2);
+      border: 1px solid var(--line); display: flex; align-items: center;
+      justify-content: center; flex-shrink: 0;
+    }
+    .flow-step-body { flex: 1; min-width: 0; }
+    .flow-step-title {
+      font-size: 13px; font-weight: 600; color: var(--brand);
+      display: flex; align-items: center; justify-content: space-between; gap: 6px; margin-bottom: 2px;
+    }
+    .flow-step-sub { font-size: 11px; color: var(--ink3); }
+    .bdg {
+      font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 500;
+      padding: 2px 8px; border-radius: 999px; flex-shrink: 0;
+    }
+    .bdg-amber { background: var(--amber-l); color: var(--amber); border: 1px solid rgba(196,122,18,0.25); }
+    .bdg-teal  { background: var(--teal-l);  color: var(--teal);  border: 1px solid rgba(13,127,106,0.25); }
+    .bdg-blue  { background: var(--blue-l);  color: var(--blue);  border: 1px solid rgba(26,95,212,0.25); }
+    .flow-card-foot {
+      padding: 10px 22px; background: var(--bg2); border-top: 1px solid var(--line);
+      display: flex; align-items: center; justify-content: space-between;
+      font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--ink3);
+    }
+    .logged { color: var(--teal); font-weight: 600; }
+
+    /* ── Products ── */
+    .prod-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .prod-card {
+      background: #fff; border: 1px solid var(--line); border-radius: 14px;
+      padding: 30px; position: relative; overflow: hidden;
+    }
+    .prod-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; }
+    .prod-card--blue::before { background: linear-gradient(90deg, var(--blue), #4a8cf5); }
+    .prod-card--teal::before { background: linear-gradient(90deg, var(--teal), #1fbc8a); }
+    .prod-icon {
+      width: 42px; height: 42px; border-radius: 10px;
+      display: flex; align-items: center; justify-content: center; margin-bottom: 14px;
+    }
+    .prod-icon--blue { background: var(--blue-l); }
+    .prod-icon--teal { background: var(--teal-l); }
+    .prod-tag { font-family: 'JetBrains Mono', monospace; font-size: 11px; margin-bottom: 8px; font-weight: 500; }
+    .prod-tag--blue { color: var(--blue); }
+    .prod-tag--teal { color: var(--teal); }
+    .prod-card h3 {
+      font-family: 'DM Serif Display', serif; font-size: 22px; margin-bottom: 10px; color: var(--brand);
+    }
+    .prod-card > p { font-size: 14px; color: var(--ink2); line-height: 1.65; margin-bottom: 18px; }
+    .feat-list { list-style: none; display: flex; flex-direction: column; gap: 7px; margin-bottom: 22px; }
+    .feat-list li { display: flex; align-items: flex-start; gap: 9px; font-size: 13.5px; color: var(--ink2); line-height: 1.5; }
+    .fdot { width: 6px; height: 6px; border-radius: 50%; margin-top: 7px; flex-shrink: 0; }
+    .fdot--blue { background: var(--blue); }
+    .fdot--teal { background: var(--teal); }
+    .code-snip {
+      border-radius: 8px; overflow: hidden; margin-bottom: 14px; border: 1px solid var(--line);
+    }
+    .code-snip-hd {
+      padding: 7px 12px; font-family: 'JetBrains Mono', monospace;
+      font-size: 10px; color: var(--ink3); background: var(--bg3);
+    }
+    .code-snip pre {
+      background: #1a1917; padding: 14px 16px; margin: 0;
+      font-family: 'JetBrains Mono', monospace; font-size: 12px; line-height: 1.75; color: #c8c0b4;
+      overflow-x: auto;
+    }
+    pre .ck { color: #93b8f5; }
+    pre .cs { color: #7ed4c0; }
+    pre .cf { color: #f5c47a; }
+    pre .cc { color: #5a5548; font-style: italic; }
+    pre .ct { color: #c5a8f5; }
+    .req-box {
+      border-radius: 8px; background: var(--teal-l); border: 1px solid rgba(13,127,106,0.15);
+      padding: 14px; font-size: 13px; color: var(--teal); line-height: 1.6; margin-bottom: 14px;
+    }
+    .req-box strong { display: block; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; margin-bottom: 5px; }
+    .req-arrow { color: var(--ink3); font-family: 'JetBrains Mono', monospace; font-size: 11px; margin-top: 5px; display: block; }
+    .prod-link { font-size: 13px; font-weight: 600; display: inline-flex; align-items: center; gap: 4px; }
+    .prod-link--blue { color: var(--blue); }
+    .prod-link--teal { color: var(--teal); }
+    .prod-link:hover { opacity: 0.7; }
+
+    /* ── Personas ── */
+    .persona-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
+    .persona-card { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 26px 22px; }
+    .ptag {
+      font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 500;
+      padding: 3px 9px; border-radius: 999px; display: inline-block; margin-bottom: 12px;
+    }
+    .ptag--blue { background: var(--blue-l); color: var(--blue); }
+    .ptag--teal { background: var(--teal-l); color: var(--teal); }
+    .ptag--both { background: var(--bg3); color: var(--ink2); }
+    .persona-card h3 { font-family: 'DM Serif Display', serif; font-size: 18px; margin-bottom: 7px; color: var(--brand); }
+    .persona-card p { font-size: 13.5px; color: var(--ink2); line-height: 1.6; margin-bottom: 14px; }
+    .persona-quote {
+      font-size: 13px; color: var(--ink3); font-style: italic;
+      line-height: 1.6; padding-top: 14px; border-top: 1px solid var(--line);
+    }
+
+    /* ── Architecture tabs ── */
+    .arch-tabs {
+      display: flex; gap: 4px; background: var(--bg2); border: 1px solid var(--line);
+      border-radius: 10px; padding: 4px; width: fit-content; margin: 0 auto 44px;
+    }
+    .arch-tab {
+      padding: 8px 18px; border-radius: 7px; font-size: 13px; font-weight: 500;
+      color: var(--ink3); background: none; border: none; cursor: pointer; transition: all 0.15s;
+    }
+    .arch-tab.active { background: #fff; color: var(--ink); box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
+    .arch-diagram { display: none; }
+    .arch-diagram.active { display: block; }
+
+    /* AGR flow nodes */
+    .flow-nodes {
+      display: flex; align-items: center; justify-content: center;
+      gap: 0; flex-wrap: wrap; margin-bottom: 32px;
+    }
+    .fnode {
+      background: #fff; border: 1px solid var(--line); border-radius: 10px;
+      padding: 14px 16px; text-align: center; min-width: 125px;
+      transition: all 0.15s; flex: 1;
+    }
+    .fnode:hover { transform: translateY(-2px); border-color: var(--blue); background: var(--blue-l); }
+    .fnode.hi { border-color: var(--blue); background: var(--blue-l); }
+    .fnode-ico { font-size: 20px; margin-bottom: 5px; }
+    .fnode-t { font-size: 12px; font-weight: 600; color: var(--brand); }
+    .fnode-s { font-size: 10px; color: var(--ink3); font-family: 'JetBrains Mono', monospace; margin-top: 3px; }
+    .farrow { color: var(--ink3); font-size: 16px; padding: 0 6px; flex-shrink: 0; }
+    .outcomes { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; margin-bottom: 32px; }
+    .outcome { border-radius: 10px; padding: 16px 18px; border: 1px solid; }
+    .outcome-t { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700; margin-bottom: 5px; }
+    .outcome p { font-size: 13px; line-height: 1.55; }
+    .oc-teal  { background: var(--teal-l); border-color: rgba(13,127,106,0.2); }
+    .oc-teal .outcome-t, .oc-teal p { color: var(--teal); }
+    .oc-red   { background: var(--red-l);  border-color: rgba(193,50,30,0.2); }
+    .oc-red .outcome-t, .oc-red p { color: var(--red); }
+    .oc-amber { background: var(--amber-l);border-color: rgba(196,122,18,0.2); }
+    .oc-amber .outcome-t, .oc-amber p { color: var(--amber); }
+    .cedar-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+    /* Pipeline */
+    .pipeline {
+      display: flex; border: 1px solid var(--line); border-radius: 12px;
+      overflow: hidden; margin-bottom: 24px; background: var(--bg2);
+    }
+    .pipe-stage { flex: 1; min-width: 140px; background: #fff; padding: 18px 14px; border-right: 1px solid var(--line); }
+    .pipe-stage:last-child { border-right: none; }
+    .pipe-stage.hi { background: var(--amber-l); }
+    .pipe-emo  { font-size: 20px; margin-bottom: 7px; }
+    .pipe-name { font-size: 13px; font-weight: 600; color: var(--brand); margin-bottom: 2px; }
+    .pipe-model{ font-size: 10px; color: var(--ink3); font-family: 'JetBrains Mono', monospace; margin-bottom: 7px; }
+    .pipe-desc { font-size: 12px; color: var(--ink2); line-height: 1.5; margin-bottom: 8px; }
+    .pbdg { font-family: 'JetBrains Mono', monospace; font-size: 10px; display: inline-block; padding: 2px 8px; border-radius: 999px; }
+    .pbdg-blue  { background: var(--blue-l);  color: var(--blue);  border: 1px solid rgba(26,95,212,0.15); }
+    .pbdg-amber { background: var(--amber-l); color: var(--amber); border: 1px solid rgba(196,122,18,0.2); }
+    .pbdg-teal  { background: var(--teal-l);  color: var(--teal);  border: 1px solid rgba(13,127,106,0.15); }
+    .cb-outcomes { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .cbo { background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 18px; }
+    .cbo-ico   { font-size: 18px; margin-bottom: 7px; }
+    .cbo-title { font-size: 14px; font-weight: 600; color: var(--ink); margin-bottom: 3px; }
+    .cbo-desc  { font-size: 13px; color: var(--ink3); line-height: 1.5; }
+
+    /* ── Code section ── */
+    .code-sec-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 36px; align-items: start; }
+    .code-win { border-radius: 12px; overflow: hidden; border: 1px solid var(--line); box-shadow: 0 2px 24px rgba(0,0,0,0.06); }
+    .code-win-hd { background: #2a2825; padding: 11px 14px; display: flex; align-items: center; gap: 7px; }
+    .dot { width: 12px; height: 12px; border-radius: 50%; }
+    .d-red { background: #ff5f57; } .d-yel { background: #ffbd2e; } .d-grn { background: #28c840; }
+    .code-win pre {
+      background: #1a1917; padding: 22px; margin: 0;
+      font-family: 'JetBrains Mono', monospace; font-size: 12.5px; line-height: 1.8; color: #c8c0b4; overflow-x: auto;
+    }
+    .metrics { display: flex; flex-direction: column; gap: 14px; margin-bottom: 20px; }
+    .metric { background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 18px; display: flex; gap: 14px; align-items: flex-start; }
+    .metric-val { font-family: 'DM Serif Display', serif; font-size: 30px; color: var(--brand); line-height: 1; min-width: 58px; }
+    .metric-lbl { font-size: 13px; font-weight: 600; color: var(--brand); margin-bottom: 2px; }
+    .metric-dsc { font-size: 12px; color: var(--ink3); line-height: 1.5; }
+
+    /* ── Flywheel ── */
+    .fly-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .fly-svg  { display: flex; justify-content: center; }
+    .fly-items { display: flex; flex-direction: column; gap: 18px; }
+    .fly-item { display: flex; gap: 18px; align-items: flex-start; }
+    .fly-num { font-family: 'DM Serif Display', serif; font-size: 34px; color: #b8ccef; line-height: 1; min-width: 44px; flex-shrink: 0; }
+    .fly-item h4 { font-family: 'DM Serif Display', serif; font-size: 16px; margin-bottom: 4px; color: var(--brand); }
+    .fly-item p  { font-size: 13.5px; color: var(--ink2); line-height: 1.6; }
+
+    /* ── CTA ── */
+    .cta-sec { text-align: center; }
+    .cta-sec h2 { font-family: 'DM Serif Display', serif; font-size: clamp(26px, 3.5vw, 42px); color: #fff; margin-bottom: 14px; }
+    .cta-sec p  { color: rgba(255,255,255,.62); font-size: 16px; max-width: 50ch; margin: 0 auto 32px; line-height: 1.7; }
+    .cta-btns   { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 24px; }
+    .cta-installs { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: rgba(255,255,255,.3); }
+
+    /* ── Footer ── */
+    footer { background: var(--bg2); border-top: 1px solid var(--line); padding: 36px 0 28px; }
+    .foot-r1 { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; padding-bottom: 18px; border-bottom: 1px solid var(--line); margin-bottom: 14px; }
+    .foot-brand { font-family: 'DM Serif Display', serif; font-size: 20px; color: var(--brand); }
+    .foot-links { display: flex; gap: 4px; flex-wrap: wrap; }
+    .foot-links a { padding: 5px 10px; font-size: 13.5px; color: var(--ink2); border-radius: 6px; transition: background 0.15s, color 0.15s; }
+    .foot-links a:hover { background: var(--bg3); color: var(--ink); }
+    .foot-domain { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--ink3); }
+    .foot-r2 { display: flex; gap: 8px; flex-wrap: wrap; font-size: 12px; color: var(--ink3); }
+    .foot-r2 a { color: var(--ink3); } .foot-r2 a:hover { color: var(--ink); }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      section { padding: 60px 0; }
+      .hero-grid, .prod-grid, .persona-grid, .code-sec-grid, .fly-grid { grid-template-columns: 1fr; gap: 28px; }
+      .outcomes, .cedar-grid, .cb-outcomes { grid-template-columns: 1fr; }
+      .flow-nodes { gap: 6px; }
+      .farrow { display: none; }
+      .pipeline { flex-direction: column; }
+      .pipe-stage { border-right: none; border-bottom: 1px solid var(--line); }
+      .pipe-stage:last-child { border-bottom: none; }
+      .nav-links {
+        display: none; flex-direction: column; position: absolute; top: 64px;
+        top: 88px; left: 0; right: 0; background: #fff; border-bottom: 1px solid var(--line);
+        padding: 10px; box-shadow: 0 4px 16px rgba(0,0,0,0.07); z-index: 99;
+      }
+      .nav-links.open { display: flex; }
+      .nav-drop-menu { position: static; box-shadow: none; border: none; border-radius: 0; background: none; display: block; padding: 0 0 0 10px; }
+      .nav-toggle { display: block; }
+      .fly-svg { order: 2; }
+      .fly-items { order: 1; }
+      .fnode { min-width: 90px; }
+    }
+  </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container nav-wrap">
-      <a class="logo" href="index.html"><img src="assets/logo.png" alt="Shreeja AI"></a>
-      <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="site-navigation">☰</button>
-      <ul class="nav-links" id="site-navigation" aria-label="Primary navigation">
-        <li><a class="active" href="index.html">Home</a></li>
-        <li class="nav-item has-dropdown">
-          <button class="nav-drop-toggle" aria-expanded="false" aria-controls="products-menu">Products</button>
-          <div class="nav-dropdown" id="products-menu" aria-label="Products submenu">
-            <a href="agr.html">AGR</a>
-            <a href="company-box.html">Company Box</a>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <img src="assets/shreeja_logo_transparent.svg" alt="Shreeja AI" class="logo">
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li class="nav-drop">
+          <button class="nav-drop-btn">Products ▾</button>
+          <div class="nav-drop-menu">
+            <div class="nav-drop-menu-inner">
+              <a href="agr.html">AGR — Governance Runtime</a>
+              <a href="company-box.html">Company Box — AI Team</a>
+            </div>
           </div>
         </li>
         <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li><a class="btn primary" href="contact.html">Book a Demo</a></li>
       </ul>
+      <div style="display:flex;gap:8px;align-items:center;">
+        <a href="contact.html" class="btn btn-dark">Get early access →</a>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">☰</button>
+      </div>
     </div>
-  </header>
+  </div>
+</nav>
 
-  <main class="container">
-    <section class="hero" aria-labelledby="hero-heading">
-      <div class="card">
-        <span class="tagline">Trust Layer for AI Agents</span>
-        <h1 id="hero-heading">Move from AI experimentation to governed operations.</h1>
-        <p class="lead">Shreeja AI helps platform and product teams deploy agentic systems with policy guardrails, runtime control, and clear accountability from action to outcome.</p>
-        <div class="btn-row">
-          <a class="btn primary" href="contact.html">Book a Demo</a>
-          <a class="btn" href="#platform" data-scroll-target="#platform">Explore platform</a>
+<main>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-badge">
+          <span class="pulse-dot"></span>
+          Developer Infrastructure for AI Agents
+        </div>
+        <h1>Ship AI agents that <em>humans trust</em></h1>
+        <p class="hero-sub">Two products. One mission. AGR governs every action your agents take. Company Box puts a full engineering team in one person's hands — with you in control of every deploy.</p>
+        <div class="hero-btns">
+          <a href="agr.html" class="btn btn-dark">Start with AGR free</a>
+          <a href="#how-it-works" class="btn btn-outline">See how it works</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><strong>&lt; 2ms</strong><span>Policy evaluation</span></div>
+          <div class="stat"><strong>Cedar</strong><span>Formal verification</span></div>
+          <div class="stat"><strong>5 agents</strong><span>PM → deploy</span></div>
         </div>
       </div>
-      <aside class="mock-panel" aria-label="Operational trust signals">
-        <h3>// Ops console snapshot</h3>
-        <div class="mock-line"><strong>Active agents</strong><span>24 across 6 workflows</span></div>
-        <div class="mock-line"><strong>Policy checks</strong><span>1,842 passed today</span></div>
-        <div class="mock-line"><strong>Escalations</strong><span>3 routed for approval</span></div>
-        <ul class="mini-flow" aria-label="Governance flow">
-          <li>Prompt + intent inspected before tool calls.</li>
-          <li>Policy engine evaluates permissions in runtime context.</li>
-          <li>Auditable logs and approval gates captured automatically.</li>
-        </ul>
-      </aside>
-    </section>
-
-    <section class="section" aria-labelledby="pillar-heading">
-      <h2 id="pillar-heading">Why teams choose Shreeja AI</h2>
-      <div class="grid-2">
-        <article class="card pillar-card">
-          <span class="badge">Pillar 01</span>
-          <h3>Runtime governance</h3>
-          <p>Policy controls execute where agent decisions are made, not only after incidents happen.</p>
-        </article>
-        <article class="card pillar-card">
-          <span class="badge">Pillar 02</span>
-          <h3>Human oversight by design</h3>
-          <p>Insert lightweight approval checkpoints for sensitive actions while preserving automation velocity.</p>
-        </article>
-        <article class="card pillar-card">
-          <span class="badge">Pillar 03</span>
-          <h3>Operational transparency</h3>
-          <p>Understand who did what, when, and why through structured runtime traces and policy outcomes.</p>
-        </article>
-        <article class="card pillar-card">
-          <span class="badge">Pillar 04</span>
-          <h3>Security-native workflows</h3>
-          <p>Bring least-privilege access and secrets discipline into agent operations from the start.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section" id="platform" aria-labelledby="platform-heading">
-      <h2 id="platform-heading">Explore platform</h2>
-      <p class="section-intro">Two connected products help teams launch AI agents confidently: AGR governs behavior in execution, while Company Box secures and operationalizes delivery workflows.</p>
-      <div class="platform-grid">
-        <article class="card platform-card">
-          <div class="pill-row"><span class="pill">Governance</span><span class="pill">Runtime control</span></div>
-          <h3>AGR</h3>
-          <p>Agent Governance at Runtime enforces policies, permissions, and intervention paths while your agents are actively working.</p>
-          <a class="btn" href="agr.html">Explore AGR →</a>
-        </article>
-        <article class="card platform-card">
-          <div class="pill-row"><span class="pill">Ops hub</span><span class="pill">Secure delivery</span></div>
-          <h3>Company Box</h3>
-          <p>A secure operations and delivery layer for AI-enabled teams that need access control, secrets discipline, and execution visibility.</p>
-          <a class="btn" href="company-box.html">Explore Company Box →</a>
-        </article>
-      </div>
-    </section>
-
-    <section class="section arch-section" aria-labelledby="arch-heading">
-      <h2 id="arch-heading">Where AGR sits in your agent stack</h2>
-      <p class="section-intro">AGR inserts a policy enforcement layer directly at runtime — between AI systems and outcomes — so every agent action is governed, not just observed after the fact.</p>
-
-      <div class="arch-spotlight">
-        <div class="arch-diagram" role="img" aria-label="Architecture diagram: AI systems connect through AGR governance layers to enterprise teams">
-
-          <div class="arch-sources">
-            <p class="arch-col-label">AI Systems</p>
-            <ul class="arch-items">
-              <li class="arch-item">OpenAI</li>
-              <li class="arch-item">Anthropic</li>
-              <li class="arch-item">LangChain</li>
-              <li class="arch-item">AutoGen</li>
-              <li class="arch-item">CrewAI</li>
-              <li class="arch-item arch-item--dim">Custom Agents</li>
-            </ul>
-          </div>
-
-          <div class="arch-products arch-products--single">
-            <div class="arch-product arch-product--agr arch-product--featured">
-              <div class="arch-product-name"><span class="arch-mark">◈</span> AGR — Agent Governance at Runtime</div>
-              <div class="arch-stack">
-                <div class="arch-layer arch-layer--blue">Runtime Policy Engine</div>
-                <div class="arch-layer arch-layer--teal">Permission Orchestration</div>
-                <div class="arch-layer arch-layer--orange">Approval Routing</div>
-                <div class="arch-layer arch-layer--purple">Audit-Grade Tracing</div>
+      <div>
+        <div class="flow-card">
+          <div class="flow-card-top"></div>
+          <div class="flow-card-body">
+            <div class="flow-lbl">// live agent request through AGR</div>
+            <div class="flow-step">
+              <div class="ficon">
+                <svg width="16" height="16" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="8" stroke="#7a7568" stroke-width="1.7"/><path d="M8 11L10.5 13.5L14 9" stroke="#7a7568" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </div>
-              <div class="arch-product-footer">
-                <p class="arch-product-sub">Every agent action evaluated. Every decision traceable.</p>
-                <a href="agr.html" class="btn">Explore AGR →</a>
+              <div class="flow-step-body">
+                <div class="flow-step-title">Agent requests deploy <span class="bdg bdg-amber">evaluating</span></div>
+                <div class="flow-step-sub">action: fs.deploy · resource: prod/main</div>
+              </div>
+            </div>
+            <div class="flow-step">
+              <div class="ficon" style="background:var(--blue-l);border-color:rgba(26,95,212,0.2)">
+                <svg width="16" height="16" viewBox="0 0 22 22" fill="none"><path d="M11 2L20 6.5V11C20 15.7 16 19.5 11 20C6 19.5 2 15.7 2 11V6.5L11 2Z" stroke="#1a5fd4" stroke-width="1.7"/></svg>
+              </div>
+              <div class="flow-step-body">
+                <div class="flow-step-title">Cedar policy check <span class="bdg bdg-amber">running</span></div>
+                <div class="flow-step-sub">agr.evaluate(agent, action, resource)</div>
+              </div>
+            </div>
+            <div class="flow-step">
+              <div class="ficon" style="background:var(--amber-l);border-color:rgba(196,122,18,0.2)">
+                <svg width="16" height="16" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="8.5" stroke="#c47a12" stroke-width="1.7"/><path d="M11 7V11" stroke="#c47a12" stroke-width="1.7" stroke-linecap="round"/><circle cx="11" cy="14" r="0.9" fill="#c47a12"/></svg>
+              </div>
+              <div class="flow-step-body">
+                <div class="flow-step-title">Approval required <span class="bdg bdg-amber">pending</span></div>
+                <div class="flow-step-sub">Temporal workflow suspended · email sent</div>
+              </div>
+            </div>
+            <div class="flow-step">
+              <div class="ficon" style="background:var(--teal-l);border-color:rgba(13,127,106,0.2)">
+                <svg width="16" height="16" viewBox="0 0 22 22" fill="none"><path d="M6 11L9.5 14.5L16 8" stroke="#0d7f6a" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="flow-step-body">
+                <div class="flow-step-title">Human approves <span class="bdg bdg-teal">approved</span></div>
+                <div class="flow-step-sub">workflow resumes · deploy proceeds</div>
               </div>
             </div>
           </div>
-
-          <div class="arch-consumers">
-            <p class="arch-col-label">Teams &amp; Outputs</p>
-            <ul class="arch-items arch-items--right">
-              <li class="arch-item">Engineering Teams</li>
-              <li class="arch-item">Security Teams</li>
-              <li class="arch-item">Compliance Officers</li>
-              <li class="arch-item">Human Reviewers</li>
-              <li class="arch-item">Audit Systems</li>
-              <li class="arch-item arch-item--dim">Risk Dashboards</li>
-            </ul>
+          <div class="flow-card-foot">
+            <span>audit trail: hash-chained · tamper-proof</span>
+            <span class="logged">✓ logged</span>
           </div>
-
         </div>
       </div>
-    </section>
-
-    <section class="section split-section" aria-labelledby="split-agr-heading">
-      <div class="split-grid">
-        <article>
-          <span class="tagline">Deep dive</span>
-          <h2 id="split-agr-heading">Policy-aware actions with AGR</h2>
-          <p>AGR continuously validates intent, tools, and context before an agent acts. Teams can define governance profiles once and apply them across multiple workflows.</p>
-          <div class="pill-row">
-            <span class="pill">Policy engine</span>
-            <span class="pill">Approval routing</span>
-            <span class="pill">Audit trace</span>
-          </div>
-        </article>
-        <aside class="mock-panel" aria-label="AGR runtime checks">
-          <h3>// AGR runtime checks</h3>
-          <div class="mock-line"><strong>Intent match</strong><span>Knowledge retrieval ✅</span></div>
-          <div class="mock-line"><strong>Tool scope</strong><span>CRM read-only ✅</span></div>
-          <div class="mock-line"><strong>Risk level</strong><span>Medium → Approval needed</span></div>
-        </aside>
-      </div>
-    </section>
-
-    <section class="section split-section" aria-labelledby="split-cb-heading">
-      <div class="split-grid">
-        <aside class="mock-panel" aria-label="Company Box delivery controls">
-          <h3>// Company Box controls</h3>
-          <div class="mock-line"><strong>Secrets rotations</strong><span>All keys current ✅</span></div>
-          <div class="mock-line"><strong>Deployment policy</strong><span>2-person review enabled</span></div>
-          <div class="mock-line"><strong>Change audit</strong><span>Last export: 14 min ago</span></div>
-        </aside>
-        <article>
-          <span class="tagline">Deep dive</span>
-          <h2 id="split-cb-heading">Operate securely with Company Box</h2>
-          <p>Company Box aligns teams on secure delivery workflows for AI operations, centralizing role-aware access, traceability, and secrets handling.</p>
-          <div class="pill-row">
-            <span class="pill">Access boundaries</span>
-            <span class="pill">Secrets workflow</span>
-            <span class="pill">Ops traceability</span>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section" aria-labelledby="security-heading">
-      <h2 id="security-heading">Security &amp; compliance, built in</h2>
-      <div class="card">
-        <p>Shreeja AI is designed to support enterprise governance expectations through policy controls, auditable workflows, and structured access patterns across your agent lifecycle.</p>
-        <div class="pill-row">
-          <span class="pill">Audit-ready history</span>
-          <span class="pill">Role-based operations</span>
-          <span class="pill">Least-privilege principles</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="cta-strip" aria-label="Final call to action">
-      <div>
-        <h2>Ready to govern AI agents with confidence?</h2>
-        <p>See how AGR and Company Box can fit your stack and rollout model.</p>
-      </div>
-      <a class="btn primary" href="contact.html">Schedule a walkthrough</a>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div class="footer-logo"><img src="assets/logo.png" alt="Shreeja AI"></div>
-      <div>Delhi, India • <a href="mailto:hello@shreejaai.com">hello@shreejaai.com</a><br><a href="privacy.html">Privacy Policy</a> • <a href="terms.html">Terms of Use</a></div>
     </div>
-  </footer>
-  <script src="assets/script.js"></script>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="bg-white">
+  <div class="container">
+    <div class="section-hd">
+      <div class="section-eyebrow">Two products, one platform</div>
+      <h2>Built for the agent era</h2>
+      <p>AGR gives developers a governance layer they can trust. Company Box gives individuals the output of a full engineering team. Both run on the same infrastructure.</p>
+    </div>
+    <div class="prod-grid">
+
+      <!-- AGR -->
+      <div class="prod-card prod-card--blue">
+        <div class="prod-icon prod-icon--blue">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+            <path d="M11 2L20 6.5V11C20 15.7 16 19.5 11 20C6 19.5 2 15.7 2 11V6.5L11 2Z" stroke="#1a5fd4" stroke-width="1.8"/>
+            <path d="M7 11L10 14L15 9" stroke="#1a5fd4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="prod-tag prod-tag--blue">AGR · Developer SDK</div>
+        <h3>Agentic Governance Runtime</h3>
+        <p>A Cedar policy engine that sits between your AI agents and the tools they call. Every action evaluated in under 2ms — formally verified, not probabilistic. Sensitive actions suspend into a Temporal approval workflow until a human decides.</p>
+        <ul class="feat-list">
+          <li><span class="fdot fdot--blue"></span><span><strong>Cedar policy engine</strong> — formally verified, deterministic. Not an LLM call, not probabilistic.</span></li>
+          <li><span class="fdot fdot--blue"></span><span><strong>Durable approvals</strong> — Temporal workflows suspend indefinitely, consuming zero compute while waiting.</span></li>
+          <li><span class="fdot fdot--blue"></span><span><strong>Hash-chained audit trail</strong> — tamper-proof, partitioned, append-only. SOC 2 ready.</span></li>
+          <li><span class="fdot fdot--blue"></span><span><strong>Framework plugins</strong> — LangGraph <code style="font-family:'JetBrains Mono',monospace;font-size:11px;background:var(--bg2);padding:1px 5px;border-radius:4px;">@agr_governed</code>, CrewAI <code style="font-family:'JetBrains Mono',monospace;font-size:11px;background:var(--bg2);padding:1px 5px;border-radius:4px;">AGRToolWrapper</code>, REST API.</span></li>
+          <li><span class="fdot fdot--blue"></span><span><strong>Multi-tenant RLS</strong> — org-scoped policies, zero cross-contamination. Free tier: 10k evals/month.</span></li>
+        </ul>
+        <div class="code-snip">
+          <div class="code-snip-hd">// 3 lines to govern any agent action</div>
+          <pre><span class="ck">from</span> agr <span class="ck">import</span> AGRClient
+agr = <span class="cf">AGRClient</span>(api_key=<span class="cs">"agr_sk_..."</span>)
+result = agr.<span class="cf">evaluate</span>(agent, action, resource)</pre>
+        </div>
+        <a href="agr.html" class="prod-link prod-link--blue">Read the docs →</a>
+      </div>
+
+      <!-- Company Box -->
+      <div class="prod-card prod-card--teal">
+        <div class="prod-icon prod-icon--teal">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+            <rect x="3" y="3" width="7" height="7" rx="2" stroke="#0d7f6a" stroke-width="1.8"/>
+            <rect x="12" y="3" width="7" height="7" rx="2" stroke="#0d7f6a" stroke-width="1.8"/>
+            <rect x="3" y="12" width="7" height="7" rx="2" stroke="#0d7f6a" stroke-width="1.8"/>
+            <path d="M15.5 12V19M12 15.5H19" stroke="#0d7f6a" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="prod-tag prod-tag--teal">Company Box · SaaS</div>
+        <h3>Your AI engineering team</h3>
+        <p>Type a plain-English requirement. Five AI agents run in sequence — writing spec, architecture, code, tests, and deploying to staging automatically. You approve production. Every agent action governed by AGR at every step.</p>
+        <ul class="feat-list">
+          <li><span class="fdot fdot--teal"></span><span><strong>5-agent pipeline</strong> — PM spec → architecture → code → tests → deploy. Claude Sonnet at every step.</span></li>
+          <li><span class="fdot fdot--teal"></span><span><strong>Real GitHub commits</strong> — code lands in your repo, on a branch, as a pull request.</span></li>
+          <li><span class="fdot fdot--teal"></span><span><strong>E2B sandboxes</strong> — code runs in an isolated cloud environment before touching your repo.</span></li>
+          <li><span class="fdot fdot--teal"></span><span><strong>QA retry loop</strong> — failed tests automatically feed back to the Coder agent (max 3 retries).</span></li>
+          <li><span class="fdot fdot--teal"></span><span><strong>Approval inbox</strong> — production deploys need your sign-off. Always. One click, no login.</span></li>
+        </ul>
+        <div class="req-box">
+          <strong>"Add Stripe payment for Pro plan upgrade with webhook signature validation"</strong>
+          5 agents run → code committed → staging deployed
+          <span class="req-arrow">→ you approve prod · one click · no login required</span>
+        </div>
+        <a href="company-box.html" class="prod-link prod-link--teal">See a live run →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WHO IT'S FOR -->
+<section class="bg-stone">
+  <div class="container">
+    <div class="section-hd">
+      <div class="section-eyebrow">Who it's for</div>
+      <h2>Three types of builders</h2>
+      <p>From a solo developer governing one agent to infrastructure teams running entire fleets — Shreeja AI meets you where you are.</p>
+    </div>
+    <div class="persona-grid">
+      <div class="persona-card">
+        <div class="ptag ptag--blue">AGR · Developer SDK</div>
+        <h3>AI infrastructure teams</h3>
+        <p>Teams building internal agent platforms on LangGraph, CrewAI, or AutoGen who need a single governance layer their compliance team can actually audit.</p>
+        <div class="persona-quote">"We needed one governance layer our entire agent fleet could share. AGR gave us Cedar policies, a durable approval gateway, and an audit trail our compliance team actually trusts."</div>
+      </div>
+      <div class="persona-card">
+        <div class="ptag ptag--teal">Company Box · SaaS</div>
+        <h3>Solo founders &amp; indie hackers</h3>
+        <p>One-person companies who need to ship features as fast as a funded team — without hiring a single engineer or waiting weeks for a contractor.</p>
+        <div class="persona-quote">"I described a feature on Monday. By Tuesday it was in a PR, tested, staging was live, and I clicked Approve to ship to prod. I didn't write a single line of code."</div>
+      </div>
+      <div class="persona-card">
+        <div class="ptag ptag--both">AGR + Company Box</div>
+        <h3>Startups building on agents</h3>
+        <p>Early-stage teams using LLMs to automate engineering who need auditability and a way for non-technical co-founders to ship independently.</p>
+        <div class="persona-quote">"Our agents were making decisions we couldn't audit. AGR fixed that in an afternoon. Now every action is policy-evaluated and logged with a tamper-proof hash chain."</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARCHITECTURE -->
+<section class="bg-white" id="how-it-works">
+  <div class="container">
+    <div class="section-hd">
+      <div class="section-eyebrow">How it works</div>
+      <h2>Architecture in 60 seconds</h2>
+      <p>Select a product to see how it works under the hood.</p>
+    </div>
+    <div class="arch-tabs">
+      <button class="arch-tab active" onclick="switchTab('agr', this)">AGR — Governance flow</button>
+      <button class="arch-tab" onclick="switchTab('cb', this)">Company Box — Pipeline flow</button>
+    </div>
+
+    <!-- AGR TAB -->
+    <div class="arch-diagram active" id="tab-agr">
+      <div class="flow-nodes">
+        <div class="fnode">
+          <div class="fnode-ico">🤖</div>
+          <div class="fnode-t">Agent action</div>
+          <div class="fnode-s">tool call intent</div>
+        </div>
+        <div class="farrow">→</div>
+        <div class="fnode hi">
+          <div class="fnode-ico">🛡️</div>
+          <div class="fnode-t">AGR SDK</div>
+          <div class="fnode-s">POST /v1/evaluate</div>
+        </div>
+        <div class="farrow">→</div>
+        <div class="fnode">
+          <div class="fnode-ico">⚡</div>
+          <div class="fnode-t">Cedar engine</div>
+          <div class="fnode-s">Rust · &lt;2ms</div>
+        </div>
+        <div class="farrow">→</div>
+        <div class="fnode">
+          <div class="fnode-ico">⚖️</div>
+          <div class="fnode-t">Decision</div>
+          <div class="fnode-s">ALLOW · DENY · APPROVAL</div>
+        </div>
+        <div class="farrow">→</div>
+        <div class="fnode">
+          <div class="fnode-ico">🔒</div>
+          <div class="fnode-t">Audit trail</div>
+          <div class="fnode-s">hash-chained · append-only</div>
+        </div>
+      </div>
+      <div class="outcomes">
+        <div class="outcome oc-teal">
+          <div class="outcome-t">ALLOW</div>
+          <p>Policy permits. Agent executes immediately. Logged to tamper-proof audit trail with policy ID.</p>
+        </div>
+        <div class="outcome oc-red">
+          <div class="outcome-t">DENY</div>
+          <p>Policy forbids. Agent does not execute. Logged with policy ID and exact deny reason.</p>
+        </div>
+        <div class="outcome oc-amber">
+          <div class="outcome-t">APPROVAL_REQUIRED</div>
+          <p>Temporal workflow suspends. Slack + email sent. Resumes when human decides. Can wait days — consuming zero compute.</p>
+        </div>
+      </div>
+      <div class="cedar-grid">
+        <div class="code-snip">
+          <div class="code-snip-hd" style="color:var(--red)">// forbid rules — deny by default</div>
+          <pre><span class="ck">forbid</span> (
+  principal,
+  action == Action::<span class="cs">"db.drop"</span>,
+  resource);
+
+<span class="ck">forbid</span> (
+  principal,
+  action == Action::<span class="cs">"fs.write"</span>,
+  resource == Resource::<span class="cs">"prod/*"</span>
+) <span class="ck">unless</span> {
+  principal <span class="ck">in</span> Role::<span class="cs">"senior-eng"</span>
+};</pre>
+        </div>
+        <div class="code-snip">
+          <div class="code-snip-hd" style="color:var(--teal)">// permit rules — explicit allow</div>
+          <pre><span class="ck">permit</span> (
+  principal <span class="ck">in</span> Role::<span class="cs">"devops"</span>,
+  action == Action::<span class="cs">"deploy.staging"</span>,
+  resource);
+
+<span class="ck">permit</span> (
+  principal,
+  action == Action::<span class="cs">"deploy.production"</span>,
+  resource) <span class="ck">when</span> {
+  context.<span class="cf">approval_status</span>
+    == <span class="cs">"approved"</span>
+};</pre>
+        </div>
+      </div>
+    </div>
+
+    <!-- CB TAB -->
+    <div class="arch-diagram" id="tab-cb">
+      <div class="pipeline">
+        <div class="pipe-stage">
+          <div class="pipe-emo">📋</div>
+          <div class="pipe-name">PM Agent</div>
+          <div class="pipe-model">claude-sonnet-4-6</div>
+          <div class="pipe-desc">Writes JSON spec: acceptance criteria, files to touch, edge cases</div>
+          <span class="pbdg pbdg-blue">agr.evaluate() ✓</span>
+        </div>
+        <div class="pipe-stage">
+          <div class="pipe-emo">🏗️</div>
+          <div class="pipe-name">Tech Lead Agent</div>
+          <div class="pipe-model">claude-sonnet-4-6</div>
+          <div class="pipe-desc">Architecture plan, task list, code hints per file</div>
+          <span class="pbdg pbdg-blue">agr.evaluate() ✓</span>
+        </div>
+        <div class="pipe-stage">
+          <div class="pipe-emo">💻</div>
+          <div class="pipe-name">Coder Agent</div>
+          <div class="pipe-model">claude-sonnet-4-6 · E2B</div>
+          <div class="pipe-desc">Writes code in isolated sandbox → commits to GitHub branch</div>
+          <span class="pbdg pbdg-blue">fs.write governed</span>
+        </div>
+        <div class="pipe-stage">
+          <div class="pipe-emo">🧪</div>
+          <div class="pipe-name">QA Agent</div>
+          <div class="pipe-model">claude-sonnet-4-6 · E2B</div>
+          <div class="pipe-desc">Runs tests. Fail → feeds back to Coder (max 3 retries)</div>
+          <span class="pbdg pbdg-teal">retry loop</span>
+        </div>
+        <div class="pipe-stage hi">
+          <div class="pipe-emo">🚀</div>
+          <div class="pipe-name">DevOps Agent</div>
+          <div class="pipe-model">claude-sonnet-4-6</div>
+          <div class="pipe-desc">Staging: auto. Production: suspends until you approve</div>
+          <span class="pbdg pbdg-amber">APPROVAL_REQUIRED</span>
+        </div>
+      </div>
+      <div class="cb-outcomes">
+        <div class="cbo">
+          <div class="cbo-ico">✅</div>
+          <div class="cbo-title">Staging auto-deploys</div>
+          <div class="cbo-desc">After QA passes, staging is live. No action needed from you.</div>
+        </div>
+        <div class="cbo" style="border-color:rgba(196,122,18,0.3);background:var(--amber-l)">
+          <div class="cbo-ico">📬</div>
+          <div class="cbo-title" style="color:var(--amber)">Production requires your approval</div>
+          <div class="cbo-desc" style="color:var(--amber)">One email arrives. One click approves. No login. Temporal resumes the workflow.</div>
+        </div>
+        <div class="cbo">
+          <div class="cbo-ico">🔄</div>
+          <div class="cbo-title">QA retry loop</div>
+          <div class="cbo-desc">Failed tests feed back to Coder automatically. Up to 3 retries before escalation.</div>
+        </div>
+        <div class="cbo">
+          <div class="cbo-ico">📁</div>
+          <div class="cbo-title">Real code in your repo</div>
+          <div class="cbo-desc">A real PR on a real branch. Your engineers can review, modify, or reject it.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CODE SECTION -->
+<section class="bg-stone">
+  <div class="container">
+    <div class="section-hd">
+      <div class="section-eyebrow">Integrate in minutes</div>
+      <h2>One decorator. Full governance.</h2>
+      <p>Wrap any LangGraph tool with <code style="font-family:'JetBrains Mono',monospace;font-size:14px;background:var(--bg3);padding:2px 8px;border-radius:4px;">@agr_governed</code> — zero refactoring of your existing tool code.</p>
+    </div>
+    <div class="code-sec-grid">
+      <div class="code-win">
+        <div class="code-win-hd">
+          <span class="dot d-red"></span>
+          <span class="dot d-yel"></span>
+          <span class="dot d-grn"></span>
+        </div>
+        <pre><span class="cc"># Before AGR — no governance</span>
+<span class="ck">@tool</span>
+<span class="ck">def</span> <span class="cf">deploy_to_production</span>(branch: str) -> str:
+    <span class="cc"># runs unconditionally — no policy checks</span>
+    <span class="ck">return</span> <span class="cf">run_deploy</span>(branch)
+
+
+<span class="cc"># After AGR — one decorator, zero refactoring</span>
+<span class="ck">from</span> agr.plugins.langgraph <span class="ck">import</span> agr_governed
+<span class="ck">from</span> agr <span class="ck">import</span> AGRClient
+
+agr = <span class="cf">AGRClient</span>(api_key=<span class="cs">"agr_sk_..."</span>)
+
+<span class="ck">@agr_governed</span>(agr, agent_id=<span class="cs">"devops-001"</span>)
+<span class="ck">@tool</span>
+<span class="ck">def</span> <span class="cf">deploy_to_production</span>(branch: str) -> str:
+    <span class="cc"># Cedar evaluates before every call</span>
+    <span class="cc"># ALLOW             → executes immediately</span>
+    <span class="cc"># DENY              → raises PermissionError</span>
+    <span class="cc"># APPROVAL_REQUIRED → suspends, emails human</span>
+    <span class="cc">#                     zero compute while waiting</span>
+    <span class="ck">return</span> <span class="cf">run_deploy</span>(branch)</pre>
+      </div>
+      <div>
+        <div class="metrics">
+          <div class="metric">
+            <div class="metric-val">&lt; 2ms</div>
+            <div>
+              <div class="metric-lbl">Cedar evaluation time p95</div>
+              <div class="metric-dsc">Deterministic. Not an LLM call. Formally verified by the Cedar specification — not a heuristic.</div>
+            </div>
+          </div>
+          <div class="metric">
+            <div class="metric-val">0</div>
+            <div>
+              <div class="metric-lbl">Compute while approval waits</div>
+              <div class="metric-dsc">Temporal suspends the workflow entirely. The agent sleeps. You are not billed for waiting.</div>
+            </div>
+          </div>
+          <div class="metric">
+            <div class="metric-val">100%</div>
+            <div>
+              <div class="metric-lbl">Agent actions logged</div>
+              <div class="metric-dsc">Every ALLOW, DENY, and APPROVAL in a hash-chained append-only audit trail. SOC 2 ready.</div>
+            </div>
+          </div>
+        </div>
+        <div class="code-snip">
+          <div class="code-snip-hd">// TypeScript SDK</div>
+          <pre><span class="ck">import</span> { <span class="ct">AGRClient</span> } <span class="ck">from</span> <span class="cs">'@agr/sdk'</span>
+
+<span class="ck">const</span> agr = <span class="ck">new</span> <span class="cf">AGRClient</span>({ apiKey })
+<span class="ck">const</span> result = <span class="ck">await</span> agr.<span class="cf">evaluate</span>({
+  agent, action, resource
+})</pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FLYWHEEL -->
+<section class="bg-white">
+  <div class="container">
+    <div class="section-hd">
+      <div class="section-eyebrow">Platform strategy</div>
+      <h2>Two products, one flywheel</h2>
+      <p>AGR and Company Box reinforce each other. Every Company Box run is a live production test of AGR. Every AGR user is a potential Company Box customer.</p>
+    </div>
+    <div class="fly-grid">
+      <div class="fly-svg">
+        <svg viewBox="0 0 360 360" width="330" height="330" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <marker id="mb" markerWidth="8" markerHeight="8" refX="5" refY="4" orient="auto">
+              <path d="M1 1.5L6 4L1 6.5" stroke="#1a5fd4" stroke-width="1.3" fill="none"/>
+            </marker>
+            <marker id="mt" markerWidth="8" markerHeight="8" refX="5" refY="4" orient="auto">
+              <path d="M1 1.5L6 4L1 6.5" stroke="#0d7f6a" stroke-width="1.3" fill="none"/>
+            </marker>
+            <marker id="mg" markerWidth="8" markerHeight="8" refX="5" refY="4" orient="auto">
+              <path d="M1 1.5L6 4L1 6.5" stroke="#7a7568" stroke-width="1.3" fill="none"/>
+            </marker>
+          </defs>
+          <!-- Outer ring -->
+          <circle cx="180" cy="180" r="148" stroke="#d8d3c8" stroke-width="1" stroke-dasharray="4 4"/>
+          <!-- Inner circle -->
+          <circle cx="180" cy="180" r="50" fill="#f2f0eb" stroke="#d8d3c8" stroke-width="1.2"/>
+          <text x="180" y="176" text-anchor="middle" font-size="13" fill="#141f4a" style="font-family:'DM Serif Display',serif">Shreeja</text>
+          <text x="180" y="194" text-anchor="middle" font-size="13" fill="#141f4a" style="font-family:'DM Serif Display',serif">AI</text>
+          <!-- Top: AGR SDK -->
+          <rect x="138" y="16" width="84" height="34" rx="8" fill="#e8f0fd" stroke="#1a5fd4" stroke-width="1.5"/>
+          <text x="180" y="38" text-anchor="middle" font-size="12" font-weight="500" fill="#1a5fd4" style="font-family:'JetBrains Mono',monospace">AGR SDK</text>
+          <!-- Bottom: Company Box -->
+          <rect x="108" y="310" width="144" height="34" rx="8" fill="#e0f4ef" stroke="#0d7f6a" stroke-width="1.5"/>
+          <text x="180" y="332" text-anchor="middle" font-size="12" font-weight="500" fill="#0d7f6a" style="font-family:'JetBrains Mono',monospace">Company Box</text>
+          <!-- Left label -->
+          <text x="40" y="174" text-anchor="middle" font-size="11" fill="#3a3830" style="font-family:'DM Sans',sans-serif">Developers</text>
+          <text x="40" y="190" text-anchor="middle" font-size="10" fill="#7a7568" style="font-family:'DM Sans',sans-serif">adopt AGR</text>
+          <!-- Right label -->
+          <text x="320" y="174" text-anchor="middle" font-size="11" fill="#3a3830" style="font-family:'DM Sans',sans-serif">Founders</text>
+          <text x="320" y="190" text-anchor="middle" font-size="10" fill="#7a7568" style="font-family:'DM Sans',sans-serif">use CB</text>
+          <!-- Arrow: top-right (AGR drives CB) -->
+          <path d="M222 34 Q316 34 316 164" stroke="#1a5fd4" stroke-width="1.4" stroke-dasharray="5 3" fill="none" marker-end="url(#mb)"/>
+          <text x="294" y="96" text-anchor="middle" font-size="9" fill="#1a5fd4" style="font-family:'DM Sans',sans-serif">AGR drives CB</text>
+          <!-- Arrow: right-bottom (CB users → AGR) -->
+          <path d="M316 200 Q316 327 252 327" stroke="#0d7f6a" stroke-width="1.4" stroke-dasharray="5 3" fill="none" marker-end="url(#mt)"/>
+          <text x="300" y="278" text-anchor="middle" font-size="9" fill="#0d7f6a" style="font-family:'DM Sans',sans-serif">CB users → AGR</text>
+          <!-- Arrow: bottom-left (CB hardens AGR) -->
+          <path d="M108 327 Q44 327 44 200" stroke="#7a7568" stroke-width="1.4" stroke-dasharray="5 3" fill="none" marker-end="url(#mg)"/>
+          <text x="60" y="278" text-anchor="middle" font-size="9" fill="#7a7568" style="font-family:'DM Sans',sans-serif">CB hardens AGR</text>
+          <!-- Arrow: left-top (devs → CB) -->
+          <path d="M44 162 Q44 34 138 28" stroke="#7a7568" stroke-width="1.4" stroke-dasharray="5 3" fill="none" marker-end="url(#mg)"/>
+          <text x="62" y="96" text-anchor="middle" font-size="9" fill="#7a7568" style="font-family:'DM Sans',sans-serif">devs → CB</text>
+        </svg>
+      </div>
+      <div class="fly-items">
+        <div class="fly-item">
+          <div class="fly-num">1</div>
+          <div>
+            <h4>AGR attracts agent developers</h4>
+            <p>Teams building on LangGraph, CrewAI, and AutoGen need a governance layer their compliance team can audit. AGR is the obvious choice.</p>
+          </div>
+        </div>
+        <div class="fly-item">
+          <div class="fly-num">2</div>
+          <div>
+            <h4>Company Box is the best AGR demo</h4>
+            <p>CB runs entirely on AGR. It is the most complex consumer of AGR in production. Every CB run is a live end-to-end test of the governance layer.</p>
+          </div>
+        </div>
+        <div class="fly-item">
+          <div class="fly-num">3</div>
+          <div>
+            <h4>CB users graduate to AGR</h4>
+            <p>When a solo founder hires their first engineer, AGR is the first SDK they reach for. The mental model is already installed.</p>
+          </div>
+        </div>
+        <div class="fly-item">
+          <div class="fly-num">4</div>
+          <div>
+            <h4>Scale hardens both products</h4>
+            <p>Every CB evaluation stress-tests AGR at scale. Volume reveals edge cases, drives performance, and builds the policy dataset that powers better defaults.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="bg-dark cta-sec">
+  <div class="container">
+    <h2>Start governing your agents today</h2>
+    <p>AGR is free up to 10,000 evaluations a month. Add governance to your first agent in 5 minutes. Company Box is in private beta — join the waitlist.</p>
+    <div class="cta-btns">
+      <a href="agr.html" class="btn btn-white">Get AGR free →</a>
+      <a href="contact.html" class="btn btn-outline-white">Join Company Box waitlist</a>
+    </div>
+    <div class="cta-installs">
+      <span>pip install agr-sdk</span>
+      <span>·</span>
+      <span>npm install @agr/sdk</span>
+      <span>·</span>
+      <span>REST API · OpenAPI docs</span>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="foot-r1">
+      <div class="foot-brand">Shreeja AI</div>
+      <nav class="foot-links" aria-label="Footer">
+        <a href="agr.html">AGR</a>
+        <a href="company-box.html">Company Box</a>
+        <a href="contact.html">Pricing</a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About</a>
+      </nav>
+      <div class="foot-domain">shreejaai.com</div>
+    </div>
+    <div class="foot-r2">
+      <span>Delhi, India</span>
+      <span>·</span>
+      <a href="mailto:hello@shreejaai.com">hello@shreejaai.com</a>
+      <span>·</span>
+      <a href="privacy.html">Privacy Policy</a>
+      <span>·</span>
+      <a href="terms.html">Terms of Use</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // 1. Architecture tab switching
+  function switchTab(id, btn) {
+    document.querySelectorAll('.arch-diagram').forEach(d => d.classList.remove('active'));
+    document.querySelectorAll('.arch-tab').forEach(t => t.classList.remove('active'));
+    document.getElementById('tab-' + id).classList.add('active');
+    btn.classList.add('active');
+  }
+
+  // 2. Mobile nav toggle
+  document.getElementById('nav-toggle').addEventListener('click', () => {
+    document.getElementById('nav-links').classList.toggle('open');
+  });
+
+  // 3. Sticky nav border on scroll
+  window.addEventListener('scroll', () => {
+    document.getElementById('main-nav').classList.toggle('scrolled', window.scrollY > 10);
+  });
+</script>
+
 </body>
 </html>
