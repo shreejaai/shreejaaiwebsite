@@ -83,10 +83,13 @@ nav.scrolled { border-bottom-color: var(--line); box-shadow: 0 1px 12px rgba(0,0
 .nav-links a.active { color: var(--brand); font-weight: 600; }
 .nav-drop { position: relative; }
 .nav-drop-menu {
-  position: absolute; top: calc(100% + 8px); left: 0;
+  position: absolute; top: 100%; left: 0;
+  background: transparent; border: none; padding: 8px 0 0 0;
+  min-width: 200px; display: none; z-index: 200;
+}
+.nav-drop-menu-inner {
   background: #fff; border: 1px solid var(--line); border-radius: 10px;
-  padding: 6px; min-width: 200px; box-shadow: 0 4px 24px rgba(0,0,0,0.09);
-  display: none; z-index: 200;
+  padding: 6px; box-shadow: 0 4px 24px rgba(0,0,0,0.09);
 }
 .nav-drop:hover .nav-drop-menu { display: block; }
 .nav-drop-menu a {

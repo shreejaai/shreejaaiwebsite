@@ -94,10 +94,13 @@
     .nav-links a:hover, .nav-drop-btn:hover { background: var(--bg2); color: var(--brand); }
     .nav-drop { position: relative; }
     .nav-drop-menu {
-      position: absolute; top: calc(100% + 8px); left: 0;
+      position: absolute; top: 100%; left: 0;
+      background: transparent; border: none; padding: 8px 0 0 0;
+      min-width: 200px; display: none; z-index: 200;
+    }
+    .nav-drop-menu-inner {
       background: #fff; border: 1px solid var(--line); border-radius: 10px;
-      padding: 6px; min-width: 200px; box-shadow: 0 4px 24px rgba(0,0,0,0.09);
-      display: none; z-index: 200;
+      padding: 6px; box-shadow: 0 4px 24px rgba(0,0,0,0.09);
     }
     .nav-drop:hover .nav-drop-menu { display: block; }
     .nav-drop-menu a {
@@ -413,8 +416,10 @@
         <li class="nav-drop">
           <button class="nav-drop-btn">Products ▾</button>
           <div class="nav-drop-menu">
-            <a href="agr.html">AGR — Governance Runtime</a>
-            <a href="company-box.html">Company Box — AI Team</a>
+            <div class="nav-drop-menu-inner">
+              <a href="agr.html">AGR — Governance Runtime</a>
+              <a href="company-box.html">Company Box — AI Team</a>
+            </div>
           </div>
         </li>
         <li><a href="about.html">About</a></li>
