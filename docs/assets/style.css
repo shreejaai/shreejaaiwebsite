@@ -332,4 +332,5 @@ details[open] summary { background: var(--bg2); }
   .nav-links.open { display: flex; }
   .nav-drop-menu { position: static; box-shadow: none; border: none; border-radius: 0; background: none; display: block; padding: 0 0 0 10px; }
   .nav-toggle { display: block; }
+  .nav-cta { display: none; }
 }
