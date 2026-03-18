@@ -156,10 +156,15 @@ section { padding: 88px 0; }
 .card-top-amber { border-top: 3px solid var(--amber); }
 
 /* ── Code ── */
-.code-snip { border-radius: 8px; overflow: hidden; border: 1px solid var(--line); }
-.code-snip-hd { padding: 7px 12px; font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--ink3); background: var(--bg3); }
+.code-snip {
+  border-radius: 8px; overflow: hidden; border: 1px solid var(--line);
+  background: #1a1917; padding: 16px;
+  font-family: 'JetBrains Mono', monospace; font-size: 12px; line-height: 1.75;
+  color: #c8c0b4; overflow-x: auto; white-space: pre;
+}
+.code-snip-hd { padding: 7px 12px; font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--ink3); background: var(--bg3); white-space: normal; }
 .code-snip pre {
-  background: #1a1917; padding: 16px; margin: 0;
+  background: #1a1917; padding: 0; margin: 0;
   font-family: 'JetBrains Mono', monospace; font-size: 12px; line-height: 1.75; color: #c8c0b4; overflow-x: auto;
 }
 pre .ck { color: #93b8f5; }
