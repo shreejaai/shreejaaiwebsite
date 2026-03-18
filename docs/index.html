@@ -19,14 +19,17 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --ink:    #0f0e0c;
-      --ink2:   #3a3830;
-      --ink3:   #7a7568;
+      /* Brand navy pulled from logo wordmark */
+      --ink:    #111827;          /* body text — dark neutral */
+      --ink2:   #374260;          /* secondary text — navy tint */
+      --ink3:   #6b7a99;          /* muted — blue-gray */
       --bg:     #faf9f6;
       --bg2:    #f2f0eb;
       --bg3:    #e8e4dc;
       --line:   #d8d3c8;
-      --blue:   #1a5fd4;
+      --brand:  #141f4a;          /* logo navy — headings, nav, CTA bg */
+      --brand2: #1e2d6b;          /* hover state for brand navy */
+      --blue:   #1a52d4;          /* AGR accent — logo gradient mid */
       --blue-l: #e8f0fd;
       --teal:   #0d7f6a;
       --teal-l: #e0f4ef;
@@ -55,8 +58,8 @@
       font-weight: 500; transition: all 0.15s; border: 1.5px solid transparent;
       cursor: pointer; text-decoration: none; white-space: nowrap;
     }
-    .btn-dark { background: var(--ink); color: #fff; border-color: var(--ink); }
-    .btn-dark:hover { background: var(--ink2); border-color: var(--ink2); }
+    .btn-dark { background: var(--brand); color: #fff; border-color: var(--brand); }
+    .btn-dark:hover { background: var(--brand2); border-color: var(--brand2); }
     .btn-outline { background: transparent; color: var(--ink); border-color: var(--line); }
     .btn-outline:hover { border-color: var(--ink3); background: var(--bg2); }
     .btn-white { background: #fff; color: var(--ink); border-color: #fff; }
@@ -67,21 +70,19 @@
     /* Nav */
     nav {
       position: sticky; top: 0; z-index: 100;
-      background: rgba(250,249,246,0.9);
+      background: rgba(250,249,246,0.94);
       backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
       border-bottom: 1px solid transparent;
       transition: border-color 0.2s, box-shadow 0.2s;
-      position: sticky;
     }
-    nav.scrolled { border-bottom-color: var(--line); box-shadow: 0 1px 12px rgba(0,0,0,0.05); }
+    nav.scrolled { border-bottom-color: var(--line); box-shadow: 0 1px 12px rgba(0,0,0,0.06); }
     .nav-inner {
       display: flex; align-items: center; justify-content: space-between;
-      height: 64px; position: relative;
+      height: 68px; position: relative;
     }
     .nav-brand {
-      display: flex; align-items: center; gap: 10px;
-      font-family: 'DM Serif Display', Georgia, serif;
-      font-size: 18px; color: var(--ink); text-decoration: none;
+      display: flex; align-items: center;
+      text-decoration: none;
     }
     .nav-links { display: flex; align-items: center; gap: 2px; list-style: none; }
     .nav-links a, .nav-drop-btn {
@@ -89,7 +90,7 @@
       color: var(--ink2); transition: background 0.15s, color 0.15s;
       background: none; border: none; display: inline-flex; align-items: center; gap: 3px;
     }
-    .nav-links a:hover, .nav-drop-btn:hover { background: var(--bg2); color: var(--ink); }
+    .nav-links a:hover, .nav-drop-btn:hover { background: var(--bg2); color: var(--brand); }
     .nav-drop { position: relative; }
     .nav-drop-menu {
       position: absolute; top: calc(100% + 8px); left: 0;
@@ -119,7 +120,7 @@
     section { padding: 88px 0; }
     .bg-white { background: #fff; }
     .bg-stone { background: var(--bg2); }
-    .bg-dark   { background: var(--ink); color: #fff; }
+    .bg-dark   { background: var(--brand); color: #fff; }
     .section-eyebrow {
       font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 500;
       letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink3); margin-bottom: 8px;
@@ -127,7 +128,7 @@
     .section-hd { text-align: center; max-width: 620px; margin: 0 auto 56px; }
     .section-hd h2 {
       font-family: 'DM Serif Display', Georgia, serif;
-      font-size: clamp(26px, 3.2vw, 38px); margin-bottom: 12px; color: var(--ink);
+      font-size: clamp(26px, 3.2vw, 38px); margin-bottom: 12px; color: var(--brand);
     }
     .section-hd p { color: var(--ink2); font-size: 16px; line-height: 1.7; }
 
@@ -142,7 +143,7 @@
     }
     .hero h1 {
       font-family: 'DM Serif Display', Georgia, serif;
-      font-size: clamp(34px, 4.8vw, 56px); line-height: 1.08; margin-bottom: 18px; color: var(--ink);
+      font-size: clamp(34px, 4.8vw, 56px); line-height: 1.08; margin-bottom: 18px; color: var(--brand);
     }
     .hero h1 em { font-style: italic; color: var(--teal); }
     .hero-sub { font-size: 17px; color: var(--ink2); line-height: 1.7; max-width: 46ch; margin-bottom: 28px; }
@@ -150,7 +151,7 @@
     .hero-stats { display: flex; gap: 28px; flex-wrap: wrap; }
     .stat strong {
       display: block; font-family: 'DM Serif Display', serif;
-      font-size: 22px; color: var(--ink); line-height: 1;
+      font-size: 22px; color: var(--brand); line-height: 1;
     }
     .stat span { font-size: 11px; color: var(--ink3); font-family: 'JetBrains Mono', monospace; }
 
@@ -177,7 +178,7 @@
     }
     .flow-step-body { flex: 1; min-width: 0; }
     .flow-step-title {
-      font-size: 13px; font-weight: 600; color: var(--ink);
+      font-size: 13px; font-weight: 600; color: var(--brand);
       display: flex; align-items: center; justify-content: space-between; gap: 6px; margin-bottom: 2px;
     }
     .flow-step-sub { font-size: 11px; color: var(--ink3); }
@@ -214,7 +215,7 @@
     .prod-tag--blue { color: var(--blue); }
     .prod-tag--teal { color: var(--teal); }
     .prod-card h3 {
-      font-family: 'DM Serif Display', serif; font-size: 22px; margin-bottom: 10px;
+      font-family: 'DM Serif Display', serif; font-size: 22px; margin-bottom: 10px; color: var(--brand);
     }
     .prod-card > p { font-size: 14px; color: var(--ink2); line-height: 1.65; margin-bottom: 18px; }
     .feat-list { list-style: none; display: flex; flex-direction: column; gap: 7px; margin-bottom: 22px; }
@@ -260,7 +261,7 @@
     .ptag--blue { background: var(--blue-l); color: var(--blue); }
     .ptag--teal { background: var(--teal-l); color: var(--teal); }
     .ptag--both { background: var(--bg3); color: var(--ink2); }
-    .persona-card h3 { font-family: 'DM Serif Display', serif; font-size: 18px; margin-bottom: 7px; }
+    .persona-card h3 { font-family: 'DM Serif Display', serif; font-size: 18px; margin-bottom: 7px; color: var(--brand); }
     .persona-card p { font-size: 13.5px; color: var(--ink2); line-height: 1.6; margin-bottom: 14px; }
     .persona-quote {
       font-size: 13px; color: var(--ink3); font-style: italic;
@@ -293,7 +294,7 @@
     .fnode:hover { transform: translateY(-2px); border-color: var(--blue); background: var(--blue-l); }
     .fnode.hi { border-color: var(--blue); background: var(--blue-l); }
     .fnode-ico { font-size: 20px; margin-bottom: 5px; }
-    .fnode-t { font-size: 12px; font-weight: 600; color: var(--ink); }
+    .fnode-t { font-size: 12px; font-weight: 600; color: var(--brand); }
     .fnode-s { font-size: 10px; color: var(--ink3); font-family: 'JetBrains Mono', monospace; margin-top: 3px; }
     .farrow { color: var(--ink3); font-size: 16px; padding: 0 6px; flex-shrink: 0; }
     .outcomes { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; margin-bottom: 32px; }
@@ -317,7 +318,7 @@
     .pipe-stage:last-child { border-right: none; }
     .pipe-stage.hi { background: var(--amber-l); }
     .pipe-emo  { font-size: 20px; margin-bottom: 7px; }
-    .pipe-name { font-size: 13px; font-weight: 600; color: var(--ink); margin-bottom: 2px; }
+    .pipe-name { font-size: 13px; font-weight: 600; color: var(--brand); margin-bottom: 2px; }
     .pipe-model{ font-size: 10px; color: var(--ink3); font-family: 'JetBrains Mono', monospace; margin-bottom: 7px; }
     .pipe-desc { font-size: 12px; color: var(--ink2); line-height: 1.5; margin-bottom: 8px; }
     .pbdg { font-family: 'JetBrains Mono', monospace; font-size: 10px; display: inline-block; padding: 2px 8px; border-radius: 999px; }
@@ -342,8 +343,8 @@
     }
     .metrics { display: flex; flex-direction: column; gap: 14px; margin-bottom: 20px; }
     .metric { background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 18px; display: flex; gap: 14px; align-items: flex-start; }
-    .metric-val { font-family: 'DM Serif Display', serif; font-size: 30px; color: var(--ink); line-height: 1; min-width: 58px; }
-    .metric-lbl { font-size: 13px; font-weight: 600; color: var(--ink); margin-bottom: 2px; }
+    .metric-val { font-family: 'DM Serif Display', serif; font-size: 30px; color: var(--brand); line-height: 1; min-width: 58px; }
+    .metric-lbl { font-size: 13px; font-weight: 600; color: var(--brand); margin-bottom: 2px; }
     .metric-dsc { font-size: 12px; color: var(--ink3); line-height: 1.5; }
 
     /* ── Flywheel ── */
@@ -352,7 +353,7 @@
     .fly-items { display: flex; flex-direction: column; gap: 18px; }
     .fly-item { display: flex; gap: 18px; align-items: flex-start; }
     .fly-num { font-family: 'DM Serif Display', serif; font-size: 34px; color: #b8ccef; line-height: 1; min-width: 44px; flex-shrink: 0; }
-    .fly-item h4 { font-family: 'DM Serif Display', serif; font-size: 16px; margin-bottom: 4px; }
+    .fly-item h4 { font-family: 'DM Serif Display', serif; font-size: 16px; margin-bottom: 4px; color: var(--brand); }
     .fly-item p  { font-size: 13.5px; color: var(--ink2); line-height: 1.6; }
 
     /* ── CTA ── */
@@ -365,7 +366,7 @@
     /* ── Footer ── */
     footer { background: var(--bg2); border-top: 1px solid var(--line); padding: 36px 0 28px; }
     .foot-r1 { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; padding-bottom: 18px; border-bottom: 1px solid var(--line); margin-bottom: 14px; }
-    .foot-brand { font-family: 'DM Serif Display', serif; font-size: 20px; color: var(--ink); }
+    .foot-brand { font-family: 'DM Serif Display', serif; font-size: 20px; color: var(--brand); }
     .foot-links { display: flex; gap: 4px; flex-wrap: wrap; }
     .foot-links a { padding: 5px 10px; font-size: 13.5px; color: var(--ink2); border-radius: 6px; transition: background 0.15s, color 0.15s; }
     .foot-links a:hover { background: var(--bg3); color: var(--ink); }
@@ -404,8 +405,7 @@
   <div class="container">
     <div class="nav-inner">
       <a href="index.html" class="nav-brand">
-        <img src="assets/logo.png" alt="Shreeja AI" height="32">
-        Shreeja AI
+        <img src="assets/logo.png" alt="Shreeja AI" height="44">
       </a>
       <ul class="nav-links" id="nav-links">
         <li><a href="index.html">Home</a></li>
@@ -864,8 +864,8 @@ agr = <span class="cf">AGRClient</span>(api_key=<span class="cs">"agr_sk_..."</s
           <circle cx="180" cy="180" r="148" stroke="#d8d3c8" stroke-width="1" stroke-dasharray="4 4"/>
           <!-- Inner circle -->
           <circle cx="180" cy="180" r="50" fill="#f2f0eb" stroke="#d8d3c8" stroke-width="1.2"/>
-          <text x="180" y="176" text-anchor="middle" font-size="13" fill="#3a3830" style="font-family:'DM Serif Display',serif">Shreeja</text>
-          <text x="180" y="194" text-anchor="middle" font-size="13" fill="#3a3830" style="font-family:'DM Serif Display',serif">AI</text>
+          <text x="180" y="176" text-anchor="middle" font-size="13" fill="#141f4a" style="font-family:'DM Serif Display',serif">Shreeja</text>
+          <text x="180" y="194" text-anchor="middle" font-size="13" fill="#141f4a" style="font-family:'DM Serif Display',serif">AI</text>
           <!-- Top: AGR SDK -->
           <rect x="138" y="16" width="84" height="34" rx="8" fill="#e8f0fd" stroke="#1a5fd4" stroke-width="1.5"/>
           <text x="180" y="38" text-anchor="middle" font-size="12" font-weight="500" fill="#1a5fd4" style="font-family:'JetBrains Mono',monospace">AGR SDK</text>
