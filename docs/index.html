@@ -78,7 +78,7 @@
     nav.scrolled { border-bottom-color: var(--line); box-shadow: 0 1px 12px rgba(0,0,0,0.06); }
     .nav-inner {
       display: flex; align-items: center; justify-content: space-between;
-      height: 68px; position: relative;
+      height: 76px; position: relative;
     }
     .nav-brand {
       display: flex; align-items: center;
@@ -386,7 +386,7 @@
       .pipe-stage:last-child { border-bottom: none; }
       .nav-links {
         display: none; flex-direction: column; position: absolute; top: 64px;
-        left: 0; right: 0; background: #fff; border-bottom: 1px solid var(--line);
+        top: 76px; left: 0; right: 0; background: #fff; border-bottom: 1px solid var(--line);
         padding: 10px; box-shadow: 0 4px 16px rgba(0,0,0,0.07); z-index: 99;
       }
       .nav-links.open { display: flex; }
@@ -405,7 +405,7 @@
   <div class="container">
     <div class="nav-inner">
       <a href="index.html" class="nav-brand">
-        <img src="assets/logo.png" alt="Shreeja AI" height="44">
+        <img src="assets/logo.png" alt="Shreeja AI" style="height:56px;width:auto;">
       </a>
       <ul class="nav-links" id="nav-links">
         <li><a href="index.html">Home</a></li>
