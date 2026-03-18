@@ -1,87 +1,187 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Contact Shreeja AI | Book a Demo</title>
-  <meta name="description" content="Contact Shreeja AI to book a demo of AGR and Company Box. Email, call, or use the contact form.">
-  <meta property="og:title" content="Contact Shreeja AI">
-  <meta property="og:description" content="Book a demo and connect with Shreeja AI in Delhi, India.">
-  <meta property="og:type" content="website">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Shreeja AI — Get in Touch</title>
+  <meta name="description" content="Contact Shreeja AI about AGR early access, Company Box waitlist, or just to say hello. Delhi-based AI infrastructure company.">
+  <meta property="og:title" content="Contact Shreeja AI — Get in Touch">
+  <meta property="og:description" content="Reach out about AGR, Company Box, or your agent governance goals.">
   <meta property="og:url" content="https://shreejaai.com/contact.html">
-  <meta property="og:image" content="https://shreejaai.com/assets/logo.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Contact Shreeja AI">
-  <meta name="twitter:description" content="Reach us for AGR and Company Box demos.">
+  <meta property="og:type" content="website">
   <link rel="canonical" href="https://shreejaai.com/contact.html">
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" href="assets/shreeja_logo_transparent.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container nav-wrap">
-      <a class="logo" href="index.html"><img src="assets/shreeja_logo_transparent.svg" alt="Shreeja AI" class="logo"></a>
-      <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="site-navigation">☰</button>
-      <ul class="nav-links" id="site-navigation" aria-label="Primary navigation">
+
+<nav id="main-nav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <img src="assets/shreeja_logo_transparent.svg" alt="Shreeja AI" class="logo">
+      </a>
+      <ul class="nav-links" id="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li class="nav-item has-dropdown">
-          <button class="nav-drop-toggle" aria-expanded="false" aria-controls="products-menu">Products</button>
-          <div class="nav-dropdown" id="products-menu" aria-label="Products submenu">
-            <a href="agr.html">AGR</a>
-            <a href="company-box.html">Company Box</a>
+        <li class="nav-drop">
+          <button class="nav-drop-btn">Products ▾</button>
+          <div class="nav-drop-menu">
+            <a href="agr.html">AGR — Governance Runtime</a>
+            <a href="company-box.html">Company Box — AI Team</a>
           </div>
         </li>
         <li><a href="about.html">About</a></li>
-        <li><a class="active" href="contact.html">Contact</a></li>
-        <li><a class="btn primary" href="contact.html">Book a Demo</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
       </ul>
-    </div>
-  </header>
-
-  <main class="container">
-    <section class="hero">
-      <div>
-        <span class="tagline">Trust Layer for AI Agents</span>
-        <h1>Book a demo and talk to Shreeja AI</h1>
-        <p class="lead">We'd love to learn about your governance and operational goals for AI agents.</p>
+      <div style="display:flex;gap:8px;align-items:center;">
+        <a href="contact.html" class="btn btn-dark">Get early access →</a>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">☰</button>
       </div>
-      <aside class="card">
-        <h3>Contact details</h3>
-        <p><strong>Email:</strong> <a href="mailto:hello@shreejaai.com">hello@shreejaai.com</a><br><strong>Location:</strong> Delhi, India<br><strong>Website:</strong> <a href="https://shreejaai.com/">shreejaai.com</a></p>
-      </aside>
-    </section>
-
-    <section class="section contact-grid">
-      <article class="card">
-        <h2>Send a message</h2>
-        <form id="mailto-form">
-          <label for="name">Name</label>
-          <input id="name" name="name" required>
-          <label for="email">Email</label>
-          <input id="email" name="email" type="email" required>
-          <label for="message">Message</label>
-          <textarea id="message" name="message" required></textarea>
-          <button class="btn primary" type="submit">Send Message</button>
-        </form>
-        <small class="note">This form opens your email client. You can also email us directly at <a href="mailto:hello@shreejaai.com">hello@shreejaai.com</a>.</small>
-      </article>
-
-      <article class="card">
-        <h2>Quick actions</h2>
-        <div class="btn-row">
-          <a class="btn primary" href="mailto:hello@shreejaai.com">Email directly</a>
-        </div>
-        <p style="margin-top: 1.2rem;">We typically respond with next steps for discovery, architecture fit, and demo planning.</p>
-      </article>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div class="footer-logo"><img src="assets/shreeja_logo_transparent.svg" alt="Shreeja AI" class="logo"></div>
-      <div>Delhi, India • <a href="mailto:hello@shreejaai.com">hello@shreejaai.com</a><br><a href="privacy.html">Privacy Policy</a> • <a href="terms.html">Terms of Use</a></div>
     </div>
-  </footer>
-  <script src="assets/script.js"></script>
+  </div>
+</nav>
+
+<main>
+
+  <!-- HERO -->
+  <section class="page-hero" style="text-align:center;">
+    <div class="container">
+      <div style="max-width:600px;margin:0 auto;">
+        <div class="hero-badge" style="justify-content:center;">
+          <span class="pulse-dot"></span>
+          Contact
+        </div>
+        <h1>Get in touch</h1>
+        <p class="page-hero-sub">
+          We'd love to hear about your governance goals for AI agents. Whether you're evaluating AGR, joining the Company Box waitlist, or just curious — reach out.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT GRID -->
+  <section class="bg-white">
+    <div class="container">
+      <div class="grid-2" style="align-items:start;gap:32px;">
+
+        <!-- LEFT: FORM -->
+        <div class="card" style="padding:32px;">
+          <h3 style="margin-bottom:24px;">Send a message</h3>
+          <form id="mailto-form">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required placeholder="Your name">
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required placeholder="you@company.com">
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" required placeholder="What are you working on?" rows="5"></textarea>
+            </div>
+            <button type="submit" class="btn btn-dark" style="width:100%;justify-content:center;">Send message →</button>
+          </form>
+          <p class="form-note">This form opens your email client. You can also email us directly at <a href="mailto:hello@shreejaai.com">hello@shreejaai.com</a>.</p>
+        </div>
+
+        <!-- RIGHT: DETAIL CARDS -->
+        <div style="display:flex;flex-direction:column;gap:16px;">
+
+          <div class="card" style="padding:24px;">
+            <h3 style="margin-bottom:16px;">Contact details</h3>
+            <div style="display:flex;flex-direction:column;gap:10px;font-size:15px;">
+              <div style="display:flex;gap:10px;align-items:baseline;">
+                <span style="color:var(--ink3);font-size:13px;min-width:72px;">Email</span>
+                <a href="mailto:hello@shreejaai.com" style="color:var(--blue);font-weight:500;">hello@shreejaai.com</a>
+              </div>
+              <div style="display:flex;gap:10px;align-items:baseline;">
+                <span style="color:var(--ink3);font-size:13px;min-width:72px;">Location</span>
+                <span style="color:var(--ink);">Delhi, India</span>
+              </div>
+              <div style="display:flex;gap:10px;align-items:baseline;">
+                <span style="color:var(--ink3);font-size:13px;min-width:72px;">Website</span>
+                <span style="color:var(--ink);">shreejaai.com</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" style="padding:24px;">
+            <h3 style="margin-bottom:12px;">Email directly</h3>
+            <a href="mailto:hello@shreejaai.com" class="btn btn-outline" style="width:100%;text-align:center;display:block;margin-bottom:12px;">Email hello@shreejaai.com →</a>
+            <p style="color:var(--ink3);font-size:13px;margin:0;">We typically respond within one business day with next steps for discovery, architecture fit, and demo planning.</p>
+          </div>
+
+          <div class="card" style="padding:24px;border-color:var(--blue);">
+            <div class="bdg bdg-blue" style="margin-bottom:12px;">AGR · Free tier</div>
+            <p style="color:var(--ink2);font-size:14px;margin-bottom:16px;">Start with 10,000 evaluations free. <code>pip install agr-sdk</code> and add governance to your first agent in 5 minutes.</p>
+            <a href="agr.html" class="btn btn-blue btn-sm">Get AGR free →</a>
+          </div>
+
+          <div class="card" style="padding:24px;border-color:var(--teal);">
+            <div class="bdg bdg-teal" style="margin-bottom:12px;">Company Box · Private beta</div>
+            <p style="color:var(--ink2);font-size:14px;margin-bottom:16px;">Join the waitlist for Company Box — your AI engineering team as a service. Describe a feature, get a PR.</p>
+            <a href="contact.html" class="btn btn-teal btn-sm">Join waitlist →</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT TO EXPECT -->
+  <section class="bg-stone">
+    <div class="container">
+      <div class="section-eyebrow">Process</div>
+      <h2 class="section-hd">What happens next</h2>
+      <div class="grid-3">
+        <div class="card" style="padding:28px 24px;">
+          <div style="font-size:28px;margin-bottom:12px;">📬</div>
+          <h3 style="margin-bottom:10px;font-size:18px;">We read your message</h3>
+          <p style="color:var(--ink2);font-size:14px;margin:0;">We review every inquiry personally. No automated responses, no sales scripts. You hear from a real person who understands your use case.</p>
+        </div>
+        <div class="card" style="padding:28px 24px;">
+          <div style="font-size:28px;margin-bottom:12px;">📞</div>
+          <h3 style="margin-bottom:10px;font-size:18px;">Quick intro call</h3>
+          <p style="color:var(--ink2);font-size:14px;margin:0;">If there's a fit, we'll suggest a 30-minute call to understand your stack and governance goals. No pitch deck, just a conversation.</p>
+        </div>
+        <div class="card" style="padding:28px 24px;">
+          <div style="font-size:28px;margin-bottom:12px;">🎯</div>
+          <h3 style="margin-bottom:10px;font-size:18px;">Tailored walkthrough</h3>
+          <p style="color:var(--ink2);font-size:14px;margin:0;">We demo AGR or Company Box against your actual use case, not a generic slide deck. You see exactly how it fits your stack.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-dark cta-sec">
+    <div class="container">
+      <h2>Ready to govern your agents?</h2>
+      <p>Start free with AGR or join the Company Box waitlist — either way, governance starts today.</p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+        <a href="agr.html" class="btn btn-white">Get AGR free</a>
+        <a href="contact.html" class="btn btn-outline-white">Join Company Box waitlist</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="foot-r1">
+      <div class="foot-brand">Shreeja AI</div>
+      <nav class="foot-links"><a href="agr.html">AGR</a><a href="company-box.html">Company Box</a><a href="contact.html">Pricing</a><a href="contact.html">Contact</a><a href="about.html">About</a></nav>
+      <div class="foot-domain">shreejaai.com</div>
+    </div>
+    <div class="foot-r2"><span>Delhi, India</span><span>·</span><a href="mailto:hello@shreejaai.com">hello@shreejaai.com</a><span>·</span><a href="privacy.html">Privacy Policy</a><span>·</span><a href="terms.html">Terms of Use</a></div>
+  </div>
+</footer>
+
+<script src="assets/script.js"></script>
 </body>
 </html>

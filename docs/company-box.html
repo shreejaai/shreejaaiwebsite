@@ -1,184 +1,381 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Company Box | Secure Ops & Delivery Hub | Shreeja AI</title>
-  <meta name="description" content="Company Box from Shreeja AI helps teams manage secure operations, secrets workflow, and delivery trace for AI-enabled systems.">
-  <meta property="og:title" content="Company Box | Shreeja AI">
-  <meta property="og:description" content="A secure ops and delivery hub for trusted AI operations.">
-  <meta property="og:type" content="website">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Company Box — Your AI Engineering Team | Shreeja AI</title>
+  <meta name="description" content="Company Box is your AI engineering team as a service. A 5-agent pipeline — PM to DevOps — that writes real code, commits to GitHub, and suspends for your approval before every production deploy.">
+  <meta property="og:title" content="Company Box — Your AI Engineering Team | Shreeja AI">
+  <meta property="og:description" content="5-agent pipeline. Real GitHub commits. You approve production.">
   <meta property="og:url" content="https://shreejaai.com/company-box.html">
-  <meta property="og:image" content="https://shreejaai.com/assets/logo.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Company Box | Secure Ops & Delivery Hub">
-  <meta name="twitter:description" content="Operate AI systems with stronger control and visibility.">
+  <meta property="og:type" content="website">
   <link rel="canonical" href="https://shreejaai.com/company-box.html">
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" href="assets/shreeja_logo_transparent.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container nav-wrap">
-      <a class="logo" href="index.html"><img src="assets/shreeja_logo_transparent.svg" alt="Shreeja AI" class="logo"></a>
-      <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="site-navigation">☰</button>
-      <ul class="nav-links" id="site-navigation" aria-label="Primary navigation">
+
+<nav id="main-nav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <img src="assets/shreeja_logo_transparent.svg" alt="Shreeja AI" class="logo">
+      </a>
+      <ul class="nav-links" id="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li class="nav-item has-dropdown">
-          <button class="nav-drop-toggle" aria-expanded="false" aria-controls="products-menu">Products</button>
-          <div class="nav-dropdown" id="products-menu" aria-label="Products submenu">
-            <a href="agr.html">AGR</a>
-            <a class="active" href="company-box.html">Company Box</a>
+        <li class="nav-drop">
+          <button class="nav-drop-btn">Products ▾</button>
+          <div class="nav-drop-menu">
+            <a href="agr.html">AGR — Governance Runtime</a>
+            <a href="company-box.html" class="active">Company Box — AI Team</a>
           </div>
         </li>
         <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li><a class="btn primary" href="contact.html">Book a Demo</a></li>
       </ul>
-    </div>
-  </header>
-
-  <main class="container">
-    <section class="hero" aria-labelledby="cb-hero-heading">
-      <div class="card">
-        <span class="tagline">Product · Secure operations hub</span>
-        <h1 id="cb-hero-heading">Company Box secures day-to-day AI delivery operations.</h1>
-        <p class="lead">Company Box gives teams a trusted workspace for access controls, secrets workflows, and delivery traceability across AI-enabled systems.</p>
-        <div class="btn-row">
-          <a class="btn primary" href="contact.html">Book Company Box demo</a>
-          <a class="btn" href="#cb-how" data-scroll-target="#cb-how">View workflow</a>
-        </div>
+      <div style="display:flex;gap:8px;align-items:center;">
+        <a href="contact.html" class="btn btn-dark">Get early access →</a>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">☰</button>
       </div>
-      <aside class="mock-panel" aria-label="Company Box operation snapshot">
-        <h3>// Operations snapshot</h3>
-        <div class="mock-line"><strong>Workspace roles</strong><span>8 teams, scoped access</span></div>
-        <div class="mock-line"><strong>Secrets status</strong><span>No stale credentials ✅</span></div>
-        <div class="mock-line"><strong>Release trace</strong><span>Audit export ready</span></div>
-      </aside>
-    </section>
+    </div>
+  </div>
+</nav>
 
-    <section class="section arch-section" aria-labelledby="cb-arch-heading">
-      <h2 id="cb-arch-heading">How Company Box fits in your operations</h2>
-      <p class="section-intro">Company Box gives operational and security teams a governed workspace — with AGR providing the runtime policy layer that keeps every action within bounds.</p>
+<main>
 
-      <div class="arch-spotlight arch-spotlight--teal">
-        <div class="arch-diagram" role="img" aria-label="Architecture showing teams using Company Box, powered by AGR, producing audit and compliance outputs">
-
-          <div class="arch-sources">
-            <p class="arch-col-label">Teams &amp; Users</p>
-            <ul class="arch-items">
-              <li class="arch-item">Ops Teams</li>
-              <li class="arch-item">DevOps Engineers</li>
-              <li class="arch-item">Security Teams</li>
-              <li class="arch-item">Platform Leads</li>
-              <li class="arch-item">Product Teams</li>
-              <li class="arch-item arch-item--dim">AI Builders</li>
-            </ul>
+  <!-- HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero-grid">
+        <div>
+          <div class="hero-badge hero-badge-teal">
+            <span class="pulse-dot" style="background:var(--teal);box-shadow:0 0 0 4px var(--teal-l);"></span>
+            Company Box · SaaS
           </div>
-
-          <div class="arch-products arch-products--single">
-            <div class="arch-product arch-product--box arch-product--featured arch-product--cb-featured">
-              <div class="arch-product-name"><span class="arch-mark arch-mark--teal">◩</span> Company Box — Secure Ops Hub</div>
-              <div class="arch-features">
-                <div class="arch-feature">
-                  <span class="arch-feature-tag">GOVERNANCE</span>
-                  <strong>Role Access Control</strong>
-                </div>
-                <div class="arch-feature">
-                  <span class="arch-feature-tag">SECURITY</span>
-                  <strong>Secrets Management</strong>
-                </div>
-                <div class="arch-feature">
-                  <span class="arch-feature-tag">DELIVERY</span>
-                  <strong>Release Traceability</strong>
-                </div>
-                <div class="arch-feature">
-                  <span class="arch-feature-tag">AUDIT</span>
-                  <strong>Change Audit Export</strong>
-                </div>
+          <h1>Your AI engineering team, <em>governed at every step</em></h1>
+          <p class="page-hero-sub">
+            Describe a feature. A 5-agent pipeline — PM, Tech Lead, Coder, QA, DevOps — plans, writes, tests, and deploys real code to your GitHub repo. Every action is Cedar-governed. You approve before anything ships to production.
+          </p>
+          <div class="page-hero-btns">
+            <a href="contact.html" class="btn btn-dark">Join waitlist →</a>
+            <a href="#how-it-works" class="btn btn-outline">See how it works</a>
+          </div>
+        </div>
+        <div>
+          <div class="card" style="padding:28px 24px;">
+            <div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--ink3);margin-bottom:16px;letter-spacing:.04em;">REQUIREMENT INPUT</div>
+            <div style="background:var(--bg2);border:1px solid var(--line);border-radius:8px;padding:14px 16px;margin-bottom:20px;font-size:14px;color:var(--ink2);">
+              <span style="color:var(--ink3);font-size:12px;font-family:'JetBrains Mono',monospace;">feature.txt</span><br>
+              <span style="color:var(--ink);font-style:italic;">"Add a CSV export button to the analytics dashboard. Users should be able to download the last 30 days of data."</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+              <div style="display:flex;flex-direction:column;align-items:center;gap:4px;font-size:11px;color:var(--ink3);">
+                <div style="width:36px;height:36px;background:var(--blue-l);border:1px solid var(--blue);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px;">📋</div>
+                PM
               </div>
-              <div class="arch-agr-layer">
-                <span class="arch-agr-tag">◈ Runtime Governance by AGR</span>
-                <p>Policy engine, permission orchestration &amp; audit-grade tracing</p>
-                <a href="agr.html" class="arch-agr-link">Learn about AGR →</a>
+              <div style="color:var(--ink3);font-size:16px;">→</div>
+              <div style="display:flex;flex-direction:column;align-items:center;gap:4px;font-size:11px;color:var(--ink3);">
+                <div style="width:36px;height:36px;background:var(--blue-l);border:1px solid var(--blue);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px;">🏗️</div>
+                Tech Lead
               </div>
-              <div class="arch-product-footer">
-                <p class="arch-product-sub">Secure, governed, fully traceable AI operations.</p>
-                <a href="contact.html" class="btn primary">Book Company Box demo</a>
+              <div style="color:var(--ink3);font-size:16px;">→</div>
+              <div style="display:flex;flex-direction:column;align-items:center;gap:4px;font-size:11px;color:var(--ink3);">
+                <div style="width:36px;height:36px;background:var(--blue-l);border:1px solid var(--blue);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px;">💻</div>
+                Coder
+              </div>
+              <div style="color:var(--ink3);font-size:16px;">→</div>
+              <div style="display:flex;flex-direction:column;align-items:center;gap:4px;font-size:11px;color:var(--ink3);">
+                <div style="width:36px;height:36px;background:var(--teal-l);border:1px solid var(--teal);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px;">🧪</div>
+                QA
+              </div>
+              <div style="color:var(--ink3);font-size:16px;">→</div>
+              <div style="display:flex;flex-direction:column;align-items:center;gap:4px;font-size:11px;color:var(--ink3);">
+                <div style="width:36px;height:36px;background:var(--amber-l);border:1px solid var(--amber);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px;">🚀</div>
+                DevOps
               </div>
             </div>
+            <div style="margin-top:16px;padding:10px 14px;background:var(--amber-l);border:1px solid var(--amber);border-radius:6px;font-size:13px;color:var(--ink2);">
+              <span class="bdg bdg-amber" style="margin-right:8px;">APPROVAL_REQUIRED</span> Production deploy waiting for your review
+            </div>
           </div>
-
-          <div class="arch-consumers">
-            <p class="arch-col-label">Audit &amp; Outputs</p>
-            <ul class="arch-items arch-items--right">
-              <li class="arch-item">Audit Logs</li>
-              <li class="arch-item">Compliance Reports</li>
-              <li class="arch-item">Release Records</li>
-              <li class="arch-item">Security Posture</li>
-              <li class="arch-item">Change History</li>
-              <li class="arch-item arch-item--dim">Delivery Clarity</li>
-            </ul>
-          </div>
-
         </div>
       </div>
-    </section>
-
-    <section class="section" aria-labelledby="cb-capabilities">
-      <h2 id="cb-capabilities">Core capabilities</h2>
-      <div class="capability-grid">
-        <article class="card"><h3>Role-aware access</h3><p>Keep boundaries clear between builders, operators, and reviewers with scoped privileges.</p></article>
-        <article class="card"><h3>Structured secrets workflow</h3><p>Handle credentials through controlled, reviewable workflows instead of ad-hoc distribution.</p></article>
-        <article class="card"><h3>Delivery traceability</h3><p>Track meaningful changes across AI operations to support audits and internal reporting.</p></article>
-      </div>
-    </section>
-
-    <section id="cb-how" class="section" aria-labelledby="cb-how-heading">
-      <h2 id="cb-how-heading">How Company Box works</h2>
-      <ol class="steps card">
-        <li>Define team roles and access scopes for environments and workflows.</li>
-        <li>Configure secrets handling with approvals and rotation expectations.</li>
-        <li>Standardize release handoffs with traceable checkpoints and logs.</li>
-        <li>Review operational telemetry to improve security posture over time.</li>
-      </ol>
-    </section>
-
-    <section class="section" aria-labelledby="cb-use-cases">
-      <h2 id="cb-use-cases">Use cases</h2>
-      <div class="pill-row">
-        <span class="pill">Internal AI platforms</span>
-        <span class="pill">Security-conscious product teams</span>
-        <span class="pill">Regulated process environments</span>
-        <span class="pill">Cross-functional AI operations</span>
-        <span class="pill">Enterprise delivery controls</span>
-      </div>
-    </section>
-
-    <section class="section faq" aria-labelledby="cb-faq-heading">
-      <h2 id="cb-faq-heading">FAQ</h2>
-      <div class="card">
-        <details><summary>Is Company Box only for AI teams?</summary><p>No. It can also support broader operations teams collaborating with AI-enabled workflows.</p></details>
-        <details><summary>Can Company Box replace existing tools?</summary><p>It is typically used with existing tooling to centralize trust-centric operational controls.</p></details>
-        <details><summary>What is the first step to adopt it?</summary><p>Start by mapping access and secrets practices, then introduce workflows incrementally per team.</p></details>
-      </div>
-    </section>
-
-    <section class="cta-strip" aria-label="Company Box final call to action">
-      <div>
-        <h2>Strengthen AI operations without slowing delivery.</h2>
-        <p>Explore how Company Box can fit your current security and release workflow.</p>
-      </div>
-      <a class="btn primary" href="contact.html">Talk to Company Box team</a>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div class="footer-logo"><img src="assets/shreeja_logo_transparent.svg" alt="Shreeja AI" class="logo"></div>
-      <div>Delhi, India • <a href="mailto:hello@shreejaai.com">hello@shreejaai.com</a><br><a href="privacy.html">Privacy Policy</a> • <a href="terms.html">Terms of Use</a></div>
     </div>
-  </footer>
-  <script src="assets/script.js"></script>
+  </section>
+
+  <!-- STATS -->
+  <section class="bg-white" style="padding:56px 0;">
+    <div class="container">
+      <div class="stat-row">
+        <div class="stat-item">
+          <div class="stat-val">5 agents</div>
+          <div class="stat-lbl">PM to deploy</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-val">Claude</div>
+          <div class="stat-lbl">claude-sonnet-4-6 powering every agent</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-val">E2B</div>
+          <div class="stat-lbl">Isolated sandboxes</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-val">0 code</div>
+          <div class="stat-lbl">You need to write</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5-AGENT PIPELINE -->
+  <section class="bg-stone" id="how-it-works">
+    <div class="container">
+      <div class="section-eyebrow">How it works</div>
+      <h2 class="section-hd">The 5-agent pipeline</h2>
+
+      <div class="pipeline">
+        <div class="pipe-stage">
+          <div class="pipe-emo">📋</div>
+          <div class="pipe-name">PM Agent</div>
+          <div class="pipe-model">claude-sonnet-4-6</div>
+          <div class="pipe-desc">Writes JSON spec: acceptance criteria, files to touch, edge cases</div>
+          <span class="bdg bdg-blue">agr.evaluate() ✓</span>
+        </div>
+        <div class="pipe-stage">
+          <div class="pipe-emo">🏗️</div>
+          <div class="pipe-name">Tech Lead Agent</div>
+          <div class="pipe-model">claude-sonnet-4-6</div>
+          <div class="pipe-desc">Architecture plan, task list, code hints per file</div>
+          <span class="bdg bdg-blue">agr.evaluate() ✓</span>
+        </div>
+        <div class="pipe-stage">
+          <div class="pipe-emo">💻</div>
+          <div class="pipe-name">Coder Agent</div>
+          <div class="pipe-model">claude-sonnet-4-6 · E2B</div>
+          <div class="pipe-desc">Writes code in isolated sandbox → commits to GitHub branch</div>
+          <span class="bdg bdg-blue">fs.write governed</span>
+        </div>
+        <div class="pipe-stage">
+          <div class="pipe-emo">🧪</div>
+          <div class="pipe-name">QA Agent</div>
+          <div class="pipe-model">claude-sonnet-4-6 · E2B</div>
+          <div class="pipe-desc">Runs tests. Fail → feeds back to Coder (max 3 retries)</div>
+          <span class="bdg bdg-teal">retry loop</span>
+        </div>
+        <div class="pipe-stage hi">
+          <div class="pipe-emo">🚀</div>
+          <div class="pipe-name">DevOps Agent</div>
+          <div class="pipe-model">claude-sonnet-4-6</div>
+          <div class="pipe-desc">Staging: auto. Production: suspends until you approve</div>
+          <span class="bdg bdg-amber">APPROVAL_REQUIRED</span>
+        </div>
+      </div>
+
+      <div class="grid-2" style="margin-top:48px;">
+        <div class="card" style="padding:24px;">
+          <div style="font-size:24px;margin-bottom:10px;">✅</div>
+          <h4 style="margin-bottom:6px;">Staging auto-deploys</h4>
+          <p style="color:var(--ink2);font-size:14px;margin:0;">Staging environments deploy automatically once QA passes. No human step required.</p>
+        </div>
+        <div class="card" style="padding:24px;border-color:var(--amber);background:var(--amber-l);">
+          <div style="font-size:24px;margin-bottom:10px;">📬</div>
+          <h4 style="margin-bottom:6px;">Production requires your approval</h4>
+          <p style="color:var(--ink2);font-size:14px;margin:0;">Every production deploy suspends and sends you a one-click approval link. No login required.</p>
+        </div>
+        <div class="card" style="padding:24px;">
+          <div style="font-size:24px;margin-bottom:10px;">🔄</div>
+          <h4 style="margin-bottom:6px;">QA retry loop (max 3×)</h4>
+          <p style="color:var(--ink2);font-size:14px;margin:0;">When tests fail, QA feeds the error back to the Coder agent. Up to 3 retry cycles before escalating.</p>
+        </div>
+        <div class="card" style="padding:24px;">
+          <div style="font-size:24px;margin-bottom:10px;">📁</div>
+          <h4 style="margin-bottom:6px;">Real code in your repo</h4>
+          <p style="color:var(--ink2);font-size:14px;margin:0;">Code lands in your GitHub repo as a branch and pull request. Your engineers can review, fork, or iterate.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CORE CAPABILITIES -->
+  <section class="bg-white">
+    <div class="container">
+      <div class="section-eyebrow">Capabilities</div>
+      <h2 class="section-hd">Built for solo founders and small teams.</h2>
+      <div class="grid-3">
+        <div class="card card-top-teal">
+          <div style="font-size:28px;margin-bottom:12px;">🤖</div>
+          <h3>5-agent pipeline</h3>
+          <p style="color:var(--ink2);margin-bottom:16px;">PM → Tech Lead → Coder → QA → DevOps. Each agent has a defined role, a Cedar policy, and a bounded set of actions. No agent can exceed its mandate.</p>
+          <ul class="feat-list">
+            <li><span class="fdot fdot-teal"></span>JSON spec from PM agent</li>
+            <li><span class="fdot fdot-teal"></span>Architecture plan from Tech Lead</li>
+            <li><span class="fdot fdot-teal"></span>Code written and tested in E2B sandbox</li>
+            <li><span class="fdot fdot-teal"></span>Every step governed by AGR Cedar policies</li>
+          </ul>
+        </div>
+        <div class="card card-top-teal">
+          <div style="font-size:28px;margin-bottom:12px;">🐙</div>
+          <h3>Real GitHub commits</h3>
+          <p style="color:var(--ink2);margin-bottom:16px;">Code lands in your own GitHub repository on a named branch as a pull request. Your engineers can review the diff, leave comments, or take over the branch.</p>
+          <ul class="feat-list">
+            <li><span class="fdot fdot-teal"></span>Commits to your GitHub org</li>
+            <li><span class="fdot fdot-teal"></span>Branch + PR created automatically</li>
+            <li><span class="fdot fdot-teal"></span>Reviewable by your team</li>
+            <li><span class="fdot fdot-teal"></span>Every file write is AGR-governed</li>
+          </ul>
+        </div>
+        <div class="card card-top-teal">
+          <div style="font-size:28px;margin-bottom:12px;">🔐</div>
+          <h3>Production gate</h3>
+          <p style="color:var(--ink2);margin-bottom:16px;">Every production deploy requires your one-click approval — sent by email or Slack. No login needed. The workflow suspends via Temporal until you respond.</p>
+          <ul class="feat-list">
+            <li><span class="fdot fdot-teal"></span>Temporal-backed approval suspension</li>
+            <li><span class="fdot fdot-teal"></span>Email + Slack approval notifications</li>
+            <li><span class="fdot fdot-teal"></span>One-click approve or deny</li>
+            <li><span class="fdot fdot-teal"></span>Full audit trail of every decision</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUILT ON AGR -->
+  <section class="bg-stone">
+    <div class="container">
+      <div class="section-eyebrow">Governance</div>
+      <h2 class="section-hd">Governed at every step</h2>
+      <div style="max-width:720px;margin:0 auto;">
+        <div class="card" style="padding:36px 32px;text-align:center;margin-bottom:32px;">
+          <div style="font-size:32px;margin-bottom:16px;">🛡️</div>
+          <h3 style="margin-bottom:12px;">Company Box is built on AGR</h3>
+          <p style="color:var(--ink2);margin-bottom:24px;">Every agent action — writing a file, committing to GitHub, deploying to staging, deploying to production — passes through <code>agr.evaluate()</code> before it executes. If the Cedar policy says DENY, the action doesn't happen. If it says APPROVAL_REQUIRED, the workflow suspends until you respond.</p>
+          <div class="code-snip" style="text-align:left;margin-bottom:24px;"><span class="cc"># Every agent action is policy-checked</span>
+agr.<span class="cf">evaluate</span>(
+    agent=<span class="cs">"pm-agent"</span>,
+    action=<span class="cs">"write.spec"</span>,
+    resource=<span class="cs">"project/csv-export"</span>,
+    context={<span class="cs">"env"</span>: <span class="cs">"staging"</span>}
+)
+
+<span class="cc"># File writes, commits, deploys — all governed</span>
+agr.<span class="cf">evaluate</span>(agent=<span class="cs">"coder-agent"</span>, action=<span class="cs">"fs.write"</span>, resource=<span class="cs">"src/export.ts"</span>)
+agr.<span class="cf">evaluate</span>(agent=<span class="cs">"devops-agent"</span>, action=<span class="cs">"deploy.production"</span>, resource=<span class="cs">"app/v2.4.1"</span>)</div>
+          <p style="color:var(--ink2);font-size:14px;margin-bottom:20px;">This means every file write, every GitHub commit, every deployment is policy-checked before it happens. You get a complete audit trail automatically — no configuration needed.</p>
+          <a href="agr.html" class="btn btn-blue">Learn about AGR →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="bg-white">
+    <div class="container">
+      <div class="section-eyebrow">Pricing</div>
+      <h2 class="section-hd">Start free. Ship faster.</h2>
+      <div class="pricing-grid">
+        <div class="price-card">
+          <div class="price-tier">Free</div>
+          <div class="price-amt">$0 <span style="font-size:14px;font-weight:400;color:var(--ink3);">/ month</span></div>
+          <div class="price-desc">Try the full pipeline</div>
+          <ul class="price-feats">
+            <li>20 runs/month</li>
+            <li>Full 5-agent pipeline</li>
+            <li>GitHub integration</li>
+            <li>E2B isolated sandboxes</li>
+            <li>AGR governance included</li>
+          </ul>
+          <a href="contact.html" class="btn btn-outline" style="width:100%;text-align:center;display:block;">Join waitlist</a>
+        </div>
+        <div class="price-card featured">
+          <div class="price-tier">Builder</div>
+          <div class="price-amt">$29 <span style="font-size:14px;font-weight:400;opacity:.7;">/ month</span></div>
+          <div class="price-desc">For solo founders shipping features fast</div>
+          <ul class="price-feats">
+            <li>Unlimited runs</li>
+            <li>Priority pipeline queue</li>
+            <li>Slack approval notifications</li>
+            <li>Custom Cedar policies</li>
+            <li>Full audit trail</li>
+            <li>Email support</li>
+          </ul>
+          <a href="contact.html" class="btn btn-white" style="width:100%;text-align:center;display:block;">Join waitlist</a>
+        </div>
+        <div class="price-card">
+          <div class="price-tier">Studio</div>
+          <div class="price-amt">$99 <span style="font-size:14px;font-weight:400;color:var(--ink3);">/ month</span></div>
+          <div class="price-desc">For small teams and agencies</div>
+          <ul class="price-feats">
+            <li>Multiple team members</li>
+            <li>Shared project workspace</li>
+            <li>Priority support</li>
+            <li>Custom deployment targets</li>
+            <li>Advanced AGR policy controls</li>
+            <li>SLA guarantee</li>
+          </ul>
+          <a href="contact.html" class="btn btn-outline" style="width:100%;text-align:center;display:block;">Contact us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-stone">
+    <div class="container">
+      <div class="section-eyebrow">FAQ</div>
+      <h2 class="section-hd">Common questions</h2>
+      <div class="faq" style="max-width:720px;margin:0 auto;">
+        <details>
+          <summary>What is a "run"?</summary>
+          <div class="faq-body">A run is one complete feature request from input to deployment. You describe a feature, and Company Box runs the full 5-agent pipeline — PM spec, Tech Lead architecture, Coder implementation, QA testing, DevOps deployment — as a single unit. Each run produces a GitHub PR and a deployed staging environment.</div>
+        </details>
+        <details>
+          <summary>Do I need to know how to code?</summary>
+          <div class="faq-body">No. Company Box is designed for founders, product managers, and small teams who want to ship software without writing it themselves. You describe what you want in plain English. The agents handle the technical implementation. You review the output and approve the production deploy.</div>
+        </details>
+        <details>
+          <summary>Where does my code go?</summary>
+          <div class="faq-body">Your code lands in your own GitHub repository. The Coder agent commits to a branch named after the feature run, and a pull request is opened automatically. You own the code — Company Box does not retain it or use it for training.</div>
+        </details>
+        <details>
+          <summary>What happens when QA tests fail?</summary>
+          <div class="faq-body">The QA agent feeds the test failure output directly back to the Coder agent. The Coder agent attempts a fix and re-runs the tests. This retry loop runs up to 3 times. If all 3 attempts fail, the run is marked as failed and you receive a report showing exactly what broke and why.</div>
+        </details>
+        <details>
+          <summary>How does production approval work?</summary>
+          <div class="faq-body">When the DevOps agent is ready to deploy to production, it hits an APPROVAL_REQUIRED decision from AGR. The workflow suspends — no compute is consumed — and you receive an email or Slack notification with a one-click approve or deny link. No login is required. The pipeline resumes the moment you respond.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-dark cta-sec">
+    <div class="container">
+      <h2>Ship your first feature without writing a line of code</h2>
+      <p>Join the Company Box private beta — your AI engineering team, governed at every step.</p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+        <a href="contact.html" class="btn btn-white">Join Company Box waitlist</a>
+        <a href="agr.html" class="btn btn-outline-white">Learn about AGR</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="foot-r1">
+      <div class="foot-brand">Shreeja AI</div>
+      <nav class="foot-links"><a href="agr.html">AGR</a><a href="company-box.html">Company Box</a><a href="contact.html">Pricing</a><a href="contact.html">Contact</a><a href="about.html">About</a></nav>
+      <div class="foot-domain">shreejaai.com</div>
+    </div>
+    <div class="foot-r2"><span>Delhi, India</span><span>·</span><a href="mailto:hello@shreejaai.com">hello@shreejaai.com</a><span>·</span><a href="privacy.html">Privacy Policy</a><span>·</span><a href="terms.html">Terms of Use</a></div>
+  </div>
+</footer>
+
+<script src="assets/script.js"></script>
 </body>
 </html>
