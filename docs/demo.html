@@ -545,6 +545,13 @@ body {
   </div>
 </aside>
 
+<!-- ─── MIXED CONTENT BANNER ─────────────────────────────────────────── -->
+<div id="https-warning" style="display:none; background:#1a1a2e; border-bottom:1px solid rgba(239,68,68,0.3); padding:10px 20px; text-align:center; font-size:13px; color:#fca5a5;">
+  ⚠️ Browser is blocking HTTP API calls from this HTTPS page.
+  <a id="download-btn" href="#" style="color:#818cf8; font-weight:600; margin-left:8px; text-decoration:underline;">Download &amp; open locally instead →</a>
+  <span style="color:#6b6b9b; margin-left:8px; font-size:11px;">(opens instantly, no install needed)</span>
+</div>
+
 <!-- ─── MAIN ──────────────────────────────────────────────────────────── -->
 <main class="main">
 
@@ -1329,6 +1336,18 @@ async function testConnection() {
 
 // ─── Init ─────────────────────────────────────────────────────────────────────
 window.addEventListener('load', () => {
+  // Show download banner when loaded over HTTPS (mixed content will block HTTP API)
+  if (location.protocol === 'https:') {
+    document.getElementById('https-warning').style.display = 'block';
+    document.getElementById('download-btn').addEventListener('click', e => {
+      e.preventDefault();
+      const blob = new Blob([document.documentElement.outerHTML], { type: 'text/html' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'agr-demo.html';
+      a.click();
+    });
+  }
   // URL params override hardcoded defaults (for internal use)
   const params = new URLSearchParams(location.search);
   if (params.get('key')) $('api-key').value = params.get('key');
