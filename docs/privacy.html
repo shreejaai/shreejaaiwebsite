@@ -15,25 +15,26 @@
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container nav-wrap">
-      <a class="logo" href="index.html"><img src="assets/shreeja_logo_transparent.svg" alt="Shreeja AI" class="logo"></a>
-      <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li class="nav-item has-dropdown">
-          <button class="nav-drop-toggle" aria-expanded="false">Products</button>
-          <div class="nav-dropdown">
-            <a href="agr.html">AGR</a>
-            <a href="company-box.html">Company Box</a>
-          </div>
-        </li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a class="btn primary" href="contact.html">Book a Demo</a></li>
-      </ul>
+  <nav id="main-nav">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="index.html" class="nav-brand">
+          <img src="assets/shreeja_logo_transparent.svg" alt="Shreeja AI" class="logo">
+        </a>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="agr.html">AGR</a></li>
+          <li><a href="company-box.html">Company Box</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-actions" style="display:flex;gap:8px;align-items:center;">
+          <a href="contact.html" class="btn btn-dark nav-cta">Get early access →</a>
+          <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-controls="nav-links" aria-expanded="false">☰</button>
+        </div>
+      </div>
     </div>
-  </header>
+  </nav>
 
   <main class="container">
     <section class="section">
@@ -76,10 +77,28 @@
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div class="footer-logo"><img src="assets/shreeja_logo_transparent.svg" alt="Shreeja AI" class="logo"></div>
-      <div>Delhi, India • <a href="mailto:hello@shreejaai.com">hello@shreejaai.com</a><br><a href="privacy.html">Privacy Policy</a> • <a href="terms.html">Terms of Use</a></div>
+  <footer>
+    <div class="container">
+      <div class="foot-r1">
+        <div class="foot-brand">Shreeja AI</div>
+        <nav class="foot-links" aria-label="Footer">
+          <a href="agr.html">AGR</a>
+          <a href="company-box.html">Company Box</a>
+          <a href="contact.html">Pricing</a>
+          <a href="contact.html">Contact</a>
+          <a href="about.html">About</a>
+        </nav>
+        <div class="foot-domain">shreejaai.com</div>
+      </div>
+      <div class="foot-r2">
+        <span>Delhi, India</span>
+        <span>·</span>
+        <a href="mailto:hello@shreejaai.com">hello@shreejaai.com</a>
+        <span>·</span>
+        <a href="privacy.html">Privacy Policy</a>
+        <span>·</span>
+        <a href="terms.html">Terms of Use</a>
+      </div>
     </div>
   </footer>
   <script src="assets/script.js"></script>

@@ -1,16 +1,43 @@
 (function () {
+  function setTab(tabId, trigger) {
+    document.querySelectorAll('.arch-diagram').forEach(diagram => {
+      diagram.classList.toggle('active', diagram.id === `tab-${tabId}`);
+    });
+    document.querySelectorAll('.arch-tab').forEach(tab => {
+      tab.classList.toggle('active', tab === trigger);
+    });
+  }
+
+  window.switchTab = function (tabId, trigger) {
+    setTab(tabId, trigger);
+  };
+
+  document.querySelectorAll('.arch-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      const target = tab.getAttribute('data-tab');
+      if (target) setTab(target, tab);
+    });
+  });
+
   // Mobile nav toggle
   const toggle = document.getElementById('nav-toggle');
-  if (toggle) {
+  const navLinks = document.getElementById('nav-links');
+  if (toggle && navLinks) {
     toggle.addEventListener('click', () => {
-      document.getElementById('nav-links').classList.toggle('open');
+      const isOpen = navLinks.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(isOpen));
     });
   }
 
   // Close nav on link click (mobile)
   document.querySelectorAll('#nav-links a').forEach(link => {
     link.addEventListener('click', () => {
-      document.getElementById('nav-links').classList.remove('open');
+      if (navLinks) {
+        navLinks.classList.remove('open');
+      }
+      if (toggle) {
+        toggle.setAttribute('aria-expanded', 'false');
+      }
     });
   });
 
