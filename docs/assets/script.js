@@ -1,43 +1,16 @@
 (function () {
-  function setTab(tabId, trigger) {
-    document.querySelectorAll('.arch-diagram').forEach(diagram => {
-      diagram.classList.toggle('active', diagram.id === `tab-${tabId}`);
-    });
-    document.querySelectorAll('.arch-tab').forEach(tab => {
-      tab.classList.toggle('active', tab === trigger);
-    });
-  }
-
-  window.switchTab = function (tabId, trigger) {
-    setTab(tabId, trigger);
-  };
-
-  document.querySelectorAll('.arch-tab').forEach(tab => {
-    tab.addEventListener('click', () => {
-      const target = tab.getAttribute('data-tab');
-      if (target) setTab(target, tab);
-    });
-  });
-
   // Mobile nav toggle
   const toggle = document.getElementById('nav-toggle');
-  const navLinks = document.getElementById('nav-links');
-  if (toggle && navLinks) {
+  if (toggle) {
     toggle.addEventListener('click', () => {
-      const isOpen = navLinks.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', String(isOpen));
+      document.getElementById('nav-links').classList.toggle('open');
     });
   }
 
   // Close nav on link click (mobile)
   document.querySelectorAll('#nav-links a').forEach(link => {
     link.addEventListener('click', () => {
-      if (navLinks) {
-        navLinks.classList.remove('open');
-      }
-      if (toggle) {
-        toggle.setAttribute('aria-expanded', 'false');
-      }
+      document.getElementById('nav-links').classList.remove('open');
     });
   });
 
