@@ -442,7 +442,7 @@
         <p class="hero-sub">Two products. One mission. AGR governs every action your agents take. Company Box shows same control plane applied to real software work. Live demo now walks through pharma parquet ingest, human approval, policy edit, and audit trail.</p>
         <div class="hero-btns">
           <a href="http://13.204.171.151:3000/dashboard" target="_blank" class="btn btn-dark">Open pharma demo</a>
-          <a href="http://13.204.171.151:4200/approvals" target="_blank" class="btn btn-outline">Open AGR approvals</a>
+          <a href="#demo-walkthrough" class="btn btn-outline">See demo process</a>
         </div>
         <div class="hero-stats">
           <div class="stat"><strong>&lt; 2ms</strong><span>Policy evaluation</span></div>
@@ -759,6 +759,78 @@ result = agr.<span class="cf">evaluate</span>(agent, action, resource)</pre>
       </div>
     </div>
 
+  </div>
+</section>
+
+<!-- DEMO WALKTHROUGH -->
+<section class="bg-stone" id="demo-walkthrough">
+  <div class="container">
+    <div class="section-hd">
+      <div class="section-eyebrow">Live Demo Process</div>
+      <h2>How the demo works from end to end</h2>
+      <p>The live demo shows a real governed workflow. A user starts in DataTrust, AGR evaluates the action, a human operator decides inside AGR, and the result flows back with policy context and audit history.</p>
+    </div>
+
+    <div class="persona-grid" style="margin-bottom:24px;">
+      <div class="persona-card">
+        <div class="ptag ptag--blue">Step 1</div>
+        <h3>User starts in DataTrust</h3>
+        <p>The business workflow begins in DataTrust. The user creates a connection or starts ingestion with data that needs governance review.</p>
+        <ul class="feat-list">
+          <li><span class="fdot fdot-blue"></span><span>The user works in the application, not in AGR first</span></li>
+          <li><span class="fdot fdot-blue"></span><span>DataTrust sends the action to AGR for evaluation</span></li>
+          <li><span class="fdot fdot-blue"></span><span>Sensitive requests pause only when policy requires approval</span></li>
+        </ul>
+      </div>
+
+      <div class="persona-card">
+        <div class="ptag ptag--teal">Step 2</div>
+        <h3>AGR becomes the control plane</h3>
+        <p>AGR evaluates the exact action against Cedar policy and returns a deterministic decision: allow, deny, or approval required.</p>
+        <ul class="feat-list">
+          <li><span class="fdot fdot-teal"></span><span>Cedar policy decides the action in under 2ms</span></li>
+          <li><span class="fdot fdot-teal"></span><span>Approval is routed into the AGR operator inbox</span></li>
+          <li><span class="fdot fdot-teal"></span><span>AGR records the request for audit and review</span></li>
+        </ul>
+      </div>
+
+      <div class="persona-card">
+        <div class="ptag ptag--both">Step 3</div>
+        <h3>Human decision closes the loop</h3>
+        <p>The operator reviews the request in AGR, approves or denies it, and DataTrust updates after the webhook callback.</p>
+        <ul class="feat-list">
+          <li><span class="fdot fdot-brand"></span><span>Approve to show a governed workflow can resume safely</span></li>
+          <li><span class="fdot fdot-brand"></span><span>Deny to show enforcement, not just observability</span></li>
+          <li><span class="fdot fdot-brand"></span><span>Open policy and audit pages to explain why the decision happened</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="prod-grid">
+      <div class="prod-card prod-card--blue">
+        <div class="prod-tag prod-tag--blue">What visitors should understand</div>
+        <h3>This is a real runtime loop</h3>
+        <p>The important message is that AGR is not another dashboard. It sits between the application and the action being attempted, decides what is allowed, and coordinates approval when human oversight is needed.</p>
+        <ul class="feat-list">
+          <li><span class="fdot fdot-blue"></span><span>DataTrust is where work begins</span></li>
+          <li><span class="fdot fdot-blue"></span><span>AGR is where governance and approval happen</span></li>
+          <li><span class="fdot fdot-blue"></span><span>Audit proves what happened after the decision</span></li>
+        </ul>
+      </div>
+
+      <div class="prod-card prod-card--teal">
+        <div class="prod-tag prod-tag--teal">Start the walkthrough</div>
+        <h3>Use the live entry points</h3>
+        <p>These links let you start from the user side in DataTrust or from the operator side in AGR depending on how you want to present the demo.</p>
+        <div class="hero-btns" style="margin-bottom:18px;">
+          <a href="http://13.204.171.151:3000/dashboard" target="_blank" class="btn btn-dark">Open DataTrust dashboard</a>
+          <a href="http://13.204.171.151:3000/ingestion" target="_blank" class="btn btn-outline">Open ingestion</a>
+          <a href="http://13.204.171.151:4200/approvals" target="_blank" class="btn btn-outline">Open AGR approvals</a>
+          <a href="agr.html#live-demo" class="btn btn-outline">Read AGR walkthrough</a>
+        </div>
+        <p style="font-size:13px;color:var(--ink3);margin:0;">Suggested order: DataTrust action → AGR approval → policy or audit view → refresh DataTrust.</p>
+      </div>
+    </div>
   </div>
 </section>
 

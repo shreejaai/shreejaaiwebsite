@@ -303,6 +303,58 @@
       <p style="font-size:13px; color:var(--ink3);">
         Flow: upload parquet &middot; block in DataTrust &middot; decide in AGR &middot; watch webhook update job
       </p>
+
+      <div class="grid-3" style="text-align:left; margin-top:32px;">
+        <div class="card card-top-blue">
+          <div class="section-eyebrow" style="margin-bottom:10px;">What the user does</div>
+          <h3 style="font-size:20px; margin-bottom:10px;">Start in DataTrust</h3>
+          <ul class="feat-list">
+            <li><span class="fdot fdot-blue"></span>Create the connection or start ingestion</li>
+            <li><span class="fdot fdot-blue"></span>Trigger a governed pharma workflow</li>
+            <li><span class="fdot fdot-blue"></span>See the request pause until policy is satisfied</li>
+          </ul>
+        </div>
+        <div class="card card-top-amber">
+          <div class="section-eyebrow" style="margin-bottom:10px;">What the operator does</div>
+          <h3 style="font-size:20px; margin-bottom:10px;">Decide inside AGR</h3>
+          <ul class="feat-list">
+            <li><span class="fdot fdot-brand"></span>Open the AGR approvals queue</li>
+            <li><span class="fdot fdot-brand"></span>Review the pending request and policy context</li>
+            <li><span class="fdot fdot-brand"></span>Approve or deny, then inspect policy and audit</li>
+          </ul>
+        </div>
+        <div class="card card-top-teal">
+          <div class="section-eyebrow" style="margin-bottom:10px;">What AGR proves</div>
+          <h3 style="font-size:20px; margin-bottom:10px;">Governance is a runtime layer</h3>
+          <ul class="feat-list">
+            <li><span class="fdot fdot-teal"></span>The application does not hardcode the final decision</li>
+            <li><span class="fdot fdot-teal"></span>Policy, approval, and audit are handled centrally</li>
+            <li><span class="fdot fdot-teal"></span>The governed app resumes only after AGR resolves the action</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grid-2" style="text-align:left; margin-top:20px;">
+        <div class="card" style="padding:22px 24px;">
+          <h3 style="font-size:20px; margin-bottom:12px;">Suggested demo script</h3>
+          <ul class="feat-list">
+            <li><span class="fdot fdot-blue"></span>Open DataTrust and explain that this is where the business user works</li>
+            <li><span class="fdot fdot-blue"></span>Perform the governed action so the request enters approval</li>
+            <li><span class="fdot fdot-blue"></span>Move to AGR and show the pending request in the operator queue</li>
+            <li><span class="fdot fdot-blue"></span>Approve or deny and return to DataTrust to show the state change</li>
+            <li><span class="fdot fdot-blue"></span>Finish with audit or policy view to show why the decision is trustworthy</li>
+          </ul>
+        </div>
+        <div class="card" style="padding:22px 24px;">
+          <h3 style="font-size:20px; margin-bottom:12px;">What is automated in this demo</h3>
+          <ul class="feat-list">
+            <li><span class="fdot fdot-teal"></span>DataTrust sends the evaluation request to AGR</li>
+            <li><span class="fdot fdot-teal"></span>AGR routes approval to the configured demo operator</li>
+            <li><span class="fdot fdot-teal"></span>Webhook callback updates DataTrust after the decision</li>
+            <li><span class="fdot fdot-teal"></span>The same action is visible across approvals, policies, and audit</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -505,6 +557,10 @@ decision = agr.<span class="cf">evaluate</span>(
         <details>
           <summary>Can I use AGR in pre-production and testing environments?</summary>
           <div class="faq-body">Yes. AGR supports environment-aware policies — you can write Cedar rules that behave differently in dev, staging, and production. In testing, you can run AGR in "audit-only" mode, where all decisions are logged but actions are never blocked. This lets you validate your policy files before enabling enforcement in production.</div>
+        </details>
+        <details>
+          <summary>Why do demo approvals land in the AGR operator account automatically?</summary>
+          <div class="faq-body">The live demo is configured so the governed request is routed to a fixed AGR operator inbox. That keeps the walkthrough reliable during meetings: the end user still works in DataTrust, but the approval always appears in the operator account that is presenting the demo.</div>
         </details>
       </div>
     </div>
