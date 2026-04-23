@@ -52,7 +52,7 @@
           </div>
           <h1>Govern every agent action <em>before it executes</em></h1>
           <p class="page-hero-sub">
-            AGR wraps your AI agents with a Cedar policy engine that evaluates every action in under 2ms. Sensitive operations suspend via Temporal-backed approval workflows — zero compute consumed while waiting.
+            AGR wraps AI agents and governed applications with a Cedar policy engine that evaluates every action in under 2ms. Live demo uses pharma parquet ingest: DataTrust blocks on regional handling policy, AGR captures approval, then webhook releases or rejects job.
           </p>
           <div class="page-hero-btns">
             <a href="contact.html" class="btn btn-dark">Get AGR free →</a>
@@ -66,16 +66,16 @@
               <div class="fnode" style="background:var(--bg2);border-color:var(--line);">
                 <div class="fnode-ico">🔍</div>
                 <div>
-                  <div class="fnode-t">Evaluating action</div>
-                  <div class="fnode-s">agr.evaluate("send_email", resource="user/42")</div>
+                  <div class="fnode-t">Evaluating ingest</div>
+                  <div class="fnode-s">agr.evaluate("ingest.parquet", resource="pharma/vendor-drop")</div>
                 </div>
                 <span class="bdg bdg-gray" style="margin-left:auto;flex-shrink:0;">evaluating</span>
               </div>
               <div class="fnode hi">
                 <div class="fnode-ico">⚡</div>
                 <div>
-                  <div class="fnode-t">Cedar policy check</div>
-                  <div class="fnode-s">1.3ms · rule match: permit external comm</div>
+                  <div class="fnode-t">Regional policy check</div>
+                  <div class="fnode-s">1.3ms · rule match: regional handling approval</div>
                 </div>
                 <span class="bdg bdg-teal" style="margin-left:auto;flex-shrink:0;">running</span>
               </div>
@@ -83,15 +83,15 @@
                 <div class="fnode-ico">⏸️</div>
                 <div>
                   <div class="fnode-t">Approval requested</div>
-                  <div class="fnode-s">action="deploy.production" → suspended</div>
+                  <div class="fnode-s">job blocked in DataTrust → AGR approval created</div>
                 </div>
                 <span class="bdg bdg-amber" style="margin-left:auto;flex-shrink:0;">pending</span>
               </div>
               <div class="fnode" style="background:var(--teal-l);border-color:var(--teal);">
                 <div class="fnode-ico">✅</div>
                 <div>
-                  <div class="fnode-t">Approved by reviewer</div>
-                  <div class="fnode-s">Workflow resumed · audit entry written</div>
+                  <div class="fnode-t">Approved or denied</div>
+                  <div class="fnode-s">Webhook updates ingestion status · audit entry written</div>
                 </div>
                 <span class="bdg bdg-teal" style="margin-left:auto;flex-shrink:0;">approved</span>
               </div>
@@ -260,21 +260,48 @@
   <section class="bg-stone" id="live-demo" style="padding:72px 0;">
     <div class="container" style="max-width:860px; text-align:center;">
       <div class="section-eyebrow">Live Demo</div>
-      <h2 class="section-hd" style="margin-bottom:16px;">See AGR govern a real AI agent</h2>
+      <h2 class="section-hd" style="margin-bottom:16px;">Run full pharma governance demo</h2>
       <p style="font-size:17px; color:var(--ink2); line-height:1.7; max-width:54ch; margin:0 auto 36px;">
-        No signup. No setup. Hit real Cedar policies, trigger approval workflows,
-        and watch the audit chain build — live.
+        Open DataTrust, upload a pharma parquet dataset, watch AGR require approval,
+        then approve, deny, edit policy, and inspect audit trail on live systems.
       </p>
-      <div style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-bottom:28px;">
-        <a href="http://35.184.255.222:9000" target="_blank" class="btn btn-dark" style="font-size:15px; padding:13px 28px;">
-          &#9654; Try Live Demo &mdash; no signup needed
+      <div class="grid-2" style="text-align:left; margin-bottom:28px;">
+        <div class="card" style="padding:22px 24px;">
+          <h3 style="font-size:20px; margin-bottom:10px;">1. DataTrust pharma app</h3>
+          <ul class="feat-list" style="margin-bottom:18px;">
+            <li><span class="fdot fdot-blue"></span>Open dashboard or ingestion workspace</li>
+            <li><span class="fdot fdot-blue"></span>Upload parquet from pharma vendor</li>
+            <li><span class="fdot fdot-blue"></span>See blocked status and governance reason</li>
+          </ul>
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <a href="http://34.170.185.57:3000/dashboard" target="_blank" class="btn btn-dark">Open pharma dashboard</a>
+            <a href="http://34.170.185.57:3000/ingestion" target="_blank" class="btn btn-outline">Open ingestion</a>
+          </div>
+        </div>
+        <div class="card" style="padding:22px 24px;">
+          <h3 style="font-size:20px; margin-bottom:10px;">2. AGR governance loop</h3>
+          <ul class="feat-list" style="margin-bottom:18px;">
+            <li><span class="fdot fdot-teal"></span>Approve or deny pending request</li>
+            <li><span class="fdot fdot-teal"></span>Edit regional handling policy in public demo</li>
+            <li><span class="fdot fdot-teal"></span>Inspect audit trail after webhook callback</li>
+          </ul>
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <a href="http://34.170.185.57:4200/approvals" target="_blank" class="btn btn-dark">Open AGR approvals</a>
+            <a href="http://34.170.185.57:4200/policies" target="_blank" class="btn btn-outline">Open policies</a>
+            <a href="http://34.170.185.57:4200/audit" target="_blank" class="btn btn-outline">Open audit</a>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-bottom:18px;">
+        <a href="http://34.170.185.57:4200/home" target="_blank" class="btn btn-dark" style="font-size:15px; padding:13px 28px;">
+          Open AGR home
         </a>
-        <a href="http://35.184.255.222:4200/home" target="_blank" class="btn btn-outline" style="font-size:15px; padding:13px 28px;">
-          View Live Dashboard &rarr;
+        <a href="http://34.170.185.57:3000/governance" target="_blank" class="btn btn-outline" style="font-size:15px; padding:13px 28px;">
+          Open DataTrust governance &rarr;
         </a>
       </div>
       <p style="font-size:13px; color:var(--ink3);">
-        Pick a scenario &middot; click Run &middot; see the governance decision in &lt;2ms
+        Flow: upload parquet &middot; block in DataTrust &middot; decide in AGR &middot; watch webhook update job
       </p>
     </div>
   </section>
