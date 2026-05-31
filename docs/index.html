@@ -37,7 +37,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/style.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Shreeja Technologies","url":"https://shreejaai.com","logo":"https://shreejaai.com/assets/shreejatech.png","email":"mailto:shreejabuid@gmail.com"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Shreeja Technologies","url":"https://shreejaai.com","logo":"https://shreejaai.com/assets/shreejatech.png","email":"mailto:hello@shreejaai.com"}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Shreeja Technologies","url":"https://shreejaai.com/"}</script>
 </head>
 <body>
@@ -82,12 +82,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <a href="#use-case-studio" class="btn btn-outline">Explore use cases</a>
         </div>
         <div class="mk-proofline">
-          <span>Trusted by ops, product, and leadership teams</span>
-          <div class="mk-proof-chips" aria-label="Capabilities">
-            <span>Agent Build</span>
-            <span>Workflow Automation</span>
-            <span>AGR Protection</span>
-            <span>Managed Operations</span>
+          <span>Built for regulated and risk-aware industries</span>
+          <div class="mk-proof-chips" aria-label="Industries">
+            <span>Pharma</span>
+            <span>Banking</span>
+            <span>Insurance</span>
+            <span>Finance Ops</span>
+            <span>Healthcare</span>
+            <span>Public Sector</span>
           </div>
         </div>
       </div>
@@ -289,61 +291,93 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </div>
   </section>
 
-  <section class="bg-stone reveal" id="roi-estimator">
+  <section class="bg-stone reveal" id="industries">
     <div class="container">
       <div class="section-hd">
-        <div class="section-eyebrow">Interactive estimator</div>
-        <h2>Estimate potential operational lift</h2>
-        <p>Quick directional estimate to help frame AI opportunity before discovery.</p>
+        <div class="section-eyebrow">Industries</div>
+        <h2>Built for industries where AI mistakes are expensive</h2>
+        <p>We deliver governed AI in environments where every action needs to be controlled, explained, and auditable.</p>
       </div>
-      <div class="mk-calculator">
-        <div class="mk-calc-controls">
-          <label for="calc-team-size">Team size: <strong id="team-size-val">25</strong></label>
-          <input id="calc-team-size" type="range" min="5" max="200" step="5" value="25">
 
-          <label for="calc-hours">Weekly repetitive hours per person: <strong id="hours-val">6</strong></label>
-          <input id="calc-hours" type="range" min="2" max="20" step="1" value="6">
-
-          <label for="calc-rate">Average hourly cost (USD): <strong id="rate-val">30</strong></label>
-          <input id="calc-rate" type="range" min="10" max="150" step="5" value="30">
-        </div>
-        <div class="mk-calc-results" aria-live="polite">
-          <div>
-            <span>Estimated monthly recoverable hours</span>
-            <strong id="monthly-hours">390</strong>
-          </div>
-          <div>
-            <span>Estimated monthly value opportunity (USD)</span>
-            <strong id="monthly-value">11700</strong>
-          </div>
-          <p class="form-note">This is a directional model for planning only. Real estimates are finalized during discovery.</p>
-          <a href="contact.html" class="btn btn-dark">Get a tailored estimate</a>
-        </div>
+      <div class="mk-problem-grid" style="grid-template-columns:repeat(4,1fr);">
+        <article class="mk-problem-card">
+          <span class="bdg bdg-blue" style="margin-bottom:8px;">Pharma &amp; Life Sciences</span>
+          <h4>GxP-aligned AI delivery</h4>
+          <p>Regulatory copilots, SOP-aware research agents, and document workflows with full traceability for GxP and 21 CFR Part 11 contexts.</p>
+        </article>
+        <article class="mk-problem-card">
+          <span class="bdg bdg-teal" style="margin-bottom:8px;">Banking</span>
+          <h4>Risk-aware customer and ops agents</h4>
+          <p>KYC support, dispute triage, and back-office automation with approval gates on every customer-impacting action.</p>
+        </article>
+        <article class="mk-problem-card">
+          <span class="bdg bdg-amber" style="margin-bottom:8px;">Insurance</span>
+          <h4>Claims and underwriting acceleration</h4>
+          <p>Claims drafting, document intake, and policy lookups with human checkpoints for payouts and exceptions.</p>
+        </article>
+        <article class="mk-problem-card">
+          <span class="bdg bdg-gray" style="margin-bottom:8px;">Finance Ops</span>
+          <h4>Controls-first finance automation</h4>
+          <p>Reconciliation, invoice review, and exception handling with AGR checkpoints on any payment-impacting action.</p>
+        </article>
       </div>
+
+      <p class="form-note" style="text-align:center;margin-top:22px;">Working in another regulated space — healthcare, public sector, energy? The same governance model applies. <a href="contact.html">Tell us your use case</a>.</p>
     </div>
   </section>
 
-  <section class="bg-white reveal">
+  <section class="bg-white reveal" id="inside-agr">
     <div class="container">
       <div class="section-hd">
-        <div class="section-eyebrow">Client voice</div>
-        <h2>What teams value most</h2>
+        <div class="section-eyebrow">What's inside AGR</div>
+        <h2>Concrete governance, not slideware</h2>
+        <p>Every engagement ships with the same enforcement stack. These are the artifacts your auditor and your CISO actually ask for.</p>
       </div>
-      <div class="mk-testimonials" data-testimonials>
-        <button class="mk-testimonial-btn" data-t-prev aria-label="Previous testimonial">‹</button>
-        <article class="mk-testimonial-slide active" data-t-slide>
-          <p>“Shreeja helped us move from scattered AI experiments to one governed operating model that leadership could trust.”</p>
-          <h3>Head of Operations, Mid-market SaaS</h3>
+
+      <div class="mk-problem-grid">
+        <article class="mk-problem-card">
+          <h4>Policy engine</h4>
+          <p>Declarative policies evaluated on every agent action. Allow, deny, or route to approval — versioned, testable, reversible.</p>
         </article>
-        <article class="mk-testimonial-slide" data-t-slide hidden>
-          <p>“The biggest win was confidence. Our team automated faster because the guardrails were already in place.”</p>
-          <h3>Director of Transformation, Services Company</h3>
+        <article class="mk-problem-card">
+          <h4>Approval workflows</h4>
+          <p>Durable multi-step approvals with reminders, escalation, SLA timers, and email + Slack delivery out of the box.</p>
         </article>
-        <article class="mk-testimonial-slide" data-t-slide hidden>
-          <p>“We appreciated the practical approach: business outcomes first, with governance designed into delivery from the start.”</p>
-          <h3>CTO, Enterprise Workflow Platform</h3>
+        <article class="mk-problem-card">
+          <h4>Hash-chained audit</h4>
+          <p>Every decision recorded with a SHA-256 chain and per-tenant sequence. Tamper-evident and exportable as a signed pack.</p>
         </article>
-        <button class="mk-testimonial-btn" data-t-next aria-label="Next testimonial">›</button>
+        <article class="mk-problem-card">
+          <h4>Risk scoring</h4>
+          <p>Six-factor risk score on every action with per-org weights and thresholds. Configurable, not hard-coded.</p>
+        </article>
+        <article class="mk-problem-card">
+          <h4>Compliance mapping</h4>
+          <p>Findings mapped to EU AI Act Art. 13, SOC 2 CC6.1, and ISO 42001 §8.4 — advisory or enforcing per organization.</p>
+        </article>
+        <article class="mk-problem-card">
+          <h4>Deployment flexibility</h4>
+          <p>Managed cloud, single-tenant cloud, or fully on-prem with a signed license. Your data stays where your policy requires.</p>
+        </article>
+      </div>
+
+      <div class="stat-row" style="margin-top:36px;">
+        <div class="stat-item">
+          <div class="stat-val">256-bit</div>
+          <div class="stat-lbl">Audit chain integrity</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-val">&lt;60s</div>
+          <div class="stat-lbl">Policy evaluation cache</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-val">RLS</div>
+          <div class="stat-lbl">Row-level tenant isolation</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-val">On-prem</div>
+          <div class="stat-lbl">Air-gapped deployment supported</div>
+        </div>
       </div>
     </div>
   </section>
@@ -375,7 +409,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <div class="foot-r2">
       <span>Delhi, India</span>
       <span>·</span>
-      <a href="mailto:shreejabuid@gmail.com">shreejabuid@gmail.com</a>
+      <a href="mailto:hello@shreejaai.com">hello@shreejaai.com</a>
       <span>·</span>
       <a href="privacy.html">Privacy Policy</a>
       <span>·</span>
