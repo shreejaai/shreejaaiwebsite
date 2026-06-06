@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dayini - Investor Pitch Deck (2026)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #030712;
+            color: #f3f4f6;
+            overflow-x: hidden;
+        }
+        .slide-container {
+            scroll-snap-type: y mandatory;
+            overflow-y: scroll;
+            height: 100vh;
+            scroll-behavior: smooth;
+        }
+        .slide {
+            scroll-snap-align: start;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding: 2rem 4rem;
+        }
+        .bg-mesh {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.12) 0%, rgba(0,0,0,0) 70%);
+            top: -10%;
+            right: -5%;
+            z-index: 0;
+            pointer-events: none;
+        }
+        .bg-mesh-2 {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(16, 185, 129, 0.08) 0%, rgba(0,0,0,0) 70%);
+            bottom: -10%;
+            left: -5%;
+            z-index: 0;
+            pointer-events: none;
+        }
+        .slide-container::-webkit-scrollbar {
+            display: none;
+        }
+        .slide-container {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="slide-container">
+
+    <!-- SLIDE 1: COVER -->
+    <section class="slide bg-gradient-to-br from-[#090d16] to-[#02040a]">
+        <div class="bg-mesh"></div>
+        <div class="bg-mesh-2"></div>
+        
+        <div class="max-w-6xl mx-auto w-full z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-7 space-y-6">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-indigo-500/30 bg-indigo-500/10 text-indigo-400 text-xs font-semibold tracking-wider uppercase">
+                    🚀 Founder Pitch Deck • 2026
+                </div>
+                <h1 class="text-7xl lg:text-9xl font-extrabold tracking-tight text-white">
+                    Dayini
+                </h1>
+                <h2 class="text-2xl lg:text-3xl font-medium text-emerald-400 tracking-wide">
+                    Diagnose first, then teach
+                </h2>
+                <p class="text-xl text-slate-400 max-w-xl font-light leading-relaxed">
+                    A personal AI tutor that adapts depth to each student, in real time. Starting with Class 11 Chemistry in India.
+                </p>
+                <div class="pt-4 text-xs text-slate-500 tracking-widest uppercase">
+                    Vision: Become the trusted learning engine for every child, every subject
+                </div>
+            </div>
+            <div class="lg:col-span-5 relative hidden lg:block">
+                <div class="absolute inset-0 bg-indigo-500/20 blur-3xl rounded-full"></div>
+                <img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=600&q=80" 
+                     alt="AI Architecture Design" 
+                     class="w-full rounded-2xl border border-slate-800 shadow-2xl shadow-indigo-500/10 transform rotate-1 hover:rotate-0 transition-all duration-500">
+            </div>
+        </div>
+        <div class="absolute bottom-6 left-1/2 -translate-x-1/2 text-slate-600 text-xs tracking-widest uppercase animate-pulse">
+            Use mouse wheel or swipe down to navigate ↓
+        </div>
+    </section>
+
+    <!-- SLIDE 2: THE PROBLEM -->
+    <section class="slide bg-[#05070f]">
+        <div class="max-w-6xl mx-auto w-full z-10">
+            <div class="mb-16">
+                <p class="text-indigo-400 font-bold tracking-widest uppercase text-xs">01 / Critical Market Friction</p>
+                <h2 class="text-4xl lg:text-5xl font-extrabold tracking-tight text-white mt-1">The Problem</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-8 rounded-2xl bg-gradient-to-b from-slate-900/80 to-slate-950 border border-slate-800/60 hover:border-red-500/30 transition-all duration-300">
+                    <div class="text-3xl mb-6">📉</div>
+                    <h3 class="text-xl font-bold mb-3 text-white">Wrong Cognitive Depth</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed font-light">
+                        Most students don’t fail from a lack of content access; they fail from explanations delivered at the wrong depth for their unique foundation level.
+                    </p>
+                </div>
+                
+                <div class="p-8 rounded-2xl bg-gradient-to-b from-slate-900/80 to-slate-950 border border-slate-800/60 hover:border-red-500/30 transition-all duration-300">
+                    <div class="text-3xl mb-6">⚖️</div>
+                    <h3 class="text-xl font-bold mb-3 text-white">The One-Size Fallacy</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed font-light">
+                        Standard uniform classroom loops leave sharp, high-performing students completely bored while simultaneously leaving struggling students permanently lost.
+                    </p>
+                </div>
+                
+                <div class="p-8 rounded-2xl bg-gradient-to-b from-slate-900/80 to-slate-950 border border-slate-800/60 hover:border-red-500/30 transition-all duration-300">
+                    <div class="text-3xl mb-6">🎯</div>
+                    <h3 class="text-xl font-bold mb-3 text-white">Demand for Real Outcomes</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed font-light">
+                        Parents and educational institutions need verified, measurable performance outcomes—not simply more archives of unguided streaming video libraries.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SLIDE 3: OUR CORE INSIGHT -->
+    <section class="slide bg-[#02040a]">
+        <div class="bg-mesh"></div>
+        <div class="max-w-6xl mx-auto w-full z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-5 hidden lg:block">
+                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=600&q=80" 
+                     alt="Data Intelligence Layer" 
+                     class="rounded-2xl border border-slate-800 shadow-2xl">
+            </div>
+            <div class="lg:col-span-7 space-y-8">
+                <div>
+                    <p class="text-emerald-400 font-bold tracking-widest uppercase text-xs">02 / Non-Replicable Advantage</p>
+                    <h2 class="text-4xl lg:text-5xl font-extrabold tracking-tight text-white mt-1">Our Core Insight</h2>
+                </div>
+                
+                <div class="p-6 rounded-xl bg-indigo-500/5 border border-indigo-500/20">
+                    <p class="text-xl lg:text-2xl font-medium text-indigo-300 italic">
+                        "Content is everywhere. Personal diagnosis is the moat."
+                    </p>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="flex gap-4">
+                        <span class="text-emerald-400 font-bold text-lg">01</span>
+                        <div>
+                            <h4 class="text-white font-semibold">Tutor Must Read Before Teaching</h4>
+                            <p class="text-slate-400 text-sm font-light">Before presenting content, an optimized layout requires the tutor to systematically analyze and understand the specific student framework.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <span class="text-emerald-400 font-bold text-lg">02</span>
+                        <div>
+                            <h4 class="text-white font-semibold">Dynamic Explanatory Alignment</h4>
+                            <p class="text-slate-400 text-sm font-light">Every single real-time explanation must map precisely to the target student's active mental structures and exact level of understanding.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <span class="text-emerald-400 font-bold text-lg">03</span>
+                        <div>
+                            <h4 class="text-white font-semibold">Continuous Evolution Loop</h4>
+                            <p class="text-slate-400 text-sm font-light">Measurable student metrics improve scale-efficiently when the AI constantly loops comprehensive real-time diagnosis alongside teaching refinement.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SLIDE 4: THE SOLUTION -->
+    <section class="slide bg-[#05070f]">
+        <div class="max-w-6xl mx-auto w-full z-10 text-center space-y-12">
+            <div>
+                <p class="text-indigo-400 font-bold tracking-widest uppercase text-xs">03 / Product Architecture</p>
+                <h2 class="text-5xl font-extrabold tracking-tight text-white mt-1">The Solution: Dayini</h2>
+                <p class="text-slate-400 text-lg mt-4 max-w-2xl mx-auto font-light">
+                    Built intentionally for cognitive clarity and confidence, eliminating modern academic information overload.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+                <div class="p-8 rounded-2xl bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950 border border-slate-800">
+                    <div class="text-emerald-400 text-sm font-bold tracking-wider uppercase mb-3">Phase A</div>
+                    <h4 class="text-xl font-bold text-white mb-2">The Quick Probe</h4>
+                    <p class="text-slate-400 text-sm font-light leading-relaxed">
+                        An AI architecture that kicks off interactions with a lightning-fast diagnostic sequence to find the student's exact learning baseline.
+                    </p>
+                </div>
+                <div class="p-8 rounded-2xl bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950 border border-slate-800">
+                    <div class="text-indigo-400 text-sm font-bold tracking-wider uppercase mb-3">UX Engine</div>
+                    <h4 class="text-xl font-bold text-white mb-2">Conversational & Multilingual</h4>
+                    <p class="text-slate-400 text-sm font-light leading-relaxed">
+                        A smooth, multi-language conversational interface crafted from the ground up for regional and native Indian learner dynamics.
+                    </p>
+                </div>
+                <div class="p-8 rounded-2xl bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950 border border-slate-800">
+                    <div class="text-purple-400 text-sm font-bold tracking-wider uppercase mb-3">Core Engine</div>
+                    <h4 class="text-xl font-bold text-white mb-2">Real-Time Depth Tuning</h4>
+                    <p class="text-slate-400 text-sm font-light leading-relaxed">
+                        A real-time feedback loop that naturally adapts instruction complexity, giving each student tailored explanations on the fly.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SLIDE 5: CURRENT TRACTION & WHY NOW -->
+    <section class="slide bg-[#02040a]">
+        <div class="bg-mesh-2"></div>
+        <div class="max-w-6xl mx-auto w-full z-10 grid grid-cols-1 lg:grid-cols-2 gap-12">
+            
+            <div class="p-8 rounded-2xl bg-slate-900/50 border border-slate-800/80 space-y-6">
+                <div>
+                    <span class="text-emerald-400 font-bold tracking-wider uppercase text-xs">Validation</span>
+                    <h3 class="text-3xl font-bold text-white mt-1">What We Have Today</h3>
+                </div>
+                <ul class="space-y-4 font-light text-sm text-slate-300">
+                    <li class="flex items-start gap-3">
+                        <span class="text-emerald-400 mt-0.5">✔</span>
+                        <span>Live, operational product on web + streamlined mobile webapp wrappers.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-emerald-400 mt-0.5">✔</span>
+                        <span>Real-time student adaptation feedback loops fully integrated into production.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-emerald-400 mt-0.5">✔</span>
+                        <span>Active testing phases for Class 11 Chemistry modules driving non-stop model refinement.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="p-8 rounded-2xl bg-slate-900/50 border border-slate-800/80 space-y-6">
+                <div>
+                    <span class="text-indigo-400 font-bold tracking-wider uppercase text-xs">Macro Dynamics</span>
+                    <h3 class="text-3xl font-bold text-white mt-1">Why Now?</h3>
+                </div>
+                <ul class="space-y-4 font-light text-sm text-slate-300">
+                    <li class="flex items-start gap-3">
+                        <span class="text-indigo-400 font-bold">•</span>
+                        <span>AI capabilities have hit a major turning point, making highly personalized, adaptive tutoring incredibly fluid and effective.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-indigo-400 font-bold">•</span>
+                        <span>Indian students are mobile-first, tech-savvy, and deeply accustomed to using AI interfaces for daily learning support.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-indigo-400 font-bold">•</span>
+                        <span>Parents are highly motivated to invest in proven academic outcomes for competitive exams and key subject foundations.</span>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SLIDE 6: MARKET STRATEGY & DEFENSE -->
+    <section class="slide bg-[#05070f]">
+        <div class="max-w-6xl mx-auto w-full z-10">
+            <div class="mb-12">
+                <span class="text-indigo-400 font-bold tracking-widest uppercase text-xs">04 / Market Mechanics</span>
+                <h2 class="text-4xl lg:text-5xl font-extrabold text-white mt-1">Market Opportunity & Business Model</h2>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="space-y-4">
+                    <div class="text-indigo-400 text-xs font-bold uppercase tracking-wider">The Wedge Strategy</div>
+                    <h4 class="text-xl font-bold text-white">Market Opportunity</h4>
+                    <p class="text-slate-400 text-sm font-light leading-relaxed">
+                        Tapping into India's massive K-12 and test-prep sectors. We're leading with high-friction science topics for senior school students before scaling across subjects, grades, and global markets.
+                    </p>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="text-emerald-400 text-xs font-bold uppercase tracking-wider">Revenue Mechanics</div>
+                    <h4 class="text-xl font-bold text-white">Business Model</h4>
+                    <p class="text-slate-400 text-sm font-light leading-relaxed">
+                        A recurring B2C subscription engine built directly for parents and students, combined with smart school and coaching institute partnerships for hybrid learning setups.
+                    </p>
+                    <div class="text-xs text-slate-500 font-medium">Future: Premium analytics dashboards, progress intelligence trackers, and direct exam prep pathways.</div>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="text-purple-400 text-xs font-bold uppercase tracking-wider">Moat Engineering</div>
+                    <h4 class="text-xl font-bold text-white">Defensibility</h4>
+                    <p class="text-slate-400 text-sm font-light leading-relaxed">
+                        As students learn, their diagnostic data compounds into comprehensive knowledge profiles. This ongoing optimization makes our personalization and student retention incredibly hard to match.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SLIDE 7: GTM & ROADMAP -->
+    <section class="slide bg-[#02040a]">
+        <div class="max-w-6xl mx-auto w-full z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <div class="lg:col-span-5 space-y-6">
+                <div>
+                    <span class="text-emerald-400 font-bold tracking-widest uppercase text-xs">05 / Commercial Scale</span>
+                    <h2 class="text-4xl font-extrabold text-white mt-1">Go-To-Market Plan</h2>
+                </div>
+                
+                <div class="space-y-4 text-sm font-light text-slate-400">
+                    <p>🔥 <strong class="text-white font-medium">Founder-Led Distribution:</strong> Growing early reach directly through parent networks and student community spaces.</p>
+                    <p>📊 <strong class="text-white font-medium">Clear Social Proof:</strong> Driving word-of-mouth growth by highlighting transparent, measurable improvements in learning outcomes.</p>
+                    <p>🤝 <strong class="text-white font-medium">Strategic Partnerships:</strong> Scaling up through structural integrations with educators and established tutoring centers.</p>
+                </div>
+            </div>
+
+            <div class="lg:col-span-7 p-8 rounded-2xl bg-slate-900/40 border border-slate-800">
+                <h3 class="text-lg font-bold text-white mb-6 border-b border-slate-800 pb-3">12 - 18 Month Growth Roadmap</h3>
+                
+                <div class="relative border-l border-indigo-500/30 pl-6 space-y-6 ml-2">
+                    <div class="relative">
+                        <div class="absolute -left-[29px] top-1 w-3 h-3 rounded-full bg-indigo-500"></div>
+                        <h4 class="text-sm font-semibold text-white">Phase 1: Lock in Product-Market Fit</h4>
+                        <p class="text-xs text-slate-400 mt-1">Focusing on high student retention and deep user engagement within our first core segment.</p>
+                    </div>
+                    <div class="relative">
+                        <div class="absolute -left-[29px] top-1 w-3 h-3 rounded-full bg-emerald-400"></div>
+                        <h4 class="text-sm font-semibold text-white">Phase 2: Core Academic Expansion</h4>
+                        <p class="text-xs text-slate-400 mt-1">Expanding our proven adaptive software setup beyond Chemistry into Physics, Mathematics, and Biology modules.</p>
+                    </div>
+                    <div class="relative">
+                        <div class="absolute -left-[29px] top-1 w-3 h-3 rounded-full bg-purple-500"></div>
+                        <h4 class="text-sm font-semibold text-white">Phase 3: Scale Institutional Channels</h4>
+                        <p class="text-xs text-slate-400 mt-1">Opening up school and coaching partnership networks to build and accelerate stable monthly recurring revenue.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SLIDE 8: THE ASK / CALL TO ACTION -->
+    <section class="slide bg-gradient-to-tr from-[#02040a] via-[#0b1224] to-[#032422]">
+        <div class="bg-mesh"></div>
+        <div class="max-w-4xl mx-auto w-full z-10 text-center space-y-8">
+            <span class="text-emerald-400 font-bold tracking-widest uppercase text-xs">Partnership Opportunity</span>
+            <h2 class="text-5xl lg:text-6xl font-black text-white tracking-tight">Investment Ask</h2>
+            
+            <p class="text-xl text-slate-300 font-light leading-relaxed max-w-2xl mx-auto">
+                We are raising pre-seed capital to expand product capabilities, scale distribution channels, and track long-term learning outcomes.
+            </p>
+            
+            <p class="text-indigo-300 text-lg font-medium max-w-xl mx-auto">
+                "We are building the intelligence layer for personalized learning. Looking for investors who believe in AI-native education for India first, then global."
+            </p>
+
+            <div class="pt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-lg mx-auto text-sm">
+                <div class="p-4 bg-slate-900/90 border border-slate-800 rounded-xl">
+                    <span class="text-slate-500 block uppercase text-xs font-semibold tracking-wider">Contact Channels</span>
+                    <a href="https://shreejaai.com" target="_blank" class="text-emerald-400 font-mono font-bold hover:underline block mt-1">shreejaai.com</a>
+                </div>
+                <div class="p-4 bg-slate-900/90 border border-slate-800 rounded-xl">
+                    <span class="text-slate-500 block uppercase text-xs font-semibold tracking-wider">Repository & Product Ecosystem</span>
+                    <span class="text-indigo-400 font-bold block mt-1">Dayini</span>
+                </div>
+            </div>
+
+            <div class="pt-6 text-xs text-slate-500 font-medium tracking-wide">
+                Open to pilot-focused, high-conviction pre-seed partners • Let’s build the future of learning together
+            </div>
+        </div>
+    </section>
+
+</div>
+
+</body>
+</html>
